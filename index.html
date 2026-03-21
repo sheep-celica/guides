@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pop-up Controller V10 Guides</title>
+  <meta
+    name="description"
+    content="Customer-facing installation and firmware flashing guides for the Pop-up Controller V10."
+  >
+  <style>
+    :root {
+      --bg: #0d1114;
+      --bg-panel: rgba(18, 23, 27, 0.8);
+      --surface: #161c20;
+      --surface-strong: #1b2227;
+      --line: rgba(228, 197, 153, 0.14);
+      --line-strong: rgba(228, 197, 153, 0.28);
+      --text: #f2e8da;
+      --muted: #c0b09a;
+      --accent: #e56d42;
+      --accent-strong: #ffb38d;
+      --accent-soft: rgba(229, 109, 66, 0.16);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+      --serif: "Georgia", "Times New Roman", serif;
+      --sans: "Trebuchet MS", "Segoe UI", sans-serif;
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(229, 109, 66, 0.18), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(178, 137, 70, 0.18), transparent 28%),
+        linear-gradient(180deg, #0b0f12 0%, #11161a 52%, #151b20 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(228, 197, 153, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(228, 197, 153, 0.045) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 85%);
+    }
+
+    .page {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+      padding: 1rem 0 4rem;
+      position: relative;
+    }
+
+    .hero {
+      margin-top: 1rem;
+      padding: clamp(1.4rem, 2.6vw, 2rem);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius-xl) + 4px);
+      background:
+        linear-gradient(135deg, rgba(30, 37, 42, 0.9), rgba(18, 23, 28, 0.84)),
+        var(--bg-panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -5rem;
+      top: -5rem;
+      width: 18rem;
+      height: 18rem;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(229, 109, 66, 0.24) 0%, rgba(229, 109, 66, 0) 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(25, 31, 36, 0.88);
+      color: var(--muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      font-family: var(--serif);
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      margin-top: 1rem;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      max-width: 11ch;
+    }
+
+    .lede {
+      margin: 1rem 0 0;
+      max-width: 48rem;
+      font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.4rem;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.85rem 1.15rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+    }
+
+    .button {
+      background: linear-gradient(180deg, #f07e52, #bc4f2a);
+      color: #1d120d;
+      box-shadow: 0 16px 34px rgba(170, 74, 41, 0.28);
+    }
+
+    .button-secondary {
+      color: var(--text);
+      border: 1px solid var(--line-strong);
+      background: rgba(27, 34, 39, 0.88);
+    }
+
+    .button:hover,
+    .button-secondary:hover,
+    .button:focus-visible,
+    .button-secondary:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .summary-card {
+      padding: 1rem 1.05rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: rgba(22, 28, 32, 0.84);
+      backdrop-filter: blur(8px);
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .summary-card span {
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.96rem;
+    }
+
+    .section {
+      margin-top: 1.25rem;
+      padding: clamp(1.25rem, 2vw, 1.6rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: rgba(18, 23, 27, 0.82);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+    }
+
+    .section-heading {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: end;
+      margin-bottom: 1rem;
+    }
+
+    .section-heading p {
+      margin: 0.35rem 0 0;
+      max-width: 46rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .guides {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .guide-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.2rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(28, 34, 39, 0.96), rgba(18, 23, 27, 0.96));
+      text-decoration: none;
+      color: inherit;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      min-height: 100%;
+    }
+
+    .guide-card:hover,
+    .guide-card:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(229, 109, 66, 0.42);
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.26);
+    }
+
+    .guide-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .guide-icon {
+      width: 2.9rem;
+      height: 2.9rem;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: var(--accent-strong);
+      background: var(--accent-soft);
+      border: 1px solid rgba(229, 109, 66, 0.24);
+      font-weight: 700;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(25, 31, 36, 0.88);
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .guide-card h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+    }
+
+    .guide-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .guide-meta {
+      display: grid;
+      gap: 0.45rem;
+      margin-top: auto;
+      padding-top: 0.4rem;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .path {
+      display: inline-block;
+      padding: 0.35rem 0.55rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+
+    .notes {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 1rem;
+    }
+
+    .note-card {
+      padding: 1.1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface-strong);
+    }
+
+    .note-card h3 {
+      margin: 0 0 0.65rem;
+      font-family: var(--serif);
+      font-size: 1.4rem;
+    }
+
+    .note-card p,
+    .note-card li {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .note-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    footer {
+      padding: 1.2rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    @media (max-width: 900px) {
+      .summary,
+      .guides,
+      .notes {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(calc(100% - 1rem), var(--max-width));
+        padding-bottom: 2rem;
+      }
+
+      .hero,
+      .section {
+        border-radius: 22px;
+      }
+
+      .guide-card,
+      .note-card,
+      .summary-card {
+        border-radius: 18px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button,
+      .button-secondary {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button,
+      .button-secondary,
+      .guide-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Sheep Celica</div>
+      <h1>Documentation.</h1>
+      <p class="lede">
+        This is the public guide library for the Pop-up Controller V10 project. It is the
+        home for customer-facing PDFs, images, and app workflow references.
+        Will contain documentation for all my projects in the future.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#guides">Browse Guides</a>
+        <a class="button-secondary" href="https://github.com/sheep-celica/guides">View Repository</a>
+      </div>
+      <div class="summary">
+        <div class="summary-card">
+          <strong>Made for owners</strong>
+          <span>Focused on the real end-user workflow, not developer setup.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Stable public links</strong>
+          <span>Firmware and app repositories can reference these PDFs directly.</span>
+        </div>
+        <div class="summary-card">
+          <strong>Simple Pages hosting</strong>
+          <span>Static files only, with no separate site generator or build step.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guides">
+      <div class="section-heading">
+        <div>
+          <h2>Guides</h2>
+          <p>
+            These links point at the canonical PDF filenames for this repository. If a guide is not
+            available yet, the PDF has not been uploaded to the repo yet.
+          </p>
+        </div>
+      </div>
+      <div class="guides">
+        <a class="guide-card" href="pdf/installation-guide.pdf">
+          <div class="guide-top">
+            <div class="guide-icon">PDF</div>
+            <span class="badge">Vehicle Install</span>
+          </div>
+          <div>
+            <h3>Hardware Installation Guide</h3>
+            <p>
+              For Celica T18 owners installing the controller in place of the factory Light
+              Retractor Relay. Covers access, fitment, and the physical install workflow.
+            </p>
+          </div>
+          <div class="guide-meta">
+            <span>Canonical file path</span>
+            <span class="path">pdf/installation-guide.pdf</span>
+          </div>
+        </a>
+
+        <a class="guide-card" href="pdf/app-flashing-guide.pdf">
+          <div class="guide-top">
+            <div class="guide-icon">PDF</div>
+            <span class="badge">Desktop App</span>
+          </div>
+          <div>
+            <h3>App Firmware Flashing Guide</h3>
+            <p>
+              Walks through using the desktop app to flash firmware bundles and follow the intended
+              end-user update flow without needing the firmware repo itself.
+            </p>
+          </div>
+          <div class="guide-meta">
+            <span>Canonical file path</span>
+            <span class="path">pdf/app-flashing-guide.pdf</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notes">
+        <article class="note-card">
+          <h3>Repository scope</h3>
+          <p>
+            The firmware and desktop app repositories should keep their user documentation brief and
+            link here for the full customer-facing guides. This keeps the PDFs and media in one
+            stable public location.
+          </p>
+        </article>
+
+        <article class="note-card">
+          <h3>License</h3>
+          <p>
+            Unless otherwise noted, the non-code content in this repository is licensed under
+            Creative Commons Attribution-NoDerivatives 4.0 International.
+          </p>
+          <ul>
+            <li><a href="LICENSE">View repository license text</a></li>
+            <li><a href="https://creativecommons.org/licenses/by-nd/4.0/">License summary</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      Pop-up Controller V10 guides repository. PDFs and images are published here for stable public
+      referencing.
+    </footer>
+  </main>
+</body>
+</html>
