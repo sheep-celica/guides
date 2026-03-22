@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Flashing Guide | Pop-up Controller V10</title>
+  <meta
+    name="description"
+    content="Step-by-step instructions for flashing Pop-up Controller V10 firmware with the Windows desktop app."
+  >
+  <link rel="stylesheet" href="../../../assets/styles/site.css">
+</head>
+<body>
+  <main class="page">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a class="crumb" href="../../../">Documentation Home</a>
+      <a class="crumb" href="../">Pop-up Controller V10</a>
+      <span class="crumb">App Flashing Guide</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">Desktop App Guide</div>
+      <h1>App Flashing Guide</h1>
+      <p class="lede">
+        Flash firmware to a Pop-up Controller V10 by using the Windows desktop app, either with the
+        controller connected directly to your PC or while it is installed in the car.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases">Download Desktop App</a>
+        <a class="button-secondary" href="#step-overview">Step Overview</a>
+        <a class="button-secondary" href="../">Back to Product Page</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <h2>Before You Start</h2>
+          <p>
+            A few quick checks will make the flashing process smoother and help avoid false
+            connection problems.
+          </p>
+        </div>
+      </div>
+      <div class="notes">
+        <article class="note-card">
+          <h3>What You Need</h3>
+          <ul class="guide-list">
+            <li>The latest desktop app release for Windows.</li>
+            <li>A USB-C cable that supports data transfer.</li>
+            <li>A Pop-up Controller V10 of any hardware revision.</li>
+            <li>A Windows 10 or Windows 11 PC.</li>
+          </ul>
+        </article>
+
+        <article class="note-card">
+          <h3>Preparation</h3>
+          <ul class="guide-list">
+            <li>You can flash the controller either while it is connected directly to your PC or while it is installed in the car.</li>
+            <li>If it is installed in the car, set the headlight switch to <strong>HOLD</strong> before starting.</li>
+            <li>Keep the controller connected until the app finishes and the device reconnects.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="step-overview">
+      <div class="section-heading">
+        <div>
+          <h2>Step Overview</h2>
+          <p>
+            Use this quick summary to jump to the part you need. Most users will use Step 4. Use
+            Step 5 instead if you already have a firmware <span class="path">.zip</span> file.
+          </p>
+        </div>
+      </div>
+      <div class="overview-grid">
+        <a class="overview-link" href="#step-1">
+          <span class="overview-number">1</span>
+          <h3>Open the desktop app</h3>
+          <p>Launch the app and continue past any Windows warning.</p>
+        </a>
+
+        <a class="overview-link" href="#step-2">
+          <span class="overview-number">2</span>
+          <h3>Find the controller</h3>
+          <p>Ask the app to search for the connected controller.</p>
+        </a>
+
+        <a class="overview-link" href="#step-3">
+          <span class="overview-number">3</span>
+          <h3>Wait for detection</h3>
+          <p>Confirm that the controller information appears in the app.</p>
+        </a>
+
+        <a class="overview-link" href="#step-4">
+          <span class="overview-number">4</span>
+          <h3>Download the latest firmware</h3>
+          <p>Let the app fetch and select the newest firmware release automatically.</p>
+        </a>
+
+        <a class="overview-link" href="#step-5">
+          <span class="overview-number">5</span>
+          <h3>Browse for a firmware zip</h3>
+          <p>Use this manual option if you already downloaded a specific firmware package.</p>
+        </a>
+
+        <a class="overview-link" href="#step-6">
+          <span class="overview-number">6</span>
+          <h3>Start the flash</h3>
+          <p>Begin writing the selected firmware to the controller.</p>
+        </a>
+
+        <a class="overview-link" href="#step-7">
+          <span class="overview-number">7</span>
+          <h3>Confirm the operation</h3>
+          <p>Approve the confirmation dialog before the firmware is written.</p>
+        </a>
+
+        <a class="overview-link" href="#step-8">
+          <span class="overview-number">8</span>
+          <h3>Wait for completion</h3>
+          <p>Let the flash finish and wait for the success message.</p>
+        </a>
+
+        <a class="overview-link" href="#step-9">
+          <span class="overview-number">9</span>
+          <h3>Verify the controller reconnects</h3>
+          <p>Check that the controller reconnects and the displayed information looks correct.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="detailed-steps">
+      <div class="section-heading">
+        <div>
+          <h2>Detailed Steps</h2>
+          <p>
+            Follow the sequence below. Each screenshot matches the step immediately above it.
+          </p>
+        </div>
+      </div>
+      <div class="step-list">
+        <article class="step-card" id="step-1">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Open the desktop app</h3>
+            </div>
+            <p>Double-click the extracted <span class="path">.exe</span> file to start the app.</p>
+            <div class="notice">
+              <h3>Note</h3>
+              <p>
+                Windows SmartScreen or antivirus software may warn you about the app because it is
+                not code-signed.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-2">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Find the controller</h3>
+            </div>
+            <p>The main window should open. Click <strong>Find controller</strong>.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_initial_screen.png" alt="Desktop app initial screen before connecting to the controller.">
+              <figcaption>The app should open to the main flashing screen.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-3">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Wait for detection</h3>
+            </div>
+            <p>Give the app a few seconds to detect the controller and update the device information.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_found_controller.png" alt="Desktop app after the controller has been detected.">
+              <figcaption>Once connected, the app should show the controller details.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-4">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">4</div>
+              <h3 class="step-title">Download the latest firmware</h3>
+            </div>
+            <p>Click <strong>Download latest</strong> to automatically download and select the newest firmware file.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_download_latest_firmware.png" alt="Desktop app with the Download latest action highlighted.">
+              <figcaption>This is the quickest option if you want the newest available release.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-5">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">5</div>
+              <h3 class="step-title">Browse for a firmware zip</h3>
+            </div>
+            <p>If needed, click <strong>Browse</strong> instead and select a firmware <span class="path">.zip</span> file manually.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_select_firmware_file.png" alt="Desktop app file picker for manually selecting a firmware zip file.">
+              <figcaption>Use this when you already have a specific firmware package downloaded.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-6">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">6</div>
+              <h3 class="step-title">Start the flash</h3>
+            </div>
+            <p>After the firmware file has been loaded, click <strong>Flash firmware</strong> to begin the process.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_downloaded_latest_firmware.png" alt="Desktop app after the latest firmware has been downloaded and selected.">
+              <figcaption>The firmware file should be loaded before you continue to the flash step.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-7">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">7</div>
+              <h3 class="step-title">Confirm the operation</h3>
+            </div>
+            <p>When the app asks for confirmation, click <strong>Yes</strong>.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_flash_begin.png" alt="Firmware flash confirmation dialog in the desktop app.">
+              <figcaption>This confirms that you want to write the selected firmware to the controller.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-8">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">8</div>
+              <h3 class="step-title">Wait for completion</h3>
+            </div>
+            <p>After about 5 to 10 seconds, the flash should finish and a success dialog should appear.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_flash_finished.png" alt="Desktop app success dialog shown after flashing completes.">
+              <figcaption>The app should report a successful flash before the controller reconnects.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-9">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">9</div>
+              <h3 class="step-title">Verify the controller reconnects</h3>
+            </div>
+            <p>A few seconds later, the controller should reconnect automatically. Check that the displayed information looks correct.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_controller_connected.png" alt="Desktop app after the controller reconnects following a successful firmware flash.">
+              <figcaption>The final screen should show the controller connected again with updated information.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      Pop-up Controller V10 app flashing instructions for the Sheep Celica documentation site.
+    </footer>
+  </main>
+</body>
+</html>

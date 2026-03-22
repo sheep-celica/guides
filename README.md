@@ -1,68 +1,97 @@
-# Pop-up Controller V10 Guides
+# Sheep Celica Documentation
 
-Customer-facing guides and media for the Pop-up Controller V10 project.
+Customer-facing guides and media for Sheep Celica projects.
 
-This repository is the canonical home for installation guides, app-based firmware flashing guides, and related images for the Pop-up Controller V10. The firmware and desktop application repositories should link here instead of storing full end-user documents directly.
+This repository is the canonical home for installation guides, user guides, app workflow guides, parts pages, purchase information, screenshots, product photos, and other customer-facing documentation. Individual project repositories should link here instead of carrying full end-user documents directly.
 
 ## Scope
 
 This repository is intended for:
 
-- owners and customers installing the controller
-- curious tinkerers following the end-user workflow
-- stable public PDF and image links that other repos can reference
+- owners and customers following real install and usage workflows
+- curious tinkerers looking for end-user documentation
+- stable public HTML page links that other repositories can reference
+- a GitHub Pages site with one landing page per product
+- a Markdown-first workflow for page drafting and future edits
 
-This repository is not intended to replace the developer-focused documentation in the firmware or desktop app repositories.
+This repository is not intended to replace developer-focused documentation in each product's code repository.
 
 ## Repository Layout
 
 ```text
 README.md
 LICENSE
-pdf/
-  installation-guide.pdf
-  app-flashing-guide.pdf
+index.html
+assets/
+  styles/
+    site.css
+products/
+  pop-up-controller-v10/
+    index.html
+    installation/
+      index.html
+    user-guide/
+      index.html
+    app-flashing/
+      index.html
+    parts/
+      index.html
+      controller-board/
+        index.html
+      adapter-harness/
+        index.html
+    purchase/
+      index.html
+source/
+  pop-up-controller-v10/
+    installation.md
+    user-guide.md
+    app-flashing.md
+    purchase.md
+    parts/
+      overview.md
+      controller-board.md
+      adapter-harness.md
 images/
-  install/
-  screenshots/
-  product/
+  pop-up-controller-v10/
+    install/
+    screenshots/
+    product/
 ```
 
-## Planned Canonical Filenames
+## Authoring Workflow
 
-These filenames are intended to stay stable once guides are published, so linked repositories do not need frequent URL changes:
+1. Write or edit the content in Markdown under `source/<product-name>/`.
+2. Rework that Markdown into the published HTML pages under `products/<product-name>/`.
+3. Update related images under `images/<product-name>/` as needed.
 
-- `pdf/installation-guide.pdf`
-- `pdf/app-flashing-guide.pdf`
+This keeps Markdown as the editable source of truth while GitHub Pages serves the customer-facing HTML pages.
 
-## Suggested Public URLs
+## GitHub Pages Structure
 
-If this repository remains `sheep-celica/guides`, the cleanest public guide URLs are:
+GitHub Pages can host multiple subpages from the same repository. The current structure uses:
 
-- `https://sheep-celica.github.io/guides/pdf/installation-guide.pdf`
-- `https://sheep-celica.github.io/guides/pdf/app-flashing-guide.pdf`
+- the root page as the main documentation hub
+- one product landing page under `products/<product-name>/`
+- one published guide, parts, or purchase page per workflow under the product folder
 
-If you decide not to enable GitHub Pages, direct raw file links can still work:
+With GitHub Pages enabled for `main` and `/(root)`, the current planned URLs are:
 
-- `https://raw.githubusercontent.com/sheep-celica/guides/main/pdf/installation-guide.pdf`
-- `https://raw.githubusercontent.com/sheep-celica/guides/main/pdf/app-flashing-guide.pdf`
+- `https://sheep-celica.github.io/guides/`
+- `https://sheep-celica.github.io/guides/products/pop-up-controller-v10/`
+- `https://sheep-celica.github.io/guides/products/pop-up-controller-v10/installation/`
+- `https://sheep-celica.github.io/guides/products/pop-up-controller-v10/user-guide/`
+- `https://sheep-celica.github.io/guides/products/pop-up-controller-v10/app-flashing/`
+- `https://sheep-celica.github.io/guides/products/pop-up-controller-v10/parts/`
+- `https://sheep-celica.github.io/guides/products/pop-up-controller-v10/purchase/`
 
-## GitHub Pages Recommendation
+## Current Products
 
-GitHub Pages is optional, but recommended for this repository.
-
-Why it is worth enabling:
-
-- cleaner customer-facing URLs
-- good fit for static PDFs and images
-- no need for a build system
-- this structure already works with Pages from the `main` branch root
-
-You do not need a separate `docs/` or `pages/` folder unless you later want a dedicated web landing page. For now, keeping the repository flat and content-first is the simplest approach.
+- `Pop-up Controller V10`
 
 ## License
 
-Unless otherwise noted, the guides, PDFs, images, and other non-code content in this repository are licensed under the Creative Commons Attribution-NoDerivatives 4.0 International license.
+Unless otherwise noted, the guides, HTML pages, images, and other non-code content in this repository are licensed under the Creative Commons Attribution-NoDerivatives 4.0 International license.
 
 - License text: [CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/)
 
