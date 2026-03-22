@@ -98,22 +98,25 @@
       </div>
       <div class="guide-grid-two">
         <article class="guide-block">
-          <div class="notice">
+          <div class="notice notice--warning">
             <h3>Important</h3>
             <p>
-              Disconnect the RTR fuse from Junction Block No. 2, or disconnect the controller,
-              before doing any work on the pop-ups. This includes headlight replacement, bulb
-              replacement, and other service work.
+              Disconnect the <span class="guide-inline-value">RTR fuse</span> from Junction Block
+              No. 2, or disconnect the controller, before doing any work on the pop-ups. This
+              includes headlight replacement, bulb replacement, and other service work.
             </p>
           </div>
           <p>
             Removing power prevents the pop-ups from closing unexpectedly while your hands are in
             the mechanism area.
           </p>
-          <p>
-            After installation, avoid driving at night or in poor visibility for at least the first
-            week so you can confirm the controller is working correctly in normal use.
-          </p>
+          <div class="notice notice--subtle">
+            <h3>First-week check</h3>
+            <p>
+              After installation, avoid driving at night or in poor visibility for at least the
+              first week so you can confirm the controller is working correctly in normal use.
+            </p>
+          </div>
         </article>
 
         <figure class="guide-figure">
@@ -215,7 +218,6 @@
           <div class="guide-link-list">
             <a href="https://github.com/sheep-celica/pop-up-controller-v10">Firmware repository</a>
             <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application">Desktop app repository</a>
-            <a href="mailto:sheep.celica@gmail.com">Contact for firmware modification questions</a>
           </div>
         </article>
       </div>
@@ -234,13 +236,32 @@
             The controller has four replaceable onboard fuses. In general, increasing the fuse
             rating is not recommended.
           </p>
-          <p>The entire light retractor circuit is also protected by a 30 A RTR fuse in the engine bay.</p>
-          <ul>
-            <li><strong>LOGIC</strong>: 1 A. Protects the 3.3 V and 12 V rails, excluding the pop-up motors.</li>
-            <li><strong>MAIN</strong>: 15 A. Protects everything after the power connector, including the main TVS diode.</li>
-            <li><strong>LEFT</strong>: 5 A. Protects the left pop-up motor.</li>
-            <li><strong>RIGHT</strong>: 5 A. Protects the right pop-up motor.</li>
-          </ul>
+          <p>
+            The entire light retractor circuit is also protected by a
+            <span class="guide-inline-value">30 A RTR fuse</span> in the engine bay.
+          </p>
+          <div class="guide-detail-grid">
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">1 A</div>
+              <strong>LOGIC</strong>
+              <p>Protects the 3.3 V and 12 V rails, excluding the pop-up motors.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">15 A</div>
+              <strong>MAIN</strong>
+              <p>Protects everything after the power connector, including the main TVS diode.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">5 A</div>
+              <strong>LEFT</strong>
+              <p>Protects the left pop-up motor.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">5 A</div>
+              <strong>RIGHT</strong>
+              <p>Protects the right pop-up motor.</p>
+            </div>
+          </div>
         </article>
 
         <article class="guide-block" id="indicator-leds">
@@ -252,13 +273,33 @@
             <figcaption>The top cover LEDs show power, input, and error status.</figcaption>
           </figure>
           <h3>Indicator LEDs</h3>
-          <ul>
-            <li><strong>LEFT</strong>: Green. Lights while the left pop-up motor is being powered.</li>
-            <li><strong>RIGHT</strong>: Green. Lights while the right pop-up motor is being powered.</li>
-            <li><strong>STATUS</strong>: Blue. Solid when the controller is running. Flashes when the debug button is pressed.</li>
-            <li><strong>ERROR</strong>: Red. Turns on when an error occurs and flashes stored error count on startup.</li>
-            <li><strong>INPUT</strong>: White. Flashes briefly when an input change is registered.</li>
-          </ul>
+          <div class="guide-detail-grid">
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker is-green">Green</div>
+              <strong>LEFT</strong>
+              <p>Lights while the left pop-up motor is being powered.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker is-green">Green</div>
+              <strong>RIGHT</strong>
+              <p>Lights while the right pop-up motor is being powered.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker is-blue">Blue</div>
+              <strong>STATUS</strong>
+              <p>Solid when the controller is running. Flashes when the debug button is pressed.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker is-red">Red</div>
+              <strong>ERROR</strong>
+              <p>Turns on when an error occurs and flashes stored error count on startup.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker is-white">White</div>
+              <strong>INPUT</strong>
+              <p>Flashes briefly when an input change is registered.</p>
+            </div>
+          </div>
           <h4>Additional LED behaviors</h4>
           <ul>
             <li>Rapid INPUT and STATUS flashing means battery voltage is below 7 V. This should only happen when connected directly to a PC.</li>
@@ -275,17 +316,23 @@
             <figcaption>The debug button sits between the OFFSET potentiometer and the LEDs.</figcaption>
           </figure>
           <h3>Buttons and potentiometers</h3>
-          <h4>Buttons</h4>
-          <ul>
-            <li><strong>RESET</strong>: Brief press power cycles the controller.</li>
-            <li><strong>BOOT</strong>: Only use when flashing firmware and troubleshooting connection issues.</li>
-            <li><strong>DEBUG</strong>: Hold for more than 5 seconds to save data and reboot. Press it 3 times quickly to toggle sleepy eye availability outside the OFF switch position.</li>
-          </ul>
-          <h4>Potentiometers</h4>
-          <ul>
-            <li><strong>LED</strong>: Adjusts illumination LED brightness in the wink buttons and sleepy eye controls.</li>
-            <li><strong>OFFSET</strong>: Adjusts right-hand pop-up timing while moving to the sleepy eye position.</li>
-          </ul>
+          <div class="guide-detail-grid">
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Buttons</div>
+              <ul class="guide-checklist">
+                <li><strong>RESET</strong>: Brief press power cycles the controller.</li>
+                <li><strong>BOOT</strong>: Only use when flashing firmware and troubleshooting connection issues.</li>
+                <li><strong>DEBUG</strong>: Hold for more than 5 seconds to save data and reboot. Press it 3 times quickly to toggle sleepy eye availability outside the OFF switch position.</li>
+              </ul>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Potentiometers</div>
+              <ul class="guide-checklist">
+                <li><strong>LED</strong>: Adjusts illumination LED brightness in the wink buttons and sleepy eye controls.</li>
+                <li><strong>OFFSET</strong>: Adjusts right-hand pop-up timing while moving to the sleepy eye position.</li>
+              </ul>
+            </div>
+          </div>
         </article>
 
         <article class="guide-block" id="connectors">
@@ -388,7 +435,7 @@
             <li>Once it reaches the opposite state, move it back to its original state.</li>
           </ol>
           <p>Multiple wink cycles can run at the same time, so one pop-up can move while the other is already in motion.</p>
-          <div class="notice">
+          <div class="notice notice--tip">
             <h3>Sleepy eye support</h3>
             <p>
               If a pop-up starts in the sleepy eye position, the wink cycle will return it to that
@@ -410,13 +457,29 @@
         </div>
       </div>
       <div class="guide-grid-two">
-        <figure class="guide-figure">
-          <img
-            src="../../../images/pop-up-controller-v10/user-guide/light-switch-behavior-overview.png"
-            alt="Light switch behavior overview for the Pop-up Controller V10."
-          >
-          <figcaption>HEAD raises the pop-ups, while OFF retracts them.</figcaption>
-        </figure>
+        <div class="guide-stack">
+          <figure class="guide-figure">
+            <img
+              src="../../../images/pop-up-controller-v10/user-guide/light-switch-behavior-overview.png"
+              alt="Light switch behavior overview for the Pop-up Controller V10."
+            >
+            <figcaption>HEAD raises the pop-ups, while OFF retracts them.</figcaption>
+          </figure>
+
+          <article class="guide-block">
+            <h3>Quick Summary</h3>
+            <div class="guide-detail-grid">
+              <div class="guide-mini-card">
+                <div class="guide-mini-kicker">Moves</div>
+                <p><strong>HEAD</strong> raises the pop-ups, and <strong>OFF</strong> retracts them.</p>
+              </div>
+              <div class="guide-mini-card">
+                <div class="guide-mini-kicker">No Change</div>
+                <p><strong>TAIL</strong> and <strong>HOLD</strong> keep the current target state.</p>
+              </div>
+            </div>
+          </article>
+        </div>
 
         <article class="guide-block">
           <h3>How the controller reacts</h3>
@@ -469,10 +532,13 @@
                 </tbody>
             </table>
           </div>
-          <p>
-            HOLD and TAIL do not interrupt an in-progress move. They simply stop requesting a new
-            position change.
-          </p>
+          <div class="notice notice--subtle">
+            <h3>HOLD and TAIL</h3>
+            <p>
+              HOLD and TAIL do not interrupt an in-progress move. They simply stop requesting a new
+              position change.
+            </p>
+          </div>
         </article>
       </div>
     </section>
@@ -502,7 +568,7 @@
             Use the sleepy eye button to toggle the mode on or off. The knob on the sleepy eye
             controls selects how far the pop-ups continue moving after first reaching UP.
           </p>
-          <div class="notice">
+          <div class="notice notice--subtle">
             <h3>Default restriction</h3>
             <p>
               By default, sleepy eye mode can only be enabled while the light switch is in the OFF
@@ -538,8 +604,10 @@
         <h3>Adjusting RH pop-up offset</h3>
         <p>
           If the pop-ups do not stop at the same angle in sleepy eye mode, adjust the OFFSET
-          potentiometer on the controller. The setting can add a fixed timing offset from -50 ms to
-          +50 ms, with the middle position equal to 0 ms.
+          potentiometer on the controller. The setting can add a fixed timing offset from
+          <span class="guide-inline-value">-50 ms</span> to
+          <span class="guide-inline-value">+50 ms</span>, with the middle position equal to
+          <span class="guide-inline-value">0 ms</span>.
         </p>
       </article>
     </section>
@@ -563,24 +631,29 @@
             duration of the hold.
           </p>
           <p>
-            Once powered, the controller attempts to latch itself on within about 300 ms. After
+            Once powered, the controller attempts to latch itself on within about
+            <span class="guide-inline-value">300 ms</span>. After
             that, it remains powered even if the light switch moves to OFF and no buttons are being
             held.
           </p>
           <p>
             If the switch stays in OFF and there is no pop-up movement, a countdown begins from
-            86400 seconds, which is 1 day. When the countdown finishes, the controller unlatches
-            power and shuts down.
+            <span class="guide-inline-value">86400 seconds</span>, which is
+            <span class="guide-inline-value">1 day</span>. When the countdown finishes, the
+            controller unlatches power and shuts down.
           </p>
           <p>
             Pressing any button, changing the light-switch position, or receiving a remote command
             that moves the pop-ups resets the countdown. The timeout value can be changed in the
             desktop app.
           </p>
-          <p>
-            Pop-up state is not remembered after power off, and sleepy eye mode does not stay active
-            through a power cycle.
-          </p>
+          <div class="notice notice--subtle">
+            <h3>After power off</h3>
+            <p>
+              Pop-up state is not remembered after power off, and sleepy eye mode does not stay
+              active through a power cycle.
+            </p>
+          </div>
         </article>
 
         <article class="guide-block">
@@ -596,11 +669,11 @@
               <tbody>
                 <tr>
                   <td>Turned on</td>
-                  <td>&lt; 30 mA*</td>
+                  <td><span class="guide-inline-value">&lt; 30 mA</span>*</td>
                 </tr>
                 <tr>
                   <td>Turned off</td>
-                  <td>&lt; 10 uA*</td>
+                  <td><span class="guide-inline-value">&lt; 10 uA</span>*</td>
                 </tr>
               </tbody>
             </table>
@@ -624,12 +697,24 @@
       <div class="guide-intro-grid">
         <article class="guide-block">
           <h3>What the app can do</h3>
-          <ul>
-            <li>Read statistical data</li>
-            <li>Read and clear errors</li>
-            <li>Read and adjust settings</li>
-            <li>Flash new firmware</li>
-          </ul>
+          <div class="guide-detail-grid">
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Stats</div>
+              <p>Read statistical data from the controller.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Errors</div>
+              <p>Read stored errors and clear them when needed.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Settings</div>
+              <p>Review and adjust controller settings.</p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Firmware</div>
+              <p>Flash new firmware revisions from your computer.</p>
+            </div>
+          </div>
           <div class="guide-link-list">
             <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application">Desktop app source and builds</a>
             <a href="https://github.com/sheep-celica/pop-up-controller-v10/releases">Firmware release downloads</a>
@@ -660,21 +745,26 @@
       <div class="guide-grid-two">
         <article class="guide-block">
           <h3>Pop-up timeout</h3>
-          <p>
-            If a pop-up cannot reach its target position within 2.5 seconds, the controller enters a
-            timeout state and stops movement. The ERROR LED turns on and an error code is stored in
-            the error log.
-          </p>
-          <p>The controller must then be restarted before normal pop-up operation returns.</p>
-          <p>This can be achieved by either of the following:</p>
-          <ul>
-            <li>Disconnect the battery</li>
-            <li>Remove the RTR fuse</li>
-            <li>Disconnect the controller from the 12-pin wiring harness connector</li>
-            <li>Remove the MAIN or LOGIC fuse from the controller</li>
-            <li>Hold the debug button for more than 5 seconds</li>
-          </ul>
-          <div class="notice">
+            <p>
+              If a pop-up cannot reach its target position within
+              <span class="guide-inline-value">2.5 seconds</span>, the controller enters a timeout
+              state and stops movement. The ERROR LED turns on and an error code is stored in the
+              error log.
+            </p>
+            <div class="guide-detail-grid">
+              <div class="guide-mini-card">
+                <div class="guide-mini-kicker">Clearing Timeout State</div>
+                <p>Use any one of the following methods to restart the controller and clear the timeout state:</p>
+                <ul class="guide-checklist">
+                  <li>Disconnect the battery</li>
+                  <li>Remove the RTR fuse</li>
+                  <li>Disconnect the controller from the 12-pin wiring harness connector</li>
+                <li>Remove the MAIN or LOGIC fuse from the controller</li>
+                <li>Hold the debug button for more than 5 seconds</li>
+              </ul>
+            </div>
+          </div>
+          <div class="notice notice--subtle">
             <h3>Note</h3>
             <p>More safety features may be added in future firmware versions.</p>
           </div>

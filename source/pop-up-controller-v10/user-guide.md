@@ -4,10 +4,12 @@ This guide explains the main parts, controls, and behavior of the Pop-up Control
 
 ## Safety
 
-A malfunction of this device could prevent you from controlling the pop-up position and could severely affect visibility at night. After installation, avoid driving at night or in poor visibility for at least the first week so you can confirm the controller is working correctly.
+A malfunction of this device could prevent you from controlling the pop-up position and could severely affect visibility at night.
 
 > **Important:** Disconnect the RTR fuse (fuse box next to the battery, Junction Block No. 2) or disconnect the controller before doing any work on the pop-ups, including headlight replacement, bulb replacement, or other service work. This disables the controller and helps prevent the pop-ups from accidentally closing on your hands.
 > 
+> **First-week check:** After installation, avoid driving at night or in poor visibility for at least the first week so you can confirm the controller is working correctly.
+>
 ![RTR fuse and Junction Block No. 2 location.](../../images/pop-up-controller-v10/user-guide/rtr-fuse-location.png)
 
 ## Clarifications
@@ -45,15 +47,13 @@ The firmware source code is publicly available on GitHub: [sheep-celica/pop-up-c
 
 A desktop application is available for flashing new firmware, reading data, and changing settings. More details are in [Pop-up controller Application](#pop-up-controller-application).
 
-If you want to modify the firmware, contact [sheep.celica@gmail.com](mailto:sheep.celica@gmail.com) first.
-
 ### Fuses
 
 ![Controller fuse locations.](../../images/pop-up-controller-v10/user-guide/controller-fuses.png)
 
 The controller has 4 replaceable automotive fuses on board. In general, increasing the fuse rating is not recommended.
 
-The entire light retractor circuit is also protected by a `30 A` RTR fuse in the engine bay near the battery.
+The entire light retractor circuit is also protected by a **`30 A` RTR fuse** in the engine bay near the battery.
 
 - **LOGIC:** `1 A`. Not recommended to increase. Protects the `3.3 V` and `12 V` rails, which includes everything except the pop-up motors.
 - **MAIN:** `15 A`. Can be increased if needed. Protects everything after the power connector, including the main TVS diode.
@@ -138,7 +138,9 @@ Wink cycle logic:
 1. Move the pop-up to the opposite state. If the pop-up is `IN-BETWEEN`, it is treated as `UP`.
 2. When the pop-up reaches the opposite state, move it back to its original state.
 
-This also supports sleepy eye mode. If the pop-up started in the sleepy eye position, it will return there at the end of the wink cycle.
+This also supports sleepy eye mode.
+
+> **Sleepy eye support:** If a pop-up starts in the sleepy eye position, the wink cycle returns it to that same position at the end.
 
 ## Light Switch Behavior
 
@@ -153,11 +155,15 @@ The controller responds to all light switch positions, but only `HEAD` and `OFF`
 | `HOLD` | ![HOLD light switch icon](../../images/pop-up-controller-v10/user-guide/light-switch-hold-icon.png) | No change to pop-up position |
 | `OFF` | ![OFF light switch icon](../../images/pop-up-controller-v10/user-guide/light-switch-off-icon.png) | Pop-ups go `DOWN` |
 
+> **Note:** `HOLD` and `TAIL` do not interrupt an in-progress move. They simply stop requesting a new position change.
+
 ## Sleepy Eye Mode
 
 ![Sleepy eye mode overview.](../../images/pop-up-controller-v10/user-guide/sleepy-eye-mode-overview.png)
 
 This mode can be toggled on and off with the button on the sleepy eye controls. The knob can be set to 1 of 7 positions to set the pop-up angle.
+
+> **Default restriction:** By default, sleepy eye mode can only be enabled while the light switch is in the `OFF` position. This can be changed in the desktop app.
 
 ### Turning the Mode On
 
@@ -187,13 +193,13 @@ The controller is permanently powered whenever the light switch is in any positi
 
 Alternatively, holding a wink button or the sleepy eye toggle button will also power the controller for as long as the button is held.
 
-When the controller is powered on, it will try to latch power as soon as possible. This takes about `300 ms`. Once the power is latched, the controller remains powered even if the light switch is moved to `OFF` and no buttons are being held.
+When the controller is powered on, it will try to latch power as soon as possible. This takes about **`300 ms`**. Once the power is latched, the controller remains powered even if the light switch is moved to `OFF` and no buttons are being held.
 
-While the controller is powered on, if the light switch remains in `OFF` and there is no pop-up movement, a countdown starts from `86400 seconds` (`1 day`). At the end of the countdown, the controller unlatches power and turns off. Before shutting down, it saves several non-critical values to persistent memory. Critical values that need to be saved, such as error codes, are written immediately when they occur.
+While the controller is powered on, if the light switch remains in `OFF` and there is no pop-up movement, a countdown starts from **`86400 seconds`** (**`1 day`**). At the end of the countdown, the controller unlatches power and turns off. Before shutting down, it saves several non-critical values to persistent memory. Critical values that need to be saved, such as error codes, are written immediately when they occur.
 
 Pressing any button, moving the light switch to another position, or receiving a remote signal that moves the pop-ups resets the countdown. The `86400` second timeout can be configured in the Pop-up controller Application.
 
-The controller does not remember pop-up state after power off. If sleepy eye mode was active, it will not remain active after a power cycle.
+> **After power off:** Pop-up state is not remembered, and sleepy eye mode does not remain active through a power cycle.
 
 ### Measured Power Draw
 
@@ -227,7 +233,9 @@ Firmware releases: [sheep-celica/pop-up-controller-v10 releases](https://github.
 
 If a pop-up cannot reach its target position within `2.5 seconds`, it enters a timeout state and stops moving. The `ERROR` LED turns on and an error code is stored in the error log.
 
-The controller must be restarted to restore pop-up functionality. You can do that by:
+#### Clearing Timeout State
+
+Use any one of the following methods to restart the controller and clear the timeout state:
 
 - Disconnecting the battery
 - Removing the RTR fuse
