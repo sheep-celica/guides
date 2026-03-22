@@ -572,3 +572,300 @@ footer {
     transition: none;
   }
 }
+
+/* Guide article layouts */
+.guide-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.guide-grid-two,
+.guide-intro-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.guide-block,
+.guide-figure {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(20, 28, 37, 0.96), rgba(13, 19, 26, 0.96));
+}
+
+.guide-block {
+  padding: 1.2rem;
+  scroll-margin-top: 1rem;
+}
+
+.guide-block h3,
+.guide-block h4 {
+  margin: 0;
+}
+
+.guide-block h3 + p,
+.guide-block h4 + p,
+.guide-block h3 + .table-wrap,
+.guide-block h4 + .table-wrap,
+.guide-block h4 + ul,
+.guide-block h4 + ol,
+.guide-block p + p,
+.guide-block p + ul,
+.guide-block p + ol,
+.guide-block p + .table-wrap,
+.guide-block p + .notice,
+.guide-block ul + p,
+.guide-block ol + p,
+.guide-block ul + h4,
+.guide-block ol + h4,
+.guide-block figure + h3,
+.guide-block .table-wrap + p {
+  margin-top: 0.9rem;
+}
+
+.guide-block p,
+.guide-block li,
+.guide-block figcaption {
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.guide-block p {
+  margin: 0;
+}
+
+.guide-block ul,
+.guide-block ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.guide-block li + li {
+  margin-top: 0.65rem;
+}
+
+.section > :is(.guide-grid-two, .guide-intro-grid, .guide-block) + :is(.guide-grid-two, .guide-intro-grid, .guide-block) {
+  margin-top: 1rem;
+}
+
+.guide-block strong,
+.guide-block h4,
+.guide-table th,
+.guide-table td strong,
+.guide-pill strong,
+.diagram-callout {
+  color: var(--text);
+}
+
+.guide-kicker {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.guide-figure {
+  margin: 0;
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.guide-grid-two > .guide-figure,
+.guide-intro-grid > .guide-figure {
+  border: 0;
+}
+
+.guide-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 0;
+  background: transparent;
+}
+
+.guide-figure figcaption {
+  margin: 0;
+}
+
+.diagram-stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f8fafc, #eef2f7);
+  border: 1px solid rgba(17, 24, 33, 0.08);
+}
+
+.diagram-stage img {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.diagram-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.diagram-overlay line {
+  stroke: #ff5252;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.diagram-callout {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  max-width: min(11rem, calc(100% - 2rem));
+  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+  border: 3px solid rgba(255, 82, 82, 0.72);
+  background: rgba(14, 19, 26, 0.94);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.26);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.guide-pill-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.guide-pill {
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.guide-pill p {
+  margin-top: 0.35rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.guide-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+}
+
+.guide-table th,
+.guide-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  color: var(--muted);
+}
+
+.guide-table th {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+}
+
+.guide-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.light-switch-table {
+  min-width: 31rem;
+}
+
+.light-switch-table th,
+.light-switch-table td {
+  vertical-align: middle;
+}
+
+.light-switch-table th.switch-icon-heading,
+.light-switch-table td.switch-icon-cell {
+  width: 7.5rem;
+  text-align: center;
+}
+
+.light-switch-table td.switch-icon-cell {
+  padding-top: 0.95rem;
+  padding-bottom: 0.95rem;
+  overflow: visible;
+}
+
+.switch-icon {
+  display: inline-block;
+  line-height: 0;
+  overflow: visible;
+}
+
+.switch-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.switch-icon.is-head {
+  width: 5rem;
+}
+
+.switch-icon.is-tail {
+  width: 3.25rem;
+}
+
+.switch-icon.is-hold {
+  width: 2rem;
+}
+
+.switch-icon.is-off {
+  width: 3.4rem;
+}
+
+.guide-link-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.guide-link-list a {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.guide-link-list a:hover,
+.guide-link-list a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .guide-grid-two,
+  .guide-intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-table {
+    min-width: 28rem;
+  }
+}
+
+
+.guide-figure figcaption {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.guide-link-list {
+  margin-top: 0.9rem;
+}

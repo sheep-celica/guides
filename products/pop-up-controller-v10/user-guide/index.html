@@ -6,7 +6,7 @@
   <title>User Guide | Pop-up Controller V10</title>
   <meta
     name="description"
-    content="Published user guide page for the Pop-up Controller V10 project."
+    content="Owner-facing guide for the Pop-up Controller V10, including safety notes, controls, operating behavior, and app support."
   >
   <link rel="stylesheet" href="../../../assets/styles/site.css">
 </head>
@@ -19,39 +19,668 @@
     </nav>
 
     <section class="hero">
-      <div class="eyebrow">Guide Page</div>
-      <h1>User Guide</h1>
+      <div class="eyebrow">Owner Guide</div>
+      <h1>Pop-up Controller V10 User Guide</h1>
       <p class="lede">
-        This published guide page will be recreated from the Markdown source for the user guide.
+        Learn the controller's safety precautions, light-switch behavior, sleepy eye controls,
+        onboard hardware, and desktop app support in one place.
       </p>
       <div class="hero-actions">
-        <a class="button" href="../">Back to Product Page</a>
-        <a class="button-secondary" href="../../../">Documentation Home</a>
+        <a class="button" href="#quick-links">Browse Sections</a>
+        <a class="button-secondary" href="#safety">Safety First</a>
+        <a class="button-secondary" href="../">Back to Product Page</a>
       </div>
     </section>
 
-    <section class="section">
-      <div class="notes">
-        <article class="note-card">
-          <h3>Markdown source</h3>
-          <p>Edit this file when you want to update the guide content:</p>
-          <p><span class="path">source/pop-up-controller-v10/user-guide.md</span></p>
+    <section class="section" id="quick-links">
+      <div class="section-heading">
+        <div>
+          <h2>Quick Links</h2>
+          <p>
+            Jump to the part of the guide you need, whether you are checking a safety detail,
+            learning the hardware, or reviewing daily-use behavior.
+          </p>
+        </div>
+      </div>
+      <div class="overview-grid">
+        <a class="overview-link" href="#safety">
+          <span class="overview-number">1</span>
+          <h3>Safety</h3>
+          <p>Find the RTR fuse location and the key warning before servicing the pop-ups.</p>
+        </a>
+
+        <a class="overview-link" href="#clarifications">
+          <span class="overview-number">2</span>
+          <h3>Clarifications</h3>
+          <p>Quick definitions for light-switch positions and pop-up states.</p>
+        </a>
+
+        <a class="overview-link" href="#pop-up-controller">
+          <span class="overview-number">3</span>
+          <h3>Controller Hardware</h3>
+          <p>Review the controller itself, its fuses, LEDs, controls, and connectors.</p>
+        </a>
+
+        <a class="overview-link" href="#wink-buttons">
+          <span class="overview-number">4</span>
+          <h3>Wink Buttons</h3>
+          <p>See how the wink inputs work, including the toggle button and wink cycle behavior.</p>
+        </a>
+
+        <a class="overview-link" href="#light-switch-behavior">
+          <span class="overview-number">5</span>
+          <h3>Light Switch Behavior</h3>
+          <p>Review how HEAD, TAIL, HOLD, and OFF affect the pop-up target state.</p>
+        </a>
+
+        <a class="overview-link" href="#sleepy-eye-mode">
+          <span class="overview-number">6</span>
+          <h3>Sleepy Eye Mode</h3>
+          <p>Understand how the mode turns on, turns off, and how to adjust offset.</p>
+        </a>
+
+        <a class="overview-link" href="#power-on-and-power-off">
+          <span class="overview-number">7</span>
+          <h3>Power and App</h3>
+          <p>Check latch behavior, measured draw, desktop app support, and timeout recovery.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="safety">
+      <div class="section-heading">
+        <div>
+          <h2>Safety</h2>
+          <p>
+            Service work around the pop-ups should always start by removing power to the controller.
+          </p>
+        </div>
+      </div>
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <div class="notice">
+            <h3>Important</h3>
+            <p>
+              Disconnect the RTR fuse from Junction Block No. 2, or disconnect the controller,
+              before doing any work on the pop-ups. This includes headlight replacement, bulb
+              replacement, and other service work.
+            </p>
+          </div>
+          <p>
+            Removing power prevents the pop-ups from closing unexpectedly while your hands are in
+            the mechanism area.
+          </p>
+          <p>
+            After installation, avoid driving at night or in poor visibility for at least the first
+            week so you can confirm the controller is working correctly in normal use.
+          </p>
         </article>
 
-        <article class="note-card">
-          <h3>Status</h3>
+        <figure class="guide-figure">
+          <div class="diagram-stage">
+            <img
+              src="../../../images/pop-up-controller-v10/user-guide/rtr-fuse-location.png"
+              alt="Location overview for Junction Block No. 2 and the RTR fuse area."
+            >
+            <svg class="diagram-overlay" viewBox="0 0 1241 623" aria-hidden="true" preserveAspectRatio="none">
+              <line x1="170" y1="505" x2="254" y2="220"></line>
+            </svg>
+            <div class="diagram-callout">Junction Block No. 2</div>
+          </div>
+          <figcaption>
+            Reference diagram for the RTR fuse location in Junction Block No. 2.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="clarifications">
+      <div class="section-heading">
+        <div>
+          <h2>Clarifications</h2>
           <p>
-            This page is a placeholder for the future HTML version of the user guide. Once the
-            Markdown draft is ready, it can be turned into the final published page.
+            These terms are used throughout the guide to describe switch positions and pop-up
+            movement.
+          </p>
+        </div>
+      </div>
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <figure class="guide-figure">
+            <img
+              src="../../../images/pop-up-controller-v10/user-guide/clarifications-light-switch-states.png"
+              alt="Light switch positions used by the Pop-up Controller V10 guide."
+            >
+            <figcaption>From top to bottom: HEAD, TAIL, HOLD, and OFF.</figcaption>
+          </figure>
+          <h3>Light switch states</h3>
+          <ul>
+            <li><strong>HEAD</strong> is the full headlight-on position.</li>
+            <li><strong>TAIL</strong> and <strong>HOLD</strong> are treated the same by the controller.</li>
+            <li><strong>OFF</strong> is the fully off position.</li>
+          </ul>
+          <p>The controller cannot distinguish between TAIL and HOLD, so both are handled as HOLD.</p>
+        </article>
+
+        <article class="guide-block">
+          <h3>Pop-up states</h3>
+          <div class="guide-pill-list">
+            <div class="guide-pill">
+              <strong>UP</strong>
+              <p>The pop-up is in the fully raised position.</p>
+            </div>
+            <div class="guide-pill">
+              <strong>DOWN</strong>
+              <p>The pop-up is in the fully retracted position.</p>
+            </div>
+            <div class="guide-pill">
+              <strong>IN-BETWEEN</strong>
+              <p>The pop-up is somewhere between the UP and DOWN end positions.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="pop-up-controller">
+      <div class="section-heading">
+        <div>
+          <h2>Pop-up Controller</h2>
+          <p>
+            The controller is a plug-and-play replacement for the factory Light Retractor Relay in a
+            Toyota Celica T18, with onboard diagnostics, configuration support, and accessory inputs.
+          </p>
+        </div>
+      </div>
+      <div class="guide-intro-grid">
+        <figure class="guide-figure">
+          <img
+            src="../../../images/pop-up-controller-v10/user-guide/controller-overview.png"
+            alt="Pop-up Controller V10 overview image."
+          >
+          <figcaption>Plug-and-play controller assembly with factory-style integration.</figcaption>
+        </figure>
+
+        <article class="guide-block">
+          <div class="guide-kicker">Overview</div>
+          <h3>What the controller does</h3>
+          <p>
+            The controller replaces the factory light retractor relay and handles pop-up movement,
+            button inputs, sleepy eye controls, error storage, and USB communication with a PC.
+          </p>
+          <p>
+            In theory it may also work with some other pop-up headlight cars if a custom wiring
+            adapter and mounting bracket are made.
+          </p>
+          <div class="guide-link-list">
+            <a href="https://github.com/sheep-celica/pop-up-controller-v10">Firmware repository</a>
+            <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application">Desktop app repository</a>
+            <a href="mailto:sheep.celica@gmail.com">Contact for firmware modification questions</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="guide-grid-two">
+        <article class="guide-block" id="fuses">
+          <figure class="guide-figure">
+            <img
+              src="../../../images/pop-up-controller-v10/user-guide/controller-fuses.png"
+              alt="Fuse locations on the Pop-up Controller V10."
+            >
+            <figcaption>All four onboard fuses are replaceable automotive fuses.</figcaption>
+          </figure>
+          <h3>Fuses</h3>
+          <p>
+            The controller has four replaceable onboard fuses. In general, increasing the fuse
+            rating is not recommended.
+          </p>
+          <p>The entire light retractor circuit is also protected by a 30 A RTR fuse in the engine bay.</p>
+          <ul>
+            <li><strong>LOGIC</strong>: 1 A. Protects the 3.3 V and 12 V rails, excluding the pop-up motors.</li>
+            <li><strong>MAIN</strong>: 15 A. Protects everything after the power connector, including the main TVS diode.</li>
+            <li><strong>LEFT</strong>: 5 A. Protects the left pop-up motor.</li>
+            <li><strong>RIGHT</strong>: 5 A. Protects the right pop-up motor.</li>
+          </ul>
+        </article>
+
+        <article class="guide-block" id="indicator-leds">
+          <figure class="guide-figure">
+            <img
+              src="../../../images/pop-up-controller-v10/user-guide/controller-indicator-leds.png"
+              alt="Indicator LEDs on the Pop-up Controller V10 case."
+            >
+            <figcaption>The top cover LEDs show power, input, and error status.</figcaption>
+          </figure>
+          <h3>Indicator LEDs</h3>
+          <ul>
+            <li><strong>LEFT</strong>: Green. Lights while the left pop-up motor is being powered.</li>
+            <li><strong>RIGHT</strong>: Green. Lights while the right pop-up motor is being powered.</li>
+            <li><strong>STATUS</strong>: Blue. Solid when the controller is running. Flashes when the debug button is pressed.</li>
+            <li><strong>ERROR</strong>: Red. Turns on when an error occurs and flashes stored error count on startup.</li>
+            <li><strong>INPUT</strong>: White. Flashes briefly when an input change is registered.</li>
+          </ul>
+          <h4>Additional LED behaviors</h4>
+          <ul>
+            <li>Rapid INPUT and STATUS flashing means battery voltage is below 7 V. This should only happen when connected directly to a PC.</li>
+            <li>All LEDs turn on for about 2 seconds at startup as a basic lamp test, excluding LEFT and RIGHT.</li>
+          </ul>
+        </article>
+
+        <article class="guide-block" id="buttons-and-potentiometers">
+          <figure class="guide-figure">
+            <img
+              src="../../../images/pop-up-controller-v10/user-guide/controller-buttons-potentiometers.png"
+              alt="Buttons and potentiometers on the Pop-up Controller V10 case."
+            >
+            <figcaption>The debug button sits between the OFFSET potentiometer and the LEDs.</figcaption>
+          </figure>
+          <h3>Buttons and potentiometers</h3>
+          <h4>Buttons</h4>
+          <ul>
+            <li><strong>RESET</strong>: Brief press power cycles the controller.</li>
+            <li><strong>BOOT</strong>: Only use when flashing firmware and troubleshooting connection issues.</li>
+            <li><strong>DEBUG</strong>: Hold for more than 5 seconds to save data and reboot. Press it 3 times quickly to toggle sleepy eye availability outside the OFF switch position.</li>
+          </ul>
+          <h4>Potentiometers</h4>
+          <ul>
+            <li><strong>LED</strong>: Adjusts illumination LED brightness in the wink buttons and sleepy eye controls.</li>
+            <li><strong>OFFSET</strong>: Adjusts right-hand pop-up timing while moving to the sleepy eye position.</li>
+          </ul>
+        </article>
+
+        <article class="guide-block" id="connectors">
+          <figure class="guide-figure">
+            <img
+              src="../../../images/pop-up-controller-v10/user-guide/controller-connectors.png"
+              alt="Connector overview for the Pop-up Controller V10."
+            >
+            <figcaption>Main car-harness input, USB-C, and accessory ports X1 through X6.</figcaption>
+          </figure>
+          <h3>Connectors</h3>
+          <p>
+            The controller includes the main Toyota harness connector, a USB-C port for computer
+            communication, and six Micro-Fit accessory connectors.
+          </p>
+          <div class="table-wrap">
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>Connector</th>
+                  <th>Function</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Main</strong></td>
+                  <td>12-pin Toyota connector</td>
+                  <td>Uses the same connector and pinout as the original Light Retractor Relay.</td>
+                </tr>
+                <tr>
+                  <td><strong>X1</strong></td>
+                  <td>RH wink button</td>
+                  <td>Accessory connector.</td>
+                </tr>
+                <tr>
+                  <td><strong>X2</strong></td>
+                  <td>LH wink button</td>
+                  <td>Accessory connector.</td>
+                </tr>
+                <tr>
+                  <td><strong>X3</strong></td>
+                  <td>Both wink button</td>
+                  <td>Accessory connector.</td>
+                </tr>
+                <tr>
+                  <td><strong>X4</strong></td>
+                  <td>Both toggle button</td>
+                  <td>Acts like both-wink, but in HOLD it toggles pop-up position between UP and DOWN.</td>
+                </tr>
+                <tr>
+                  <td><strong>X5</strong></td>
+                  <td>Sleepy eye controls</td>
+                  <td>Accessory connector.</td>
+                </tr>
+                <tr>
+                  <td><strong>X6</strong></td>
+                  <td>Expansion</td>
+                  <td>Used for accessories such as the remote receiver module.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="wink-buttons">
+      <div class="section-heading">
+        <div>
+          <h2>Wink Buttons</h2>
+          <p>
+            Up to four wink-related inputs can be connected, with the fourth input acting as a
+            toggle button on X4.
+          </p>
+        </div>
+      </div>
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <figure class="guide-figure">
+            <img
+              src="../../../images/pop-up-controller-v10/user-guide/wink-buttons-overview.png"
+              alt="Overview of wink button positions and connections."
+            >
+            <figcaption>Wink buttons connect to X1, X2, X3, and X4.</figcaption>
+          </figure>
+          <h3>Button behavior</h3>
+          <p>
+            Wink buttons all use the same connector type, and their cables can be interchanged if
+            needed. Pressing a wink button makes one pop-up or both pop-ups wink.
+          </p>
+          <p>The fourth button on X4 is a toggle button rather than a standard wink input.</p>
+        </article>
+
+        <article class="guide-block">
+          <h3>Wink cycle</h3>
+          <p>The wink cycle starts when a pop-up button is pressed and released.</p>
+          <ol>
+            <li>Move the targeted pop-up to the opposite state. If it is IN-BETWEEN, it is treated as UP.</li>
+            <li>Once it reaches the opposite state, move it back to its original state.</li>
+          </ol>
+          <p>Multiple wink cycles can run at the same time, so one pop-up can move while the other is already in motion.</p>
+          <div class="notice">
+            <h3>Sleepy eye support</h3>
+            <p>
+              If a pop-up starts in the sleepy eye position, the wink cycle will return it to that
+              same position at the end of the cycle.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="light-switch-behavior">
+      <div class="section-heading">
+        <div>
+          <h2>Light Switch Behavior</h2>
+          <p>
+            The controller reacts to all light-switch positions, but only HEAD and OFF actively
+            change the pop-up target state.
+          </p>
+        </div>
+      </div>
+      <div class="guide-grid-two">
+        <figure class="guide-figure">
+          <img
+            src="../../../images/pop-up-controller-v10/user-guide/light-switch-behavior-overview.png"
+            alt="Light switch behavior overview for the Pop-up Controller V10."
+          >
+          <figcaption>HEAD raises the pop-ups, while OFF retracts them.</figcaption>
+        </figure>
+
+        <article class="guide-block">
+          <h3>How the controller reacts</h3>
+            <div class="table-wrap">
+            <table class="guide-table light-switch-table">
+                <thead>
+                  <tr>
+                    <th>Position</th>
+                    <th class="switch-icon-heading">Icon</th>
+                    <th>Behavior</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>HEAD</strong></td>
+                    <td class="switch-icon-cell">
+                      <span class="switch-icon is-head" aria-hidden="true">
+                        <img src="../../../images/pop-up-controller-v10/user-guide/light-switch-head-icon.png" alt="">
+                      </span>
+                    </td>
+                    <td>Pop-ups go UP.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>TAIL</strong></td>
+                    <td class="switch-icon-cell">
+                      <span class="switch-icon is-tail" aria-hidden="true">
+                        <img src="../../../images/pop-up-controller-v10/user-guide/light-switch-tail-icon.png" alt="">
+                      </span>
+                    </td>
+                    <td>No change to pop-up position.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>HOLD</strong></td>
+                    <td class="switch-icon-cell">
+                      <span class="switch-icon is-hold" aria-hidden="true">
+                        <img src="../../../images/pop-up-controller-v10/user-guide/light-switch-hold-icon.png" alt="">
+                      </span>
+                    </td>
+                    <td>No change to pop-up position.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>OFF</strong></td>
+                    <td class="switch-icon-cell">
+                      <span class="switch-icon is-off" aria-hidden="true">
+                        <img src="../../../images/pop-up-controller-v10/user-guide/light-switch-off-icon.png" alt="">
+                      </span>
+                    </td>
+                    <td>Pop-ups go DOWN.</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
+          <p>
+            HOLD and TAIL do not interrupt an in-progress move. They simply stop requesting a new
+            position change.
           </p>
         </article>
       </div>
     </section>
 
-    <footer>
-      Pop-up Controller V10 user guide page. Published HTML can be regenerated from the Markdown
-      source.
-    </footer>
+    <section class="section" id="sleepy-eye-mode">
+      <div class="section-heading">
+        <div>
+          <h2>Sleepy Eye Mode</h2>
+          <p>
+            Sleepy eye mode lets the pop-ups stop at a partial angle set by the sleepy eye control
+            knob.
+          </p>
+        </div>
+      </div>
+      <div class="guide-intro-grid">
+        <figure class="guide-figure">
+          <img
+            src="../../../images/pop-up-controller-v10/user-guide/sleepy-eye-mode-overview.png"
+            alt="Sleepy eye controls and position overview."
+          >
+          <figcaption>The rotary control selects one of seven available partial-open positions.</figcaption>
+        </figure>
+
+        <article class="guide-block">
+          <h3>Mode overview</h3>
+          <p>
+            Use the sleepy eye button to toggle the mode on or off. The knob on the sleepy eye
+            controls selects how far the pop-ups continue moving after first reaching UP.
+          </p>
+          <div class="notice">
+            <h3>Default restriction</h3>
+            <p>
+              By default, sleepy eye mode can only be enabled while the light switch is in the OFF
+              position. This can be changed in the desktop app.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <h3>Turning the mode on</h3>
+          <ul>
+            <li>An LED lights up under the sleepy eye button.</li>
+            <li>The pop-ups first go to UP and then continue for a set amount of time.</li>
+            <li>Light-switch commands no longer change pop-up position while the mode is active.</li>
+            <li>Wink buttons still work normally.</li>
+          </ul>
+        </article>
+
+        <article class="guide-block">
+          <h3>Turning the mode off</h3>
+          <ul>
+            <li>The LED under the sleepy eye button turns off.</li>
+            <li>Normal light-switch control is restored.</li>
+            <li>If the switch is in OFF, the pop-ups go DOWN right away.</li>
+            <li>If the switch is in HEAD, the pop-ups go UP right away.</li>
+          </ul>
+        </article>
+      </div>
+
+      <article class="guide-block">
+        <h3>Adjusting RH pop-up offset</h3>
+        <p>
+          If the pop-ups do not stop at the same angle in sleepy eye mode, adjust the OFFSET
+          potentiometer on the controller. The setting can add a fixed timing offset from -50 ms to
+          +50 ms, with the middle position equal to 0 ms.
+        </p>
+      </article>
+    </section>
+
+    <section class="section" id="power-on-and-power-off">
+      <div class="section-heading">
+        <div>
+          <h2>Power On and Power Off</h2>
+          <p>
+            The controller latches power during use and can shut itself back down after long idle
+            time with the light switch in OFF.
+          </p>
+        </div>
+      </div>
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <h3>Latch behavior</h3>
+          <p>
+            The controller stays powered whenever the light switch is in any position other than
+            OFF. Holding a wink button or the sleepy eye toggle button can also power it for the
+            duration of the hold.
+          </p>
+          <p>
+            Once powered, the controller attempts to latch itself on within about 300 ms. After
+            that, it remains powered even if the light switch moves to OFF and no buttons are being
+            held.
+          </p>
+          <p>
+            If the switch stays in OFF and there is no pop-up movement, a countdown begins from
+            86400 seconds, which is 1 day. When the countdown finishes, the controller unlatches
+            power and shuts down.
+          </p>
+          <p>
+            Pressing any button, changing the light-switch position, or receiving a remote command
+            that moves the pop-ups resets the countdown. The timeout value can be changed in the
+            desktop app.
+          </p>
+          <p>
+            Pop-up state is not remembered after power off, and sleepy eye mode does not stay active
+            through a power cycle.
+          </p>
+        </article>
+
+        <article class="guide-block">
+          <h3>Measured power draw</h3>
+          <div class="table-wrap">
+            <table class="guide-table">
+              <thead>
+                <tr>
+                  <th>Controller state</th>
+                  <th>Power draw</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Turned on</td>
+                  <td>&lt; 30 mA*</td>
+                </tr>
+                <tr>
+                  <td>Turned off</td>
+                  <td>&lt; 10 uA*</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>*Measured at 12 V. Draw may vary slightly with supply voltage.</p>
+          <p>While the pop-ups are moving, current draw can peak to several amps.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="pop-up-controller-application">
+      <div class="section-heading">
+        <div>
+          <h2>Pop-up Controller Application</h2>
+          <p>
+            The desktop application provides a simple way to read controller data, adjust settings,
+            and flash firmware updates.
+          </p>
+        </div>
+      </div>
+      <div class="guide-intro-grid">
+        <article class="guide-block">
+          <h3>What the app can do</h3>
+          <ul>
+            <li>Read statistical data</li>
+            <li>Read and clear errors</li>
+            <li>Read and adjust settings</li>
+            <li>Flash new firmware</li>
+          </ul>
+          <div class="guide-link-list">
+            <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application">Desktop app source and builds</a>
+            <a href="https://github.com/sheep-celica/pop-up-controller-v10/releases">Firmware release downloads</a>
+            <a href="../app-flashing/">Open the app flashing guide</a>
+          </div>
+        </article>
+
+        <figure class="guide-figure">
+          <img
+            src="../../../images/pop-up-controller-v10/user-guide/desktop-app-overview.png"
+            alt="Desktop application overview for the Pop-up Controller V10."
+          >
+          <figcaption>The app handles settings, diagnostics, and firmware updates.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="additional-features">
+      <div class="section-heading">
+        <div>
+          <h2>Additional Features</h2>
+          <p>
+            The controller includes safety timeout behavior, and the guide currently tracks one
+            published revision.
+          </p>
+        </div>
+      </div>
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <h3>Pop-up timeout</h3>
+          <p>
+            If a pop-up cannot reach its target position within 2.5 seconds, the controller enters a
+            timeout state and stops movement. The ERROR LED turns on and an error code is stored in
+            the error log.
+          </p>
+          <p>The controller must then be restarted before normal pop-up operation returns.</p>
+          <p>This can be achieved by either of the following:</p>
+          <ul>
+            <li>Disconnect the battery</li>
+            <li>Remove the RTR fuse</li>
+            <li>Disconnect the controller from the 12-pin wiring harness connector</li>
+            <li>Remove the MAIN or LOGIC fuse from the controller</li>
+            <li>Hold the debug button for more than 5 seconds</li>
+          </ul>
+          <div class="notice">
+            <h3>Note</h3>
+            <p>More safety features may be added in future firmware versions.</p>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
 </body>
 </html>

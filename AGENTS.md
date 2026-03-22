@@ -60,7 +60,12 @@ When asked to turn Markdown into HTML:
 ## Supplemental Agent Instructions
 
 - For folder-based screenshot cleanup, read `agent-instructions/crop-snipping-tool-borders.md`.
-- When you finish a task and are idle, run `C:\Users\Sheep\AppData\Local\Python\pythoncore-3.14-64\python.exe .codex\notify.py agent-turn-complete` from the repository root to send the completion notification.
+
+## Notifications
+
+- Before sending your final user-facing response for a completed task, run `C:\Users\Sheep\AppData\Local\Python\pythoncore-3.14-64\python.exe .codex\tools\notify_client.py "Codex finished" "Task complete in this repository."` from the repository root to send the desktop notification.
+- When you are blocked waiting for my approval or input, run `C:\Users\Sheep\AppData\Local\Python\pythoncore-3.14-64\python.exe .codex\tools\notify_client.py "Codex needs input" "Waiting for approval or more instructions."` from the repository root to send the desktop notification.
+- If the notification command fails once, continue with the task and mention briefly that the notification failed.
 
 ## If The User Starts A New Chat
 
