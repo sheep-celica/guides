@@ -1102,3 +1102,277 @@ h3 {
 .guide-link-list {
   margin-top: 0.9rem;
 }
+
+/* Parts catalogue */
+.parts-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.part-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(20, 28, 37, 0.96), rgba(13, 19, 26, 0.96));
+  overflow: hidden;
+  will-change: height;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.part-card[open] {
+  border-color: rgba(138, 164, 200, 0.35);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
+}
+
+.part-card.is-wip {
+  border-color: var(--danger-line);
+  background: linear-gradient(180deg, rgba(54, 22, 26, 0.96), rgba(28, 11, 14, 0.96));
+  box-shadow: inset 0 0 0 1px rgba(255, 123, 123, 0.05);
+}
+
+.part-card.is-wip[open] {
+  border-color: rgba(255, 123, 123, 0.42);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 123, 123, 0.05);
+}
+
+.part-card summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 210px);
+  gap: 1rem;
+  align-items: center;
+  padding: 1.2rem;
+}
+
+.part-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.part-card summary::marker {
+  content: "";
+}
+
+.part-card:hover,
+.part-card:focus-within {
+  border-color: rgba(138, 164, 200, 0.35);
+}
+
+.part-card.is-wip:hover,
+.part-card.is-wip:focus-within {
+  border-color: rgba(255, 123, 123, 0.42);
+}
+
+.part-summary-copy {
+  min-width: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.part-summary-copy h3 {
+  margin: 0;
+}
+
+.part-summary-meta,
+.part-source-note,
+.part-badge-row,
+.part-summary-pricing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.part-summary-pricing {
+  gap: 0.7rem;
+}
+
+.part-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.part-toggle::after {
+  content: "+";
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.part-card[open] .part-toggle::after {
+  content: "-";
+}
+
+.part-card[data-animating="collapse"] .part-toggle::after {
+  content: "+";
+}
+
+.part-card.is-wip .part-toggle {
+  border-color: var(--danger-line);
+  background: rgba(255, 123, 123, 0.08);
+  color: var(--danger-strong);
+}
+
+.part-thumb-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 8.5rem;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.part-thumb-wrap img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.part-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 18rem;
+  object-fit: contain;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.part-content {
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.part-content-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.95fr);
+}
+
+.part-copy-stack,
+.part-gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.part-price-pill {
+  padding: 1rem;
+  border: 1px solid rgba(103, 164, 236, 0.28);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(103, 164, 236, 0.16), rgba(103, 164, 236, 0.06));
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.62rem 0.78rem;
+}
+
+.part-price-pill__label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(186, 206, 235, 0.28);
+  background: rgba(186, 206, 235, 0.1);
+  color: #dce7f5;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.part-price-pill__label {
+  flex: 0 0 auto;
+}
+
+.part-price-pill__value {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.part-card.is-wip .part-price-pill {
+  border-color: rgba(255, 215, 215, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.part-copy-stack > p,
+.part-copy-stack li,
+.part-figure figcaption {
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.part-copy-stack > p,
+.part-figure {
+  margin: 0;
+}
+
+.part-gallery {
+  align-content: start;
+}
+
+.part-figure {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.part-figure figcaption {
+  margin: 0.6rem 0 0;
+}
+
+.part-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.part-actions .button-secondary {
+  min-width: 0;
+  background: linear-gradient(180deg, #556b8a, #34455e);
+  border-color: rgba(186, 206, 235, 0.28);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.part-actions .button-secondary:hover,
+.part-actions .button-secondary:focus-visible {
+  border-color: rgba(205, 221, 244, 0.45);
+  background: linear-gradient(180deg, #667e9f, #3e5270);
+  box-shadow: 0 15px 28px rgba(0, 0, 0, 0.26);
+}
+
+@media (max-width: 900px) {
+  .part-card summary,
+  .part-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .part-thumb-wrap {
+    height: 7rem;
+  }
+}

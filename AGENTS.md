@@ -32,10 +32,18 @@ For `pop-up-controller-v10`:
 - Parts overview source: `source/pop-up-controller-v10/parts/overview.md`
 - Parts overview page: `products/pop-up-controller-v10/parts/index.html`
 
-Part subpages follow the same pattern:
+## Parts Page Structure
 
-- `source/pop-up-controller-v10/parts/<part-name>.md`
-- `products/pop-up-controller-v10/parts/<part-name>/index.html`
+For `pop-up-controller-v10`, the parts section is not a collection of customer-facing subpages.
+
+- The published parts experience is a single expandable catalogue page at
+  `products/pop-up-controller-v10/parts/index.html`.
+- Each base part still has its own Markdown source file under
+  `source/pop-up-controller-v10/parts/<part-name>.md`.
+- The parts overview and the individual part Markdown files should be treated as the source of
+  truth for regenerating the single published catalogue page.
+- Legacy placeholder part subpages may still exist in the repository, but the current customer-
+  facing pattern for this product is the single catalogue page unless the user asks otherwise.
 
 ## Guide Conversion Rules
 
@@ -47,8 +55,30 @@ When asked to turn Markdown into HTML:
 4. Keep the content customer-facing and easy to scan on mobile.
 5. Prefer short sections, clear headings, numbered steps where appropriate, and simple warning/notes wording.
 6. Add or update breadcrumbs and product-page links when needed.
-7. If a new guide or part page is introduced, update the relevant product landing page so it links to it.
+7. If a new guide or major page is introduced, update the relevant product landing page so it links to it.
 8. If images are referenced, place them under the matching `images/<product-name>/...` folder and use relative links from the page.
+
+## Parts Catalogue Rules
+
+When asked to update the `pop-up-controller-v10` parts section:
+
+1. Read `source/pop-up-controller-v10/parts/overview.md`.
+2. Read the relevant per-part Markdown files under `source/pop-up-controller-v10/parts/`.
+3. Update the single published catalogue page at `products/pop-up-controller-v10/parts/index.html`.
+4. Keep each part as an expandable card rather than creating a separate customer-facing page unless the user explicitly asks for that.
+5. Use regular badge tags in the card header. Do not rely on a separate leading icon chip unless the user asks for it.
+6. Use `PN` for visible customer-facing part-number labels.
+   For the `pop-up-controller-v10` parts catalogue, prefer carrying the part number in the card heading instead of using a dedicated PN fact card.
+7. Keep unfinished entries clearly marked with a `WIP` or similar status badge until the user asks to remove it.
+8. Show a visible catalogue-wide pricing note when the parts page includes prices, making it clear that prices are reference-only and the user should be contacted for the most accurate quote.
+9. Show pricing as compact EUR and USD pills in the collapsed summary when prices are present.
+10. Do not duplicate the same pricing block inside the expanded card unless the user explicitly asks for it.
+11. Keep the expanded card customer-facing: short description, quick facts, PDF links, and images only.
+12. When pricing is shown, support both `EUR` and `USD` values for each part card.
+13. For `pop-up-controller-v10`, keep live price values in `products/pop-up-controller-v10/parts/pricing-data.js` and let the HTML load them from there instead of hardcoding prices in each card.
+14. Preserve the lightweight JS-enhanced expand/collapse animation implemented in `assets/scripts/part-card-animation.js` unless the user asks to remove or replace it, and keep reduced-motion users on the native no-animation behavior.
+15. Store part images under `images/<product-name>/parts/<part-number>-<slug>/`.
+16. Store technical drawing PDFs under `downloads/<product-name>/parts/<part-number>-<slug>/`.
 
 ## Style Notes
 
