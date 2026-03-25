@@ -38,10 +38,20 @@ page per part.
   part files.
 - The published page uses expandable cards with normal badge tags, a `WIP` badge while unfinished,
   a heading that carries the part number, visible EUR and USD pricing in the collapsed summary,
-  quick fact cards, a technical drawing PDF button, and one or more images inside the expanded
-  card.
+  quick fact cards, an optional related parts section, a technical drawing PDF button, and one or
+  more images inside the expanded card.
 - The published page also uses a light JS-enhanced expand/collapse animation for the part cards
   while preserving native `details` behavior as the fallback.
+
+## Related Parts
+
+- Each real part source file can include an optional `## Related Parts` section after `## Fact
+  Cards`.
+- Leave the section blank when there are no curated cross-links ready yet.
+- Ignore blank `## Related Parts` sections when converting Markdown into the published HTML.
+- When the section has entries, render it inside the expanded part card below the fact cards as
+  links to the matching part cards on the same catalogue page.
+- Prefer simple bullet items such as ``- `10300` Pop-up Controller V10`` in the source Markdown.
 
 ## Current Part Files
 

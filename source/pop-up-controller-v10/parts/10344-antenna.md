@@ -2,7 +2,7 @@
 
 ## Status
 
-- WIP
+- Live
 
 ## Tags
 
@@ -29,6 +29,10 @@ for Pop-up Controller V10.
 - Use: Remote system antenna for the matching receiver module.
 - Works with: `10341` Remote Receiver Module.
 - Format: Antenna lead assembly for remote accessory installs.
+
+## Related Parts
+
+- `10341` Remote Receiver Module
 
 ## Pricing
 

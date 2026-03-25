@@ -73,12 +73,15 @@ When asked to update the `pop-up-controller-v10` parts section:
 8. Show a visible catalogue-wide pricing note when the parts page includes prices, making it clear that prices are reference-only and the user should be contacted for the most accurate quote.
 9. Show pricing as compact EUR and USD pills in the collapsed summary when prices are present.
 10. Do not duplicate the same pricing block inside the expanded card unless the user explicitly asks for it.
-11. Keep the expanded card customer-facing: short description, quick facts, PDF links, and images only.
-12. When pricing is shown, support both `EUR` and `USD` values for each part card.
-13. For `pop-up-controller-v10`, keep live price values in `products/pop-up-controller-v10/parts/pricing-data.js` and let the HTML load them from there instead of hardcoding prices in each card.
-14. Preserve the lightweight JS-enhanced expand/collapse animation implemented in `assets/scripts/part-card-animation.js` unless the user asks to remove or replace it, and keep reduced-motion users on the native no-animation behavior.
-15. Store part images under `images/<product-name>/parts/<part-number>-<slug>/`.
-16. Store technical drawing PDFs under `downloads/<product-name>/parts/<part-number>-<slug>/`.
+11. Support an optional `## Related Parts` section in each per-part Markdown source, placed after `## Fact Cards`.
+12. If `## Related Parts` is blank, ignore it when converting the Markdown into the published HTML.
+13. If `## Related Parts` contains entries, render them inside the expanded card below the fact cards as links to the matching part cards in the same catalogue page.
+14. Keep the expanded card customer-facing: short description, quick facts, optional related-part links, PDF links, and images only.
+15. When pricing is shown, support both `EUR` and `USD` values for each part card.
+16. For `pop-up-controller-v10`, keep live price values in `products/pop-up-controller-v10/parts/pricing-data.js` and let the HTML load them from there instead of hardcoding prices in each card.
+17. Preserve the lightweight JS-enhanced expand/collapse animation implemented in `assets/scripts/part-card-animation.js` unless the user asks to remove or replace it, and keep reduced-motion users on the native no-animation behavior.
+18. Store part images under `images/<product-name>/parts/<part-number>-<slug>/`.
+19. Store technical drawing PDFs under `downloads/<product-name>/parts/<part-number>-<slug>/`.
 
 ## Style Notes
 

@@ -33,6 +33,11 @@ Supports various LED colors.
 - Install style: Accessory panel control for compatible interior mounting.
 - Compatibility: V8 and V10 Controllers
 
+## Related Parts
+
+- `10300` Pop-up Controller V10
+- `10321` Wink Button Cable
+
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.

@@ -2,17 +2,17 @@
 
 ## Status
 
-- WIP
+- Live
 
 ## Tags
 
 - Cable
-- Sleepy Eye
+- Sleepy Eyes
 
 ## Summary Badges
 
 - Cable assembly
-- Sleepy eye control
+- Sleepy eyes control
 - PDF drawing
 
 ## Card Summary
@@ -21,14 +21,20 @@ Cable assembly for connecting the sleepy eye controls to the Pop-up Controller V
 
 ## Details
 
-This cable links the sleepy eye controls to the controller so the dedicated sleepy eye inputs are
-available at the chosen mounting location.
+Use this cable to connect the `10305` Sleepy Eye controls to the `X5` connector of a Pop-up controller V10.  
+Same connector on both ends. Doesn't matter which end goes to the Pop-up controller and which one goes to the controls.
 
 ## Fact Cards
 
-- Purpose: Control-to-controller cable for sleepy eye inputs.
-- Works with: `10305` Sleepy Eye Controls and Pop-up Controller V10.
-- Format: Single cable assembly for accessory wiring.
+- Use: Sleepy Eye Control-to-controller cable.
+- Works with: `10305` Sleepy Eye Controls and `10300` Pop-up Controller V10.
+- Length: 1.7 meters
+- Compatibility: V8 and V10 Controllers
+
+## Related Parts
+
+- `10300` Pop-up Controller V10
+- `10305` Sleepy Eye Controls
 
 ## Pricing
 

@@ -31,6 +31,15 @@ Additionally, several accessories can be connected to it to allow more customiza
 - Fits: T18 Toyota Celica.
 - Connections: 12-pin main connector, accessory ports `X1` to `X6` and a 'USB-C'.
 
+## Related Parts
+
+- `10302` Wink Button - Large Slot
+- `10305` Sleepy Eye Controls
+- `10321` Wink Button Cable
+- `10322` Sleepy Eye Controls Cable
+- `10341` Remote Receiver Module
+- `10343` Expansion Cable
+
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.

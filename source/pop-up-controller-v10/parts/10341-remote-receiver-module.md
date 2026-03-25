@@ -2,7 +2,7 @@
 
 ## Status
 
-- WIP
+- Live
 
 ## Tags
 
@@ -17,7 +17,7 @@
 
 ## Card Summary
 
-Receiver module for the Pop-up Controller V10 remote accessory system.
+Remote receiver module for the Pop-up Controller V10 remote accessory system.
 
 ## Details
 
@@ -26,9 +26,16 @@ matching transmitter, expansion cable, and antenna.
 
 ## Fact Cards
 
-- Use: Remote receiver for compatible controller functions.
+- Use: Remote receiver for up to 4 actions.
 - Works with: `10342`, `10343`, and `10344`.
-- Connection: Expansion connection on Pop-up Controller V10.
+- Install style: Slide-on mount on the Controller
+- Compability: V10 Controllers
+
+## Related Parts
+
+- `10342` 4-button Remote Transmitter
+- `10343` Expansion Cable
+- `10344` Antenna
 
 ## Pricing
 

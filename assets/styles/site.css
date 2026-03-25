@@ -243,6 +243,17 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.section-heading-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.part-catalogue-button {
+  white-space: nowrap;
+}
+
 .section-heading p {
   margin: 0.35rem 0 0;
   max-width: 46rem;
@@ -1114,6 +1125,7 @@ h3 {
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(20, 28, 37, 0.96), rgba(13, 19, 26, 0.96));
   overflow: hidden;
+  scroll-margin-top: 1rem;
   will-change: height;
   transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
@@ -1332,7 +1344,57 @@ h3 {
 }
 
 .part-gallery {
+  display: grid;
+  gap: 1rem;
   align-content: start;
+  padding: 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.part-related {
+  display: grid;
+  gap: 0.8rem;
+  padding: 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.part-related h4 {
+  margin: 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.part-related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.part-related-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.72rem;
+  border: 1px solid rgba(138, 164, 200, 0.22);
+  border-radius: 999px;
+  background: rgba(138, 164, 200, 0.12);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.3;
+  transition: border-color 140ms ease, background-color 140ms ease, transform 140ms ease;
+}
+
+.part-related-link:hover,
+.part-related-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(186, 206, 235, 0.34);
+  background: rgba(138, 164, 200, 0.18);
 }
 
 .part-figure {
@@ -1344,6 +1406,10 @@ h3 {
 
 .part-figure figcaption {
   margin: 0.6rem 0 0;
+}
+
+.part-gallery .part-actions {
+  margin-top: 0.1rem;
 }
 
 .part-actions {
@@ -1364,6 +1430,14 @@ h3 {
   border-color: rgba(205, 221, 244, 0.45);
   background: linear-gradient(180deg, #667e9f, #3e5270);
   box-shadow: 0 15px 28px rgba(0, 0, 0, 0.26);
+}
+
+.part-gallery-actions {
+  display: grid;
+}
+
+.part-gallery-actions .button-secondary {
+  width: 100%;
 }
 
 @media (max-width: 900px) {

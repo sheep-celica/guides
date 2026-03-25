@@ -34,6 +34,11 @@ NOTE The two small slots under the steering wheel may not be suitable for all in
 - Install style: Accessory panel control for compatible interior mounting.
 - Compatibility: V8 and V10 Controllers
 
+## Related Parts
+
+- `10300` Pop-up Controller V10
+- `10322` Sleepy Eye Controls Cable
+
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.

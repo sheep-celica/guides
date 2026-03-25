@@ -2,7 +2,7 @@
 
 ## Status
 
-- WIP
+- Live
 
 ## Tags
 
@@ -22,14 +22,20 @@ connection.
 
 ## Details
 
-Use the expansion cable when connecting the remote receiver module to the controller's expansion
-port as part of the remote accessory setup.
+Use the expansion cable when connecting the remote receiver module to the controller's expansion port.  
+The cable serves to expand the I2c system. Can be used to connect any I2c module in theory.
 
 ## Fact Cards
 
-- Purpose: Expansion interconnect cable for the remote accessory chain.
+- Use: Remote Receiver-to-controller cable.
 - Works with: `10341` Remote Receiver Module and Pop-up Controller V10.
-- Format: Accessory cable assembly for expansion routing.
+- Length: 200 milimeters
+- Compatibility: V10 Controllers
+
+## Related Parts
+
+- `10300` Pop-up Controller V10
+- `10341` Remote Receiver Module
 
 ## Pricing
 

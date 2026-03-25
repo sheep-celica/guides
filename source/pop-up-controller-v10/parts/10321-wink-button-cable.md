@@ -2,7 +2,7 @@
 
 ## Status
 
-- WIP
+- Live
 
 ## Tags
 
@@ -21,14 +21,22 @@ Cable assembly for connecting a wink button to the Pop-up Controller V10 accesso
 
 ## Details
 
-Use this cable to connect a compatible wink button assembly to the controller's dedicated wink
-accessory connection.
+Use this cable to connect a Wink Button to any of the `X1` to `X4` connectors of a Pop-up controller V10.  
+An adapter is needed if the AliExpress variant of the `10302` Wink Button is used. That adapter is included with that `10302` unit.
+
+
 
 ## Fact Cards
 
-- Purpose: Button-to-controller cable for wink inputs.
-- Works with: `10302` Wink Button and Pop-up Controller V10.
-- Format: Single cable assembly for accessory wiring.
+- Use: Wink Button-to-controller cable.
+- Works with: `10302` Wink Button and `10300` Pop-up Controller V10.
+- Length: 1.7 meters
+- Compatibility: V8 and V10 Controllers
+
+## Related Parts
+
+- `10300` Pop-up Controller V10
+- `10302` Wink Button - Large Slot
 
 ## Pricing
 
