@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../../assets/styles/site.css">
 </head>
 <body>
-  <main class="page">
+  <main class="page page--wide-guide">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a class="crumb" href="../../../">Documentation Home</a>
       <a class="crumb" href="../">Pop-up Controller V10</a>
@@ -132,6 +132,8 @@
           </div>
           <figcaption>
             Reference diagram for the RTR fuse location in Junction Block No. 2.
+            <br>
+            It is located on the left side of the battery.
           </figcaption>
         </figure>
       </div>
@@ -663,23 +665,36 @@
               <thead>
                 <tr>
                   <th>Controller state</th>
+                  <th>Voltage</th>
                   <th>Power draw</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Turned on</td>
-                  <td><span class="guide-inline-value">&lt; 30 mA</span>*</td>
+                  <td><span class="guide-inline-value">12 V</span></td>
+                  <td><span class="guide-inline-value">&lt; 30 mA</span></td>
                 </tr>
                 <tr>
                   <td>Turned off</td>
-                  <td><span class="guide-inline-value">&lt; 10 uA</span>*</td>
+                  <td><span class="guide-inline-value">12 V</span></td>
+                  <td><span class="guide-inline-value">&lt; 10 uA</span></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p>*Measured at 12 V. Draw may vary slightly with supply voltage.</p>
-          <p>While the pop-ups are moving, current draw can peak to several amps.</p>
+          <div class="notice notice--subtle">
+            <h3>Battery drain</h3>
+            <p>
+              While the controller is awake, it roughly doubles the car's normal idle current
+              draw, so the battery also drains about twice as fast during that time. If the light
+              switch is left in the <span class="guide-inline-value">OFF</span> position, the
+              controller shuts itself down after <span class="guide-inline-value">24 hours</span>.
+              Once shut down, its own power draw drops to a negligible level, so in practice it
+              typically shortens battery standby time by only about
+              <span class="guide-inline-value">1 day</span>.
+            </p>
+          </div>
         </article>
       </div>
     </section>
@@ -716,7 +731,7 @@
             </div>
           </div>
           <div class="guide-link-list">
-            <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application">Desktop app source and builds</a>
+            <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases">Desktop app downloads</a>
             <a href="https://github.com/sheep-celica/pop-up-controller-v10/releases">Firmware release downloads</a>
             <a href="../app-flashing/">Open the app flashing guide</a>
           </div>
@@ -736,10 +751,6 @@
       <div class="section-heading">
         <div>
           <h2>Additional Features</h2>
-          <p>
-            The controller includes safety timeout behavior, and the guide currently tracks one
-            published revision.
-          </p>
         </div>
       </div>
       <div class="guide-grid-two">

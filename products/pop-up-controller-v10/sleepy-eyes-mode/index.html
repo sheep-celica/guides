@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sleepy Eyes Mode Guide | Pop-up Controller V10</title>
+  <meta
+    name="description"
+    content="Guide for Sleepy Eyes Mode on the Pop-up Controller V10, including operation, the seven position states, automatic calibration, and manual adjustment."
+  >
+  <link rel="stylesheet" href="../../../assets/styles/site.css">
+</head>
+<body>
+  <main class="page page--wide-guide">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a class="crumb" href="../../../">Documentation Home</a>
+      <a class="crumb" href="../">Pop-up Controller V10</a>
+      <span class="crumb">Sleepy Eyes Mode Guide</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">Feature Guide</div>
+      <h1>Sleepy Eyes Mode Guide</h1>
+      <p class="lede">
+        Learn how Sleepy Eyes Mode works, what each of the seven rotary positions targets, and how
+        automatic calibration and manual adjustment help both pop-ups land evenly.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#quick-links">Browse Sections</a>
+        <a class="button-secondary" href="#possible-states">Possible States</a>
+        <a class="button-secondary" href="../">Back to Product Page</a>
+      </div>
+    </section>
+
+    <section class="section" id="quick-links">
+      <div class="section-heading">
+        <div>
+          <h2>Quick Links</h2>
+          <p>
+            Jump straight to the part you need, whether you are learning the feature, comparing the
+            seven positions, or fine-tuning the final angle.
+          </p>
+        </div>
+      </div>
+      <div class="overview-grid">
+        <a class="overview-link" href="#how-it-works">
+          <span class="overview-number">1</span>
+          <h3>How It Works</h3>
+          <p>See how the mode turns on, behaves while active, and hands control back when turned off.</p>
+        </a>
+
+        <a class="overview-link" href="#possible-states">
+          <span class="overview-number">2</span>
+          <h3>Possible States</h3>
+          <p>Compare all seven rotary positions from the lowest sleepy-eye setting to the highest.</p>
+        </a>
+
+        <a class="overview-link" href="#automatic-calibration">
+          <span class="overview-number">3</span>
+          <h3>Automatic Calibration</h3>
+          <p>Understand how the controller learns timing automatically from normal use.</p>
+        </a>
+
+        <a class="overview-link" href="#manual-adjustment">
+          <span class="overview-number">4</span>
+          <h3>Manual Adjustment</h3>
+          <p>Use the OFFSET potentiometer only when you need to fine-tune the right-hand side.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="section-heading">
+        <div>
+          <h2>How It Works</h2>
+          <p>
+            Sleepy Eyes Mode lets both pop-ups stop at a selected partial-open position instead of
+            fully raising or fully retracting.
+          </p>
+        </div>
+      </div>
+      <div class="guide-intro-grid">
+        <figure class="guide-figure">
+          <img
+            src="../../../images/pop-up-controller-v10/user-guide/sleepy-eye-mode-overview.png"
+            alt="Sleepy eye mode overview with the controls and pop-up position reference."
+          >
+          <figcaption>The rotary control selects one of seven fixed sleepy-eye targets.</figcaption>
+        </figure>
+
+        <article class="guide-block">
+          <h3>Mode overview</h3>
+          <p>
+            Sleepy Eyes Mode uses the dedicated controls connected to
+            <span class="guide-inline-value">X5</span> to stop both pop-ups at a partial-open
+            target.
+          </p>
+          <p>
+            When the mode is turned on, both pop-ups first move to
+            <span class="guide-inline-value">UP</span> and then continue to the selected
+            intermediate position.
+          </p>
+          <div class="notice notice--subtle">
+            <h3>Default restriction</h3>
+            <p>
+              By default, Sleepy Eyes Mode can only be enabled while the light switch is in the
+              <span class="guide-inline-value">OFF</span> position. That safety behavior can be
+              changed in the desktop app.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <h3>While the mode is active</h3>
+          <ul>
+            <li>The LED under the sleepy eye button stays on.</li>
+            <li>Light-switch commands no longer change pop-up position.</li>
+            <li>The selected rotary position continues to define the target angle.</li>
+            <li>Wink commands still work and return to the same sleepy-eye position afterward.</li>
+          </ul>
+        </article>
+
+        <article class="guide-block">
+          <h3>When the mode is turned off</h3>
+          <ul>
+            <li>The LED under the sleepy eye button turns off.</li>
+            <li>Normal light-switch control returns immediately.</li>
+            <li>If the switch is in <strong>OFF</strong>, the pop-ups go <strong>DOWN</strong>.</li>
+            <li>If the switch is in <strong>HEAD</strong>, the pop-ups go <strong>UP</strong>.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="possible-states">
+      <div class="section-heading">
+        <div>
+          <h2>Possible States</h2>
+          <p>
+            The rotary control provides seven fixed partial-open targets. Each step raises the
+            pop-ups farther than the one before it.
+          </p>
+        </div>
+      </div>
+      <div class="notice notice--subtle">
+        <h3>Visual reference</h3>
+        <p>
+          The illustrations below show the seven target stages from the lowest sleepy-eye position
+          to the highest. They are simplified visual references rather than exact measurements.
+        </p>
+      </div>
+      <div class="sleepy-state-grid">
+        <article class="sleepy-state-card">
+          <div class="sleepy-state-head">
+            <h3>Position 1</h3>
+            <span class="guide-inline-value">12.5%</span>
+          </div>
+          <div class="sleepy-state-visual" style="--sleepy-angle: 12deg;" aria-hidden="true">
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--left"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--right"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+          </div>
+          <p>The lowest sleepy-eye position.</p>
+        </article>
+
+        <article class="sleepy-state-card">
+          <div class="sleepy-state-head">
+            <h3>Position 2</h3>
+            <span class="guide-inline-value">25%</span>
+          </div>
+          <div class="sleepy-state-visual" style="--sleepy-angle: 24deg;" aria-hidden="true">
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--left"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--right"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+          </div>
+          <p>Slightly more open while still keeping a low-angle sleepy-eye look.</p>
+        </article>
+
+        <article class="sleepy-state-card">
+          <div class="sleepy-state-head">
+            <h3>Position 3</h3>
+            <span class="guide-inline-value">37.5%</span>
+          </div>
+          <div class="sleepy-state-visual" style="--sleepy-angle: 36deg;" aria-hidden="true">
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--left"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--right"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+          </div>
+          <p>A moderate low-angle setting.</p>
+        </article>
+
+        <article class="sleepy-state-card">
+          <div class="sleepy-state-head">
+            <h3>Position 4</h3>
+            <span class="guide-inline-value">50%</span>
+          </div>
+          <div class="sleepy-state-visual" style="--sleepy-angle: 48deg;" aria-hidden="true">
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--left"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--right"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+          </div>
+          <p>Roughly the midpoint between the lowest sleepy-eye setting and fully UP.</p>
+        </article>
+
+        <article class="sleepy-state-card">
+          <div class="sleepy-state-head">
+            <h3>Position 5</h3>
+            <span class="guide-inline-value">62.5%</span>
+          </div>
+          <div class="sleepy-state-visual" style="--sleepy-angle: 60deg;" aria-hidden="true">
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--left"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--right"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+          </div>
+          <p>Noticeably more open while still below full height.</p>
+        </article>
+
+        <article class="sleepy-state-card">
+          <div class="sleepy-state-head">
+            <h3>Position 6</h3>
+            <span class="guide-inline-value">75%</span>
+          </div>
+          <div class="sleepy-state-visual" style="--sleepy-angle: 72deg;" aria-hidden="true">
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--left"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--right"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+          </div>
+          <p>Close to fully raised, but still intentionally below the full UP state.</p>
+        </article>
+
+        <article class="sleepy-state-card">
+          <div class="sleepy-state-head">
+            <h3>Position 7</h3>
+            <span class="guide-inline-value">87.5%</span>
+          </div>
+          <div class="sleepy-state-visual" style="--sleepy-angle: 84deg;" aria-hidden="true">
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--left"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+            <div class="sleepy-state-pod">
+              <span class="sleepy-state-door sleepy-state-door--right"></span>
+              <span class="sleepy-state-bucket"></span>
+            </div>
+          </div>
+          <p>The highest sleepy-eye position and the closest one to fully UP.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="automatic-calibration">
+      <div class="section-heading">
+        <div>
+          <h2>Automatic Calibration</h2>
+          <p>
+            The controller learns timing during normal use so it can target the selected sleepy-eye
+            position more consistently.
+          </p>
+        </div>
+      </div>
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <h3>What the controller uses</h3>
+          <p>
+            The controller combines stored timing calibration data with live battery-voltage
+            measurements to estimate how long each pop-up should move to reach the selected
+            intermediate target.
+          </p>
+          <p>
+            This matters because pop-up travel time changes with supply voltage, so a fixed timer
+            would not land in the same place under every condition.
+          </p>
+        </article>
+
+        <article class="guide-block">
+          <h3>What you need to do</h3>
+          <p>
+            For most users, no separate calibration routine is needed. The firmware continuously
+            builds timing calibration data during normal use and stores it in non-volatile memory,
+            so that learning survives power cycles.
+          </p>
+          <div class="notice notice--tip">
+            <h3>Practical result</h3>
+            <p>
+              As the controller gathers more timing data, it can better match the intermediate
+              sleepy-eye position on both sides.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="manual-adjustment">
+      <div class="section-heading">
+        <div>
+          <h2>Manual Adjustment</h2>
+          <p>
+            Use manual adjustment only when you need to fine-tune the right-hand side after the
+            controller's automatic timing calibration has already had a chance to work.
+          </p>
+        </div>
+      </div>
+      <div class="guide-intro-grid">
+        <figure class="guide-figure">
+          <img
+            src="../../../images/pop-up-controller-v10/user-guide/controller-buttons-potentiometers.png"
+            alt="Buttons and potentiometers on the Pop-up Controller V10, including the OFFSET control."
+          >
+          <figcaption>The OFFSET potentiometer fine-tunes right-hand sleepy-eye timing only.</figcaption>
+        </figure>
+
+        <article class="guide-block">
+          <h3>OFFSET potentiometer</h3>
+          <p>
+            If the left and right pop-ups still do not stop at the same angle closely enough, use
+            the controller's <span class="guide-inline-value">OFFSET</span> potentiometer to
+            fine-tune the <span class="guide-inline-value">RH</span> pop-up timing.
+          </p>
+          <div class="guide-detail-grid">
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Range</div>
+              <p><span class="guide-inline-value">-50 ms</span> to <span class="guide-inline-value">+50 ms</span></p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Center</div>
+              <p><span class="guide-inline-value">0 ms</span></p>
+            </div>
+            <div class="guide-mini-card">
+              <div class="guide-mini-kicker">Applies To</div>
+              <p>Right-hand pop-up only.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <h3>Adjustment steps</h3>
+          <ol>
+            <li>Select the sleepy-eye position you want to match.</li>
+            <li>Turn Sleepy Eyes Mode on and compare the left and right pop-up angles.</li>
+            <li>Make a small OFFSET adjustment.</li>
+            <li>Turn the mode off and back on so the pop-ups move to the target again.</li>
+            <li>Repeat in small steps until both sides match as closely as needed.</li>
+          </ol>
+        </article>
+
+        <article class="guide-block">
+          <h3>When to stop adjusting</h3>
+          <p>
+            If the mismatch is still too large after small OFFSET changes, keep using the
+            controller normally so it can continue building timing calibration data before making
+            larger manual adjustments.
+          </p>
+          <div class="notice notice--warning">
+            <h3>Avoid chasing tiny differences</h3>
+            <p>
+              Make small changes and re-test each time. Large adjustment swings make it harder to
+              tell whether the mismatch is improving or getting worse.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="../../../assets/scripts/site-config.js"></script>
+  <script src="../../../assets/scripts/site-shell.js"></script>
+</body>
+</html>

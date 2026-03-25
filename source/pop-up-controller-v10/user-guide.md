@@ -12,6 +12,8 @@ A malfunction of this device could prevent you from controlling the pop-up posit
 >
 ![RTR fuse and Junction Block No. 2 location.](../../images/pop-up-controller-v10/user-guide/rtr-fuse-location.png)
 
+It is located on the left side of the battery.
+
 ## Clarifications
 
 This guide uses several terms to describe pop-up states and light switch positions. The sections below define them.
@@ -203,14 +205,12 @@ Pressing any button, moving the light switch to another position, or receiving a
 
 ### Measured Power Draw
 
-| Controller state | Power draw |
-| --- | --- |
-| Turned on | `< 30 mA`* |
-| Turned off | `< 10 uA`* |
+| Controller state | Voltage | Power draw |
+| --- | --- | --- |
+| Turned on | `12 V` | `< 30 mA` |
+| Turned off | `12 V` | `< 10 uA` |
 
-*These measurements were performed at `12 V`. Values can be slightly higher at lower voltages and slightly lower at higher voltages.*
-
-While the pop-ups are moving, current draw can peak to several amps.
+> **Battery drain:** While the controller is awake, it roughly doubles the car's normal idle current draw, so the battery also drains about twice as fast during that time. If the light switch is left in the `OFF` position, the controller shuts itself down after `24 hours`. Once shut down, its own power draw drops to a negligible level, so in practice it typically shortens battery standby time by only about `1 day`.
 
 ## Pop-up Controller Application
 
@@ -221,7 +221,7 @@ A desktop application has been developed to allow easy communication with the co
 - Read and adjust settings
 - Flash new firmware
 
-Source code and `.exe` builds: [sheep-celica/Pop-up-controller-V10-Application](https://github.com/sheep-celica/Pop-up-controller-V10-Application)
+Desktop app downloads: [sheep-celica/Pop-up-controller-V10-Application releases](https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases)
 
 Firmware releases: [sheep-celica/pop-up-controller-v10 releases](https://github.com/sheep-celica/pop-up-controller-v10/releases)
 

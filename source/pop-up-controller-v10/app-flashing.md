@@ -13,6 +13,8 @@ This guide walks through flashing firmware to a Pop-up Controller V10 by using t
 
 Prepare the USB-C cable and the app files listed above.
 
+Desktop app downloads: [sheep-celica/Pop-up-controller-V10-Application releases](https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases)
+
 The firmware can be flashed either with the controller connected directly to your PC or while it is installed in the car.
 
 If the controller is installed in the car, set the headlight switch to the `HOLD` position before starting.
@@ -62,6 +64,8 @@ Click **Download latest** to automatically download and select the latest firmwa
 ### Step 5: Browse for a firmware zip
 
 If needed, click **Browse** instead to select a firmware `.zip` file manually.
+
+Firmware release downloads: [sheep-celica/pop-up-controller-v10 releases](https://github.com/sheep-celica/pop-up-controller-v10/releases)
 
 ![Desktop app file picker for manually selecting a firmware zip file.](../../images/pop-up-controller-v10/screenshots/app-flashing/app_select_firmware_file.png)
 
