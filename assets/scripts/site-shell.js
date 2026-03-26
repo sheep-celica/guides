@@ -1,6 +1,6 @@
 (function () {
   const main = document.querySelector("main.page");
-  if (!main || document.querySelector("[data-site-shell-header]")) {
+  if (!main) {
     return;
   }
 
@@ -177,6 +177,79 @@
     "</div>" +
     "</footer>";
 
-  main.insertAdjacentHTML("afterbegin", headerMarkup);
-  main.insertAdjacentHTML("beforeend", footerMarkup);
+  if (!document.querySelector("[data-site-shell-header]")) {
+    main.insertAdjacentHTML("afterbegin", headerMarkup);
+    main.insertAdjacentHTML("beforeend", footerMarkup);
+  }
+
+  if (document.querySelector("[data-back-to-top-button]")) {
+    return;
+  }
+
+  const backToTopButton = document.createElement("button");
+  const reducedMotionQuery =
+    typeof window.matchMedia === "function"
+      ? window.matchMedia("(prefers-reduced-motion: reduce)")
+      : null;
+  let isTicking = false;
+
+  function shouldReduceMotion() {
+    return Boolean(reducedMotionQuery && reducedMotionQuery.matches);
+  }
+
+  function updateBackToTopButton() {
+    const canScroll = document.documentElement.scrollHeight > window.innerHeight + 160;
+    const shouldShow =
+      canScroll && window.scrollY > Math.max(320, Math.round(window.innerHeight * 0.7));
+
+    backToTopButton.classList.toggle("is-visible", shouldShow);
+    backToTopButton.setAttribute("aria-hidden", shouldShow ? "false" : "true");
+    backToTopButton.tabIndex = shouldShow ? 0 : -1;
+  }
+
+  function requestBackToTopButtonUpdate() {
+    if (isTicking) {
+      return;
+    }
+
+    isTicking = true;
+    window.requestAnimationFrame(function () {
+      updateBackToTopButton();
+      isTicking = false;
+    });
+  }
+
+  backToTopButton.type = "button";
+  backToTopButton.className = "back-to-top-button";
+  backToTopButton.setAttribute("data-back-to-top-button", "");
+  backToTopButton.setAttribute("aria-label", "Scroll back to top");
+  backToTopButton.setAttribute("aria-hidden", "true");
+  backToTopButton.tabIndex = -1;
+  backToTopButton.innerHTML =
+    '<span class="back-to-top-button__icon" aria-hidden="true">↑</span>' +
+    '<span class="back-to-top-button__label">Top</span>';
+
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: shouldReduceMotion() ? "auto" : "smooth"
+    });
+
+    backToTopButton.blur();
+  });
+
+  window.addEventListener("scroll", requestBackToTopButtonUpdate, { passive: true });
+  window.addEventListener("resize", requestBackToTopButtonUpdate);
+  window.addEventListener("load", updateBackToTopButton);
+
+  if (reducedMotionQuery) {
+    if (typeof reducedMotionQuery.addEventListener === "function") {
+      reducedMotionQuery.addEventListener("change", updateBackToTopButton);
+    } else if (typeof reducedMotionQuery.addListener === "function") {
+      reducedMotionQuery.addListener(updateBackToTopButton);
+    }
+  }
+
+  document.body.append(backToTopButton);
+  updateBackToTopButton();
 })();

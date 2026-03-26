@@ -36,6 +36,32 @@
     <section class="section">
       <div class="section-heading">
         <div>
+          <h2>Start Here</h2>
+          <p>
+            Complete app setup before using the flashing steps below.
+          </p>
+        </div>
+      </div>
+      <div class="notes">
+        <article class="note-card note-card--warning">
+          <h3>Precondition</h3>
+          <p>Complete the <a href="../app-setup/">App Setup Guide</a> first.</p>
+        </article>
+
+        <article class="note-card">
+          <h3>This Guide Assumes</h3>
+          <ul class="guide-list">
+            <li>The desktop app is already installed and opens correctly.</li>
+            <li>The controller can be found by the app.</li>
+            <li>The controller connects normally before flashing.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
           <h2>Before You Start</h2>
           <p>
             A few quick checks will make the flashing process smoother and help avoid false
@@ -150,8 +176,8 @@
               <h3 class="step-title">Open the desktop app</h3>
             </div>
             <p>Double-click the extracted <span class="path">.exe</span> file to start the app.</p>
-            <div class="notice">
-              <h3>Note</h3>
+            <div class="notice notice--info">
+              <h3>Info</h3>
               <p>
                 Windows SmartScreen or antivirus software may warn you about the app because it is
                 not code-signed.
@@ -181,6 +207,10 @@
               <h3 class="step-title">Wait for detection</h3>
             </div>
             <p>Give the app a few seconds to detect the controller and update the device information.</p>
+            <div class="notice notice--info">
+              <h3>Info</h3>
+              <p>If you run into detection issues here, check <a href="../app-setup/#if-the-controller-is-not-detected">If the Controller Is Not Detected</a> in the App Setup Guide.</p>
+            </div>
             <figure>
               <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_found_controller.png" alt="Desktop app after the controller has been detected.">
               <figcaption>Once connected, the app should show the controller details.</figcaption>
@@ -238,7 +268,7 @@
               <h3 class="step-title">Confirm the operation</h3>
             </div>
             <p>When the app asks for confirmation, click <strong>Yes</strong>.</p>
-            <figure>
+            <figure class="step-figure--compact is-medium">
               <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_flash_begin.png" alt="Firmware flash confirmation dialog in the desktop app.">
               <figcaption>This confirms that you want to write the selected firmware to the controller.</figcaption>
             </figure>
@@ -252,7 +282,7 @@
               <h3 class="step-title">Wait for completion</h3>
             </div>
             <p>After about 5 to 10 seconds, the flash should finish and a success dialog should appear.</p>
-            <figure>
+            <figure class="step-figure--compact is-medium">
               <img src="../../../images/pop-up-controller-v10/screenshots/app-flashing/app_flash_finished.png" alt="Desktop app success dialog shown after flashing completes.">
               <figcaption>The app should report a successful flash before the controller reconnects.</figcaption>
             </figure>

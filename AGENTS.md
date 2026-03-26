@@ -88,6 +88,8 @@ When asked to update the `pop-up-controller-v10` parts section:
 - This website is primarily technical documentation. Favor precise, information-dense content over promotional or decorative copy.
 - Keep pages simple. Avoid extra filler sections unless they help the customer.
 - Avoid needless fluff. If a sentence or section does not add technical clarity, guidance, or customer value, leave it out.
+- Use note severity consistently across guides: `Info` = blue, `Warning` = yellow, `Serious Warning` = red.
+- Use `Info` for neutral clarifications and troubleshooting hand-offs, `Warning` for prerequisites and cautions, and `Serious Warning` for safety-critical or high-risk situations.
 - Favor HTML pages over PDFs unless the user explicitly asks for a PDF.
 - Reuse the existing card, hero, notes, breadcrumb, and button patterns where they fit.
 - Keep filenames and URLs stable once a page is published.

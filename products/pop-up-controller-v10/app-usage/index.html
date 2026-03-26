@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../../assets/styles/site.css">
 </head>
 <body>
-  <main class="page page--wide-guide">
+  <main class="page page--wide-guide page--app-usage-guide">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a class="crumb" href="../../../">Documentation Home</a>
       <a class="crumb" href="../">Pop-up Controller V10</a>
@@ -42,13 +42,11 @@
         </div>
       </div>
       <div class="guide-stack">
-        <article class="guide-block">
-          <div class="notice notice--warning">
-            <h3>Precondition</h3>
-            <p>
-              Complete the <a href="../app-setup/">App Setup Guide</a> first.
-            </p>
-          </div>
+        <article class="guide-mini-card guide-note-card guide-mini-card--warning">
+          <div class="guide-mini-kicker is-yellow">Precondition</div>
+          <p>
+            Complete the <a href="../app-setup/">App Setup Guide</a> first.
+          </p>
         </article>
         <div class="guide-card-grid">
           <article class="guide-mini-card">
@@ -131,28 +129,38 @@
             <div class="guide-section-summary">
               <div class="guide-section-summary-copy">
                 <h2>Serial Connection</h2>
-                <p>COM port selection, finding the controller, connecting, and reconnecting.</p>
+                <p>Controller detection, connection state, and connection control buttons.</p>
               </div>
               <span class="guide-section-toggle">Open</span>
             </div>
           </summary>
           <div class="guide-section-content">
+            <figure class="guide-figure">
+              <img
+                src="../../../images/pop-up-controller-v10/screenshots/app-usage/serial_section.png"
+                alt="Serial connection area from the Pop-up Controller V10 desktop app."
+              >
+            </figure>
             <div class="guide-card-grid">
               <article class="guide-mini-card">
-                <div class="guide-mini-kicker">COM port selection</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+                <div class="guide-mini-kicker">COM port</div>
+                <p>Shows which <span class="guide-inline-value">COM</span> port the controller was found on.</p>
               </article>
               <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Find controller</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+                <div class="guide-mini-kicker">Status</div>
+                <p>Shows connection status.</p>
               </article>
-              <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Connect and disconnect</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+              <article class="guide-mini-card guide-mini-card--button">
+                <div class="guide-mini-kicker is-green">Find controller</div>
+                <p>Searches the <span class="guide-inline-value">COM</span> ports for the controller.</p>
               </article>
-              <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Reconnect behavior</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+              <article class="guide-mini-card guide-mini-card--button">
+                <div class="guide-mini-kicker is-green">Connect / Disconnect</div>
+                <p>Connects to or disconnects from the controller.</p>
+              </article>
+              <article class="guide-mini-card guide-mini-card--button">
+                <div class="guide-mini-kicker is-green">Reboot controller</div>
+                <p>Reboots the controller. This will save all data to memory before reboot.</p>
               </article>
             </div>
           </div>
@@ -223,8 +231,12 @@
                 </figure>
                 <div class="guide-card-grid">
                   <article class="guide-mini-card">
-                    <div class="guide-mini-kicker">Technical breakdown</div>
-                    <p>Parameter-level cards for this category will be added here.</p>
+                    <div class="guide-mini-kicker">Sleepy eyes with headlights</div>
+                    <p>Determines if Sleepy Eye mode can be activated with light-switch in other positions than <span class="guide-inline-value">OFF</span>.</p>
+                  </article>
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Remote inputs with light-switch</div>
+                    <p>Determines if remote control works with light-switch in other positions than <span class="guide-inline-value">OFF</span>.</p>
                   </article>
                 </div>
               </article>
@@ -237,10 +249,23 @@
                     alt="Pop-up settings category highlighted in the Settings dialog."
                   >
                 </figure>
+                <article class="guide-mini-card guide-note-card guide-mini-card--warning">
+                  <div class="guide-mini-kicker is-yellow">Warning</div>
+                  <p>It is not recommended to adjust the following two settings without consulting me first.</p>
+                </article>
                 <div class="guide-card-grid">
                   <article class="guide-mini-card">
-                    <div class="guide-mini-kicker">Technical breakdown</div>
-                    <p>Parameter-level cards for this category will be added here.</p>
+                    <div class="guide-mini-kicker">Minimum time to change states</div>
+                    <p>The minimum amount of time the mechanical switch needs to maintain a position before it becomes valid.</p>
+                  </article>
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Pop-up sensing delay</div>
+                    <p>The amount of time a sensing impulse is settling during a pop-up position readout.</p>
+                  </article>
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Pop-up timing calibration</div>
+                    <p>See the <a href="../sleepy-eyes-mode/#automatic-calibration">Sleepy Eye Mode Guide automatic calibration section</a>.</p>
+                    <p>These calibrations are solely used to improve the quality of the Sleepy Eye mode positions.</p>
                   </article>
                 </div>
               </article>
@@ -255,8 +280,12 @@
                 </figure>
                 <div class="guide-card-grid">
                   <article class="guide-mini-card">
-                    <div class="guide-mini-kicker">Technical breakdown</div>
-                    <p>Parameter-level cards for this category will be added here.</p>
+                    <div class="guide-mini-kicker">Remote input mapping</div>
+                    <p>Allows mapping controller actions to different buttons on the remote.</p>
+                  </article>
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Remote inputs with light-switch</div>
+                    <p>Determines if remote control works with light-switch in other positions than <span class="guide-inline-value">OFF</span>.</p>
                   </article>
                 </div>
               </article>
@@ -270,9 +299,13 @@
                   >
                 </figure>
                 <div class="guide-card-grid">
+                  <article class="guide-mini-card guide-note-card guide-mini-card--full guide-mini-card--info">
+                    <div class="guide-mini-kicker is-blue">Info</div>
+                    <p>This time is only incremented while the light-switch is in the <span class="guide-inline-value">OFF</span> position. Any input or pop-up movement resets it.</p>
+                  </article>
                   <article class="guide-mini-card">
-                    <div class="guide-mini-kicker">Technical breakdown</div>
-                    <p>Parameter-level cards for this category will be added here.</p>
+                    <div class="guide-mini-kicker">Idle time to power off</div>
+                    <p>The amount of idle time needed for the controller to shutdown.</p>
                   </article>
                 </div>
               </article>
@@ -286,9 +319,13 @@
                   >
                 </figure>
                 <div class="guide-card-grid">
+                  <article class="guide-mini-card guide-note-card guide-mini-card--full guide-mini-card--info">
+                    <div class="guide-mini-kicker is-blue">Info</div>
+                    <p>These constants are calibrated in manufacturing and represent the slope/gain (<span class="guide-inline-value">a</span>) and offset (<span class="guide-inline-value">b</span>).</p>
+                  </article>
                   <article class="guide-mini-card">
-                    <div class="guide-mini-kicker">Technical breakdown</div>
-                    <p>Parameter-level cards for this category will be added here.</p>
+                    <div class="guide-mini-kicker">Battery voltage calibration</div>
+                    <p>Allows getting live readings of voltage and adjustments of calibration constants.</p>
                   </article>
                 </div>
               </article>
@@ -301,24 +338,42 @@
             <div class="guide-section-summary">
               <div class="guide-section-summary-copy">
                 <h2>Direct Controls</h2>
-                <p>Live actions triggered directly from the app.</p>
+                <p>Direct actions that can be triggered from the app.</p>
               </div>
               <span class="guide-section-toggle">Open</span>
             </div>
           </summary>
           <div class="guide-section-content">
+            <figure class="guide-figure">
+              <img
+                src="../../../images/pop-up-controller-v10/screenshots/app-usage/direct_controls_dialog.PNG"
+                alt="Direct Controls dialog in the Pop-up Controller V10 desktop app."
+              >
+            </figure>
+            <article class="guide-mini-card guide-note-card guide-mini-card--info">
+              <div class="guide-mini-kicker is-blue">Info</div>
+              <p>This section is only available if the controller is in the <span class="guide-inline-value">RUNNING</span> mode.</p>
+            </article>
             <div class="guide-card-grid">
               <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Overview</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+                <div class="guide-mini-kicker">RH Wink</div>
+                <p>Winks <span class="guide-inline-value">RH</span> Pop-up.</p>
               </article>
               <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Use cases</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+                <div class="guide-mini-kicker">LH Wink</div>
+                <p>Winks <span class="guide-inline-value">LH</span> Pop-up.</p>
               </article>
               <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Safety</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+                <div class="guide-mini-kicker">Both Wink</div>
+                <p>Winks both Pop-ups.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Toggle Sleepy Eye Mode</div>
+                <p>Toggles Sleepy Eye mode on or off.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Toggle Both</div>
+                <p>Moves both Pop-ups to the opposite position if the light-switch is in <span class="guide-inline-value">HOLD</span>.</p>
               </article>
             </div>
           </div>
@@ -341,6 +396,10 @@
                 alt="Errors dialog in the Pop-up Controller V10 desktop app."
               >
             </figure>
+            <article class="guide-mini-card guide-note-card guide-mini-card--info">
+              <div class="guide-mini-kicker is-blue">Info</div>
+              <p>Right now only the <span class="guide-inline-value">RH Timeout</span> and <span class="guide-inline-value">LH Timeout</span> errors are supported in firmware.</p>
+            </article>
             <div class="guide-card-grid">
               <article class="guide-mini-card">
                 <div class="guide-mini-kicker">Headlight / pop-up stored errors</div>
@@ -350,9 +409,9 @@
                 <div class="guide-mini-kicker">Other module stored errors</div>
                 <p>Shows stored controller errors that do not belong to the pop-up mechanism section.</p>
               </article>
-              <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Actions</div>
-                <p>The dialog includes actions for clearing errors, refreshing the error list, and closing the window.</p>
+              <article class="guide-mini-card guide-mini-card--button">
+                <div class="guide-mini-kicker is-green">Action</div>
+                <p>Allows clearing the error list.</p>
               </article>
             </div>
           </div>
@@ -405,10 +464,10 @@
           <div class="guide-section-content">
             <article class="guide-block">
               <p>Contains service actions intended during manufacturing to load manufacturing data and setup calibrations.</p>
-              <div class="notice notice--warning">
-                <h3>Note</h3>
-                <p>This section is not intended for users.</p>
-              </div>
+            </article>
+            <article class="guide-mini-card guide-note-card guide-mini-card--warning">
+              <div class="guide-mini-kicker is-yellow">Warning</div>
+              <p>This section is not intended for users.</p>
             </article>
             <figure class="guide-figure guide-figure--compact">
               <img
@@ -430,22 +489,37 @@
             </div>
           </summary>
           <div class="guide-section-content">
+            <figure class="guide-figure">
+              <img
+                src="../../../images/pop-up-controller-v10/screenshots/app-usage/firmware_section.png"
+                alt="Firmware area from the Pop-up Controller V10 desktop app."
+              >
+            </figure>
+            <article class="guide-mini-card guide-note-card guide-mini-card--info">
+              <div class="guide-mini-kicker is-blue">Info</div>
+              <p>Follow the <a href="../app-flashing/">App Flashing Guide</a> for more detailed instructions.</p>
+            </article>
             <div class="guide-card-grid">
               <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Overview</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+                <div class="guide-mini-kicker">Firmware file</div>
+                <p>The selected firmware file to be used for the flashing.</p>
               </article>
               <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Firmware source</div>
-                <p>Detailed screenshot and notes still need to be added.</p>
+                <div class="guide-mini-kicker">GitHub release</div>
+                <p>The latest firmware file available on GitHub.</p>
               </article>
-              <article class="guide-mini-card">
-                <div class="guide-mini-kicker">Flashing guide</div>
-                <p>Use the dedicated flashing guide for the actual firmware update procedure.</p>
+              <article class="guide-mini-card guide-mini-card--button">
+                <div class="guide-mini-kicker is-green">Browse</div>
+                <p>Opens dialog for manually selecting a firmware file.</p>
               </article>
-            </div>
-            <div class="guide-link-list">
-              <a href="../app-flashing/">Open the App Flashing Guide</a>
+              <article class="guide-mini-card guide-mini-card--button">
+                <div class="guide-mini-kicker is-green">Flash firmware</div>
+                <p>Flashes the selected firmware file to the controller.</p>
+              </article>
+              <article class="guide-mini-card guide-mini-card--button">
+                <div class="guide-mini-kicker is-green">Download latest</div>
+                <p>Downloads the latest GitHub firmware release and selects the file.</p>
+              </article>
             </div>
           </div>
         </details>

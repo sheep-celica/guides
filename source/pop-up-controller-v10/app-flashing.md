@@ -2,6 +2,16 @@
 
 This guide walks through flashing firmware to a Pop-up Controller V10 by using the desktop app.
 
+## Start Here
+
+**Warning:** Complete the [App Setup Guide](app-setup.md) first.
+
+This guide assumes:
+
+- The desktop app is already installed and opens correctly
+- The controller can be found by the app
+- The controller connects normally before flashing
+
 ## Prerequisites
 
 1. [Download](https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases) the latest release of the desktop app.
@@ -41,7 +51,7 @@ Most users will use **Step 4** to download the newest firmware automatically. Us
 
 Double-click the extracted `.exe` file to open the app.
 
-> **Note:** Windows SmartScreen or antivirus software may warn you about the app because it is not code-signed.
+> **Info:** Windows SmartScreen or antivirus software may warn you about the app because it is not code-signed.
 
 ### Step 2: Find the controller
 
@@ -52,6 +62,8 @@ The main app window should open. Click **Find controller**.
 ### Step 3: Wait for detection
 
 Wait a few seconds for the app to detect the controller and update the device information.
+
+> **Info:** If you run into detection issues here, check [If the Controller Is Not Detected](app-setup.md#if-the-controller-is-not-detected) in the App Setup Guide.
 
 ![Desktop app after the controller has been detected.](../../images/pop-up-controller-v10/screenshots/app-flashing/app_found_controller.png)
 

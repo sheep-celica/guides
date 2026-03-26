@@ -70,7 +70,7 @@ Wait a few seconds for the app to detect the controller and update the device in
 
 ![Desktop app after the controller has connected successfully.](../../images/pop-up-controller-v10/screenshots/app-setup/app_connected_success.png)
 
-## If Detection Fails
+## If the Controller Is Not Detected
 
 - Check that the USB-C cable supports data transfer
 - Reconnect the controller and try **Find controller** again
