@@ -225,6 +225,12 @@ Desktop app downloads: [sheep-celica/Pop-up-controller-V10-Application releases]
 
 Firmware releases: [sheep-celica/pop-up-controller-v10 releases](https://github.com/sheep-celica/pop-up-controller-v10/releases)
 
+Dedicated app guides:
+
+- [App Setup Guide](app-setup.md)
+- [App Flashing Guide](app-flashing.md)
+- [App Usage Guide](app-usage.md)
+
 ![Desktop application overview.](../../images/pop-up-controller-v10/user-guide/desktop-app-overview.png)
 
 ## Additional Features

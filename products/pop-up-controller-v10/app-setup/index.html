@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Setup Guide | Pop-up Controller V10</title>
+  <meta
+    name="description"
+    content="Get the Pop-up Controller V10 desktop app ready by downloading it, extracting the files, opening the app, and confirming the controller connects correctly."
+  >
+  <link rel="stylesheet" href="../../../assets/styles/site.css">
+</head>
+<body>
+  <main class="page page--wide-guide">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a class="crumb" href="../../../">Documentation Home</a>
+      <a class="crumb" href="../">Pop-up Controller V10</a>
+      <a class="crumb" href="../app-guides/">App Guides</a>
+      <span class="crumb">App Setup Guide</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">Desktop App Guide</div>
+      <h1>App Setup Guide</h1>
+      <p class="lede">
+        Download the Windows desktop app, open it safely, connect the controller, and confirm the
+        app can talk to the hardware before you move on to flashing or settings changes.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases">Download Desktop App</a>
+        <a class="button-secondary" href="#setup-overview">Setup Overview</a>
+        <a class="button-secondary" href="../app-guides/">Back to App Guides</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <h2>Before You Start</h2>
+          <p>
+            A few quick checks will make the first app connection smoother.
+          </p>
+        </div>
+      </div>
+      <div class="notes">
+        <article class="note-card">
+          <h3>What You Need</h3>
+          <ul class="guide-list">
+            <li>A Windows 10 or Windows 11 PC.</li>
+            <li>The latest desktop app release.</li>
+            <li>A USB-C cable that supports data transfer.</li>
+            <li>A Pop-up Controller V10.</li>
+          </ul>
+        </article>
+
+        <article class="note-card">
+          <h3>Quick Notes</h3>
+          <ul class="guide-list">
+            <li>A charge-only USB-C cable will not work.</li>
+            <li>Windows SmartScreen may warn you because the app is not code-signed.</li>
+            <li>If that warning appears, use <strong>More info</strong> and then <strong>Run anyway</strong>.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="setup-overview">
+      <div class="section-heading">
+        <div>
+          <h2>Setup Overview</h2>
+          <p>
+            Follow these steps to get the app ready and confirm the controller is detected.
+          </p>
+        </div>
+      </div>
+      <div class="overview-grid">
+        <a class="overview-link" href="#step-1">
+          <span class="overview-number">1</span>
+          <h3>Download the app</h3>
+          <p>Get the latest desktop app release from GitHub.</p>
+        </a>
+
+        <a class="overview-link" href="#step-2">
+          <span class="overview-number">2</span>
+          <h3>Extract the files</h3>
+          <p>Unpack the downloaded zip file before opening the app.</p>
+        </a>
+
+        <a class="overview-link" href="#step-3">
+          <span class="overview-number">3</span>
+          <h3>Open the extracted .exe</h3>
+          <p>Launch the app and continue past SmartScreen if Windows warns you.</p>
+        </a>
+
+        <a class="overview-link" href="#step-4">
+          <span class="overview-number">4</span>
+          <h3>Connect the controller</h3>
+          <p>Use a USB-C data cable to connect the controller to your PC.</p>
+        </a>
+
+        <a class="overview-link" href="#step-5">
+          <span class="overview-number">5</span>
+          <h3>Find and connect</h3>
+          <p>Ask the app to find the controller and then open the connection.</p>
+        </a>
+
+        <a class="overview-link" href="#step-6">
+          <span class="overview-number">6</span>
+          <h3>Confirm detection</h3>
+          <p>Check that the controller information appears after the connection succeeds.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <h2>Detailed Setup</h2>
+          <p>
+            Complete the steps below in order for a first-time desktop app setup.
+          </p>
+        </div>
+      </div>
+      <div class="step-list">
+        <article class="step-card" id="step-1">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Download the app</h3>
+            </div>
+            <p>
+              Open the
+              <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases">desktop app releases page</a>
+              and download the latest release package.
+            </p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-setup/download_zip.png" alt="GitHub release page with the desktop app zip package highlighted.">
+              <figcaption>Download the latest desktop app zip package from the release page.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-2">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Extract the files</h3>
+            </div>
+            <p>Extract the downloaded release before opening the <span class="path">.exe</span> file.</p>
+            <figure class="step-figure--compact is-medium">
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-setup/extract_files.png" alt="Downloaded desktop app zip file shown in Windows Explorer.">
+              <figcaption>Extract the downloaded zip file before you try to launch the app.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-3">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Open the extracted .exe</h3>
+            </div>
+            <p>Open the extracted <span class="path">.exe</span> file.</p>
+            <figure class="step-figure--compact is-small">
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-setup/open_exe.png" alt="Desktop app executable inside the extracted folder.">
+              <figcaption>Run the app from the extracted folder.</figcaption>
+            </figure>
+            <div class="notice">
+              <h3>Note</h3>
+              <p>
+                Windows SmartScreen or antivirus software may warn you about the app because it is
+                not code-signed. If Windows shows the protection warning, click
+                <strong>More info</strong> and then <strong>Run anyway</strong>.
+              </p>
+            </div>
+            <div class="step-image-flow">
+              <div class="step-image-flow__track">
+                <figure class="step-image-flow__figure">
+                  <img src="../../../images/pop-up-controller-v10/screenshots/app-setup/windows-smartscreen-warning.png" alt="Windows SmartScreen warning shown before the extra launch option is revealed.">
+                  <figcaption>Start with <strong>More info</strong>.</figcaption>
+                </figure>
+                <div class="step-image-flow__arrow" aria-hidden="true">→</div>
+                <figure class="step-image-flow__figure">
+                  <img src="../../../images/pop-up-controller-v10/screenshots/app-setup/windows-smartscreen-run-anyway.png" alt="Windows SmartScreen warning with the Run anyway option visible.">
+                  <figcaption>Then click <strong>Run anyway</strong>.</figcaption>
+                </figure>
+              </div>
+              <p class="step-image-flow__caption">The SmartScreen flow only needs two clicks to continue.</p>
+            </div>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-setup/app_initial_screen.png" alt="Desktop app main window before connecting to the controller.">
+              <figcaption>The desktop app should open to the main controller screen.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-4">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">4</div>
+              <h3 class="step-title">Connect the controller</h3>
+            </div>
+            <p>Connect your controller to your computer.</p>
+            <p>You can connect the controller directly to your PC or while it is installed in the car.</p>
+            <p>Use a USB-C cable that supports data transfer. A charge-only cable will not work.</p>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-5">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">5</div>
+              <h3 class="step-title">Find and connect to the controller</h3>
+            </div>
+            <p>Open the desktop app and click <strong>Find controller</strong>.</p>
+            <p>Once the controller is found, click <strong>Connect</strong>.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-setup/app_find_and_connect.png" alt="Desktop app with the Find controller step highlighted.">
+              <figcaption>Search for the controller first, then connect once the app makes the button available.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="step-card" id="step-6">
+          <div class="step-body">
+            <div class="step-header">
+              <div class="step-number">6</div>
+              <h3 class="step-title">Confirm the controller information appears</h3>
+            </div>
+            <p>Wait a few seconds for the app to detect the controller and update the device information.</p>
+            <figure>
+              <img src="../../../images/pop-up-controller-v10/screenshots/app-setup/app_connected_success.png" alt="Desktop app after the controller has connected successfully.">
+              <figcaption>The connected view should show controller information and make the live sections available.</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <h2>If the Controller Is Not Detected</h2>
+          <p>
+            Most connection problems come down to the cable, the USB port, or the serial driver.
+          </p>
+        </div>
+      </div>
+      <div class="guide-grid-two">
+        <article class="guide-block">
+          <h3>Quick checks</h3>
+          <ul>
+            <li>Check that the USB-C cable supports data transfer.</li>
+            <li>Reconnect the controller and try <strong>Find controller</strong> again.</li>
+            <li>Close and reopen the app, then try again.</li>
+            <li>Try different USB ports on your PC.</li>
+            <li>As a last resort, try installing the CH340 drivers.</li>
+          </ul>
+        </article>
+
+        <article class="guide-block">
+          <h3>Next guides</h3>
+          <div class="guide-link-list">
+            <a href="../app-usage/">Open the App Usage Guide</a>
+            <a href="../app-flashing/">Open the App Flashing Guide</a>
+            <a href="../app-guides/">Return to App Guides</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="../../../assets/scripts/site-config.js"></script>
+  <script src="../../../assets/scripts/site-shell.js"></script>
+</body>
+</html>

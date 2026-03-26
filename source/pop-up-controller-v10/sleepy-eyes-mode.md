@@ -10,6 +10,8 @@ Sleepy Eyes Mode uses the dedicated controls connected to `X5` to stop both pop-
 
 When the mode is turned on, both pop-ups first move to `UP` and then continue to the selected intermediate target. The rotary control offers `7` fixed positions.
 
+The intermediate is simple reached by moving each pop-up for a set amount of time.
+
 By default, Sleepy Eyes Mode can only be enabled while the light switch is in the `OFF` position. This safety behavior can be changed in the desktop app.
 
 While the mode is active:
@@ -22,8 +24,6 @@ When the mode is turned off:
 
 - The LED under the sleepy eye button turns off
 - Normal light-switch control returns immediately
-- If the switch is in `OFF`, the pop-ups go `DOWN`
-- If the switch is in `HEAD`, the pop-ups go `UP`
 
 ## Possible States
 
@@ -31,31 +31,31 @@ The rotary control provides `7` fixed partial-open targets. Each step raises the
 
 ### Position 1
 
-Approximate target: `12.5%` open. This is the lowest sleepy-eye position.
+Approximate target: `12.5%` open.
 
 ### Position 2
 
-Approximate target: `25%` open. Slightly more open while still keeping a low sleepy-eye look.
+Approximate target: `25%` open.
 
 ### Position 3
 
-Approximate target: `37.5%` open. A moderate low-angle setting.
+Approximate target: `37.5%` open.
 
 ### Position 4
 
-Approximate target: `50%` open. Roughly the midpoint between the lowest sleepy-eye setting and fully `UP`.
+Approximate target: `50%` open.
 
 ### Position 5
 
-Approximate target: `62.5%` open. Noticeably more open while still below full height.
+Approximate target: `62.5%` open. 
 
 ### Position 6
 
-Approximate target: `75%` open. Close to fully raised, but still intentionally below `UP`.
+Approximate target: `75%` open.
 
 ### Position 7
 
-Approximate target: `87.5%` open. The highest sleepy-eye position and the closest one to fully `UP`.
+Approximate target: `87.5%` open.
 
 ## Automatic Calibration
 
@@ -67,11 +67,21 @@ The firmware continuously builds timing calibration data during normal use and s
 
 For most users, no separate calibration routine is needed. The controller improves the sleepy-eye target automatically as it gathers timing data.
 
+NOTE:
+If a Pop-up is falsely determined to have reached DOWN position too soon it can produce a severe misalignment of the sleepy eye position for that pop-up.
+
+This might not be visible if it happens once in a 100 cycles, but if it happens often enough, the effect can be clearly visible.
+
+In such a case it is recommended to clear the timing calibration tables from the 'Desktop App'.
+
 ## Manual Adjustment
 
 If the left and right pop-ups still do not stop at the same angle closely enough, use the controller's `OFFSET` potentiometer to fine-tune the `RH` pop-up timing.
 
 The `OFFSET` adjustment range is `-50 ms` to `+50 ms`. The middle position is `0 ms`.
+
+Note:
+Only do this if the pop-up offset is consistent as this is a fixed timing correction.
 
 Recommended adjustment flow:
 

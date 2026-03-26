@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Usage Guide | Pop-up Controller V10</title>
+  <meta
+    name="description"
+    content="Technical reference for the Pop-up Controller V10 desktop app, with collapsed sections for each app area."
+  >
+  <link rel="stylesheet" href="../../../assets/styles/site.css">
+</head>
+<body>
+  <main class="page page--wide-guide">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a class="crumb" href="../../../">Documentation Home</a>
+      <a class="crumb" href="../">Pop-up Controller V10</a>
+      <a class="crumb" href="../app-guides/">App Guides</a>
+      <span class="crumb">App Usage Guide</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">Desktop App Guide</div>
+      <h1>App Usage Guide</h1>
+      <p class="lede">
+        Technical reference for the desktop app after the initial setup is complete.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="../app-setup/">Open App Setup Guide</a>
+        <a class="button-secondary" href="#guide-sections">Jump to Sections</a>
+        <a class="button-secondary" href="../app-guides/">Back to App Guides</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <h2>Start Here</h2>
+          <p>
+            Complete app setup before using anything on this page.
+          </p>
+        </div>
+      </div>
+      <div class="guide-stack">
+        <article class="guide-block">
+          <div class="notice notice--warning">
+            <h3>Precondition</h3>
+            <p>
+              Complete the <a href="../app-setup/">App Setup Guide</a> first.
+            </p>
+          </div>
+        </article>
+        <div class="guide-card-grid">
+          <article class="guide-mini-card">
+            <div class="guide-mini-kicker">Required</div>
+            <p>The desktop app is already downloaded and opens correctly.</p>
+          </article>
+          <article class="guide-mini-card">
+            <div class="guide-mini-kicker">Required</div>
+            <p>The controller can be found and connected in the app.</p>
+          </article>
+          <article class="guide-mini-card">
+            <div class="guide-mini-kicker">Required</div>
+            <p>The controller information appears normally after connection.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guide-sections">
+      <div class="section-heading">
+        <div>
+          <h2>Guide Sections</h2>
+          <p>
+            All sections start collapsed.
+          </p>
+        </div>
+      </div>
+      <div class="guide-section-list">
+        <details class="guide-section-card" id="basic-information">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Basic Information</h2>
+                <p>Main header values shown after connection.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <figure class="guide-figure">
+              <img
+                src="../../../images/pop-up-controller-v10/screenshots/app-usage/overview_information.png"
+                alt="Main information header from the Pop-up Controller V10 desktop app."
+              >
+            </figure>
+            <div class="guide-card-grid">
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">FW version</div>
+                <p>Shows the firmware version currently running on the connected controller.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Build date</div>
+                <p>Shows the build date of the currently running firmware.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Controller state</div>
+                <p>Current mode of the controller.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">External</div>
+                <p>Shows the <span class="guide-inline-value">I2C</span> address of the remote module.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Temperature</div>
+                <p>Controller board temperature.</p>
+              </article>
+            </div>
+            <article class="guide-block">
+              <div class="notice notice--subtle">
+                <h3>Controller States</h3>
+                <p><strong>BENCH MODE:</strong> Voltage &lt; 7 Volts. Controller runs in limited functionality, pop-up control is disabled.</p>
+                <p><strong>RUNNING:</strong> Controller is running in the standard mode as is expected in the car.</p>
+              </div>
+            </article>
+          </div>
+        </details>
+
+        <details class="guide-section-card" id="serial-connection">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Serial Connection</h2>
+                <p>COM port selection, finding the controller, connecting, and reconnecting.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <div class="guide-card-grid">
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">COM port selection</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Find controller</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Connect and disconnect</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Reconnect behavior</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="guide-section-card" id="statistical-data">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Statistical Data</h2>
+                <p>Runtime, pop-up statistics, and input activity.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <div class="guide-grid-two guide-grid-two--sidebar-right">
+              <figure class="guide-figure">
+                <img
+                  src="../../../images/pop-up-controller-v10/screenshots/app-usage/statistical_dialog.PNG"
+                  alt="Statistical Data dialog in the Pop-up Controller V10 desktop app."
+                >
+              </figure>
+              <div class="guide-stack">
+                <article class="guide-mini-card">
+                  <div class="guide-mini-kicker">Runtime</div>
+                  <p>The total controller runtime along with boot counter.</p>
+                </article>
+                <article class="guide-mini-card">
+                  <div class="guide-mini-kicker">Pop-up statistics</div>
+                  <p>Shows total pop-up cycles, runtime, and errors.</p>
+                  <p><strong>Note:</strong> This includes cleared error codes.</p>
+                </article>
+                <article class="guide-mini-card">
+                  <div class="guide-mini-kicker">Input activity</div>
+                  <p>Shows activity counters for physical buttons and remote inputs.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="guide-section-card" id="settings">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Settings</h2>
+                <p>Settings overview and category-specific screenshots.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <figure class="guide-figure">
+              <img
+                src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_overview.PNG"
+                alt="Settings dialog overview in the Pop-up Controller V10 desktop app."
+              >
+            </figure>
+            <div class="guide-stack">
+              <article class="guide-block">
+                <h3>Safety</h3>
+                <figure class="guide-figure">
+                  <img
+                    src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_safety.PNG"
+                    alt="Safety category highlighted in the Settings dialog."
+                  >
+                </figure>
+                <div class="guide-card-grid">
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Technical breakdown</div>
+                    <p>Parameter-level cards for this category will be added here.</p>
+                  </article>
+                </div>
+              </article>
+
+              <article class="guide-block">
+                <h3>Pop-up Settings</h3>
+                <figure class="guide-figure">
+                  <img
+                    src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_popups.PNG"
+                    alt="Pop-up settings category highlighted in the Settings dialog."
+                  >
+                </figure>
+                <div class="guide-card-grid">
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Technical breakdown</div>
+                    <p>Parameter-level cards for this category will be added here.</p>
+                  </article>
+                </div>
+              </article>
+
+              <article class="guide-block">
+                <h3>Remote</h3>
+                <figure class="guide-figure">
+                  <img
+                    src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_remote.PNG"
+                    alt="Remote category highlighted in the Settings dialog."
+                  >
+                </figure>
+                <div class="guide-card-grid">
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Technical breakdown</div>
+                    <p>Parameter-level cards for this category will be added here.</p>
+                  </article>
+                </div>
+              </article>
+
+              <article class="guide-block">
+                <h3>Idle</h3>
+                <figure class="guide-figure">
+                  <img
+                    src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_idle.PNG"
+                    alt="Idle category highlighted in the Settings dialog."
+                  >
+                </figure>
+                <div class="guide-card-grid">
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Technical breakdown</div>
+                    <p>Parameter-level cards for this category will be added here.</p>
+                  </article>
+                </div>
+              </article>
+
+              <article class="guide-block">
+                <h3>Other</h3>
+                <figure class="guide-figure">
+                  <img
+                    src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_other.PNG"
+                    alt="Other category highlighted in the Settings dialog."
+                  >
+                </figure>
+                <div class="guide-card-grid">
+                  <article class="guide-mini-card">
+                    <div class="guide-mini-kicker">Technical breakdown</div>
+                    <p>Parameter-level cards for this category will be added here.</p>
+                  </article>
+                </div>
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="guide-section-card" id="direct-controls">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Direct Controls</h2>
+                <p>Live actions triggered directly from the app.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <div class="guide-card-grid">
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Overview</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Use cases</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Safety</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="guide-section-card" id="errors">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Errors</h2>
+                <p>Stored pop-up errors, other module errors, and error actions.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <figure class="guide-figure">
+              <img
+                src="../../../images/pop-up-controller-v10/screenshots/app-usage/error_dialog.PNG"
+                alt="Errors dialog in the Pop-up Controller V10 desktop app."
+              >
+            </figure>
+            <div class="guide-card-grid">
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Headlight / pop-up stored errors</div>
+                <p>Shows stored errors related to the pop-up mechanisms.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Other module stored errors</div>
+                <p>Shows stored controller errors that do not belong to the pop-up mechanism section.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Actions</div>
+                <p>The dialog includes actions for clearing errors, refreshing the error list, and closing the window.</p>
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="guide-section-card" id="manufacture-data">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Manufacture Data</h2>
+                <p>Controller identity and production metadata.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <figure class="guide-figure">
+              <img
+                src="../../../images/pop-up-controller-v10/screenshots/app-usage/manufacture_dialog.PNG"
+                alt="Manufacture Data dialog in the Pop-up Controller V10 desktop app."
+              >
+            </figure>
+            <div class="guide-card-grid">
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Overview</div>
+                <p>Shows serial number, manufacture date, and initial firmware version.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Board identity</div>
+                <p>Shows board serial, board revision, and car model.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Typical use</div>
+                <p>Useful for confirming controller identity or answering support questions.</p>
+              </article>
+            </div>
+          </div>
+        </details>
+
+        <details class="guide-section-card" id="service">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Service</h2>
+                <p>Manufacturing-only service actions and password-gated access.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <article class="guide-block">
+              <p>Contains service actions intended during manufacturing to load manufacturing data and setup calibrations.</p>
+              <div class="notice notice--warning">
+                <h3>Note</h3>
+                <p>This section is not intended for users.</p>
+              </div>
+            </article>
+            <figure class="guide-figure guide-figure--compact">
+              <img
+                src="../../../images/pop-up-controller-v10/screenshots/app-usage/service_dialog.PNG"
+                alt="Service access dialog in the Pop-up Controller V10 desktop app."
+              >
+            </figure>
+          </div>
+        </details>
+
+        <details class="guide-section-card" id="firmware">
+          <summary>
+            <div class="guide-section-summary">
+              <div class="guide-section-summary-copy">
+                <h2>Firmware</h2>
+                <p>Firmware tools and the hand-off to the flashing guide.</p>
+              </div>
+              <span class="guide-section-toggle">Open</span>
+            </div>
+          </summary>
+          <div class="guide-section-content">
+            <div class="guide-card-grid">
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Overview</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Firmware source</div>
+                <p>Detailed screenshot and notes still need to be added.</p>
+              </article>
+              <article class="guide-mini-card">
+                <div class="guide-mini-kicker">Flashing guide</div>
+                <p>Use the dedicated flashing guide for the actual firmware update procedure.</p>
+              </article>
+            </div>
+            <div class="guide-link-list">
+              <a href="../app-flashing/">Open the App Flashing Guide</a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+  <script src="../../../assets/scripts/site-config.js"></script>
+  <script src="../../../assets/scripts/site-shell.js"></script>
+</body>
+</html>
