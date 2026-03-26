@@ -91,7 +91,7 @@ This section covers the Settings dialog overview and the individual settings cat
 
 - **Minimum time to change states:** The minimum amount of time the mechanical switch needs to maintain a position before it becomes valid.
 - **Pop-up sensing delay:** The amount of time a sensing impulse is settling during a pop-up position readout.
-- **Pop-up timing calibration:** See the [Sleepy Eye Mode Guide automatic calibration section](sleepy-eyes-mode.md#automatic-calibration). These calibrations are solely used to improve the quality of the Sleepy Eye mode positions.
+- **Pop-up timing calibration:** The separate Sleepy Eye Mode guide covers automatic calibration in more detail. That guide is currently `WIP` and is shared by direct link only. These calibrations are solely used to improve the quality of the Sleepy Eye mode positions.
 
 ### Remote
 

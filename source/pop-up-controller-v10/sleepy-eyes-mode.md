@@ -2,6 +2,8 @@
 
 This guide explains how Sleepy Eyes Mode works on the Pop-up Controller V10, what the 7 position settings mean, and how automatic calibration and manual adjustment affect the final pop-up angle.
 
+**Status:** `WIP`. This guide is currently shared by direct link only while the content is still being reviewed.
+
 ## How It Works
 
 ![Sleepy eye mode overview.](../../images/pop-up-controller-v10/user-guide/sleepy-eye-mode-overview.png)
