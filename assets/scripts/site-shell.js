@@ -15,6 +15,7 @@
       brandLabel: "Documentation",
       logoPath: "",
       supportEmail: "",
+      youtubeUrl: "",
       githubUrl: "https://github.com/sheep-celica/guides",
       featuredProductLabel: "Pop-up Controller V10",
       featuredProductPath: "products/pop-up-controller-v10/",
@@ -29,6 +30,7 @@
   const logoPath = String(config.logoPath || "").trim();
   const logoSrc = logoPath ? rootPrefix + logoPath.replace(/^\.?\//, "") : "";
   const email = String(config.supportEmail || "").trim();
+  const youtubeUrl = String(config.youtubeUrl || "").trim();
   const countryFlag = String(config.countryFlag || "").trim();
   const countryLabel = String(config.countryLabel || "").trim();
   const currentYear = new Date().getFullYear();
@@ -113,6 +115,12 @@
       "</a>"
     : '<p class="site-footer-copy">Add a public email in <span class="path">assets/scripts/site-config.js</span> to show it here on every page.</p>';
 
+  const youtubeMarkup = youtubeUrl
+    ? '<div class="site-footer-links"><a href="' +
+      escapeHtml(youtubeUrl) +
+      '" target="_blank" rel="noopener">YouTube Channel</a></div>'
+    : "";
+
   const flagMarkup =
     countryFlag && countryLabel
       ? '<span class="site-footer-flag" title="' +
@@ -147,6 +155,7 @@
     '<section class="site-footer-panel">' +
     "<h2>Contact</h2>" +
     emailMarkup +
+    youtubeMarkup +
     '<p class="site-footer-copy">Use email for support questions, pricing checks, or availability updates.</p>' +
     "</section>" +
     '<nav class="site-footer-panel" aria-label="Footer">' +
