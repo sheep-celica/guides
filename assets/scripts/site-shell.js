@@ -27,6 +27,7 @@
 
   const homeHref = rootPrefix || "./";
   const productHref = rootPrefix + config.featuredProductPath;
+  const aboutHref = rootPrefix + "products/pop-up-controller-v10/about/";
   const logoPath = String(config.logoPath || "").trim();
   const logoSrc = logoPath ? rootPrefix + logoPath.replace(/^\.?\//, "") : "";
   const email = String(config.supportEmail || "").trim();
@@ -103,6 +104,7 @@
     "</a>" +
     '<div class="site-frame-links">' +
     buildInternalLink(productHref, config.featuredProductLabel) +
+    buildInternalLink(aboutHref, "About Me") +
     buildExternalLink(config.githubUrl, "GitHub") +
     "</div>" +
     "</header>";
@@ -169,6 +171,9 @@
     '">' +
     escapeHtml(config.featuredProductLabel) +
     "</a>" +
+    '<a href="' +
+    escapeHtml(aboutHref) +
+    '">About Me</a>' +
     '<a href="' +
     escapeHtml(config.githubUrl) +
     '" target="_blank" rel="noopener">Guides Repository</a>' +
