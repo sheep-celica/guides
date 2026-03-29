@@ -8,6 +8,7 @@ the package contents that can be ordered.
 ## Order Form
 
 - Google Form: `https://docs.google.com/forms/d/e/1FAIpQLSdwSCUfg9_QjMCZRTCWtinO0b0rWUTmqeDFUVd-ipEr0qKvdw/viewform?usp=header`
+- The published purchase page should also link to the `About Me` page at `../about/`.
 
 ## Availability Notice
 

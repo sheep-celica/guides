@@ -9,6 +9,6 @@ window.SheepSiteConfig = {
   githubUrl: "https://github.com/sheep-celica/guides",
   featuredProductLabel: "Pop-up Controller V10",
   featuredProductPath: "products/pop-up-controller-v10/",
-  countryFlag: "",
-  countryLabel: ""
+  countryFlag: "🇨🇿",
+  countryLabel: "Czechia"
 };
