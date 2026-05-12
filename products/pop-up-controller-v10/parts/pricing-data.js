@@ -1,8 +1,8 @@
 // Edit part prices here. The parts catalogue loads this file directly.
 window.POPUP_CONTROLLER_V10_PART_PRICING = {
   "10300": {
-    eur: "68",
-    usd: "79"
+    eur: "75",
+    usd: "88"
   },
   "10302": {
     eur: "26",
