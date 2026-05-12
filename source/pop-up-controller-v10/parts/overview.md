@@ -56,6 +56,7 @@ page per part.
 ## Current Part Files
 
 - `10300-pop-up-controller-v10.md`
+- `10300-pop-up-controller-v10-revision-c.md`
 - `10302-wink-button-large-slot.md`
 - `10305-sleepy-eye-controls.md`
 - `10321-wink-button-cable.md`

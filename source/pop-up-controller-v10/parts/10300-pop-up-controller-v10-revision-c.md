@@ -1,29 +1,33 @@
-# 10300 - Pop-up Controller V10 - Revision E
+# 10300 - Pop-up Controller V10 - Revision C
 
 ## Status
 
-- Live
+- Obsolete
 
 ## Tags
 
 - Core
 - Controller
+- Obsolete
 
 ## Summary Badges
 
 - Main unit
 - X1 to X6 accessories
-- Drawing coming soon
+- PDF drawing
+- Obsolete
 
 ## Card Summary
 
 Main control unit for the Pop-up Controller V10 system and the hub for the accessory connections
-used by the rest of the hardware.  
+used by the rest of the hardware.
 
 ## Details
 
-The Pop-up Controller V10 Revision E replaces the factory Light Retractor Relay.  
+The Pop-up Controller V10 Revision C replaced the factory Light Retractor Relay.
 Additionally, several accessories can be connected to it to allow more customizable pop-up control.
+
+This revision is obsolete and remains listed for reference only.
 
 ## Fact Cards
 
@@ -33,6 +37,7 @@ Additionally, several accessories can be connected to it to allow more customiza
 
 ## Related Parts
 
+- `10300` Pop-up Controller V10 - Revision E
 - `10302` Wink Button - Large Slot
 - `10305` Sleepy Eye Controls
 - `10321` Wink Button Cable
@@ -42,15 +47,11 @@ Additionally, several accessories can be connected to it to allow more customiza
 
 ## Pricing
 
-Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.
-
-- EUR: `TBD`
-- USD: `TBD`
+Obsolete revision. Current pricing is not shown for this entry.
 
 ## Downloads
 
-- Technical drawing PDF: `N/A`
-- Note: Revision E technical drawing is coming soon.
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10300-pop-up-controller-v10/technical-drawing.pdf`
 
 ## Images
 

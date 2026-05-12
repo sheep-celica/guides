@@ -34,7 +34,7 @@ The cable serves to expand the I2c system. Can be used to connect any I2c module
 
 ## Related Parts
 
-- `10300` Pop-up Controller V10
+- `10300` Pop-up Controller V10 - Revision E
 - `10341` Remote Receiver Module
 
 ## Pricing

@@ -18,6 +18,7 @@ the package contents that can be ordered.
 
 - All published pricing on this page is reference only.
 - Final pricing will be revealed once production starts.
+- Fixed package prices are loaded from `products/pop-up-controller-v10/purchase/pricing-data.js`.
 
 ## Shipping Cost
 
@@ -29,13 +30,13 @@ the package contents that can be ordered.
 ### Regular Package
 
 - Includes the same core hardware as the Complete Package but without any `1034x` remote parts.
-- Reference package total should be shown as:
+- Reference fixed package price should be shown as:
   - EUR: `147.5`
   - USD: `172`
 
 Contents:
 
-- `10300` Pop-up Controller V10
+- `10300` Pop-up Controller V10 - Revision E
 - `10302` Wink Button - Large Slot
 - `10305` Sleepy Eye Controls
 - `10321` Wink Button Cable x3
@@ -53,13 +54,13 @@ Published package item links should point to the matching card anchors on the pa
 
 - Includes the full package with all currently listed remote parts.
 - Contains every listed part once, except `10321` which is included `x3`.
-- Reference package total should be shown as:
+- Reference fixed package price should be shown as:
   - EUR: `172.5`
   - USD: `201`
 
 Contents:
 
-- `10300` Pop-up Controller V10
+- `10300` Pop-up Controller V10 - Revision E
 - `10302` Wink Button - Large Slot
 - `10305` Sleepy Eye Controls
 - `10321` Wink Button Cable x3

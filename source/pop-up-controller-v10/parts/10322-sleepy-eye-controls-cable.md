@@ -27,13 +27,13 @@ Same connector on both ends. Doesn't matter which end goes to the Pop-up control
 ## Fact Cards
 
 - Use: Sleepy Eye Control-to-controller cable.
-- Works with: `10305` Sleepy Eye Controls and `10300` Pop-up Controller V10.
+- Works with: `10305` Sleepy Eye Controls and `10300` Pop-up Controller V10 - Revision E.
 - Length: 1.7 meters
 - Compatibility: V8 and V10 Controllers
 
 ## Related Parts
 
-- `10300` Pop-up Controller V10
+- `10300` Pop-up Controller V10 - Revision E
 - `10305` Sleepy Eye Controls
 
 ## Pricing

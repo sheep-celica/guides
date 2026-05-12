@@ -29,13 +29,13 @@ An adapter is needed if the AliExpress variant of the `10302` Wink Button is use
 ## Fact Cards
 
 - Use: Wink Button-to-controller cable.
-- Works with: `10302` Wink Button and `10300` Pop-up Controller V10.
+- Works with: `10302` Wink Button and `10300` Pop-up Controller V10 - Revision E.
 - Length: 1.7 meters
 - Compatibility: V8 and V10 Controllers
 
 ## Related Parts
 
-- `10300` Pop-up Controller V10
+- `10300` Pop-up Controller V10 - Revision E
 - `10302` Wink Button - Large Slot
 
 ## Pricing

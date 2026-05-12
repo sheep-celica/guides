@@ -85,7 +85,7 @@
       </div>
 
       <div class="purchase-package-grid">
-        <article class="purchase-package-card">
+        <article class="purchase-package-card" data-package-key="regular">
           <div class="purchase-package-head">
             <div class="purchase-package-copy">
               <div class="card-top">
@@ -110,11 +110,11 @@
             <div class="purchase-package-pricing" aria-label="Regular package reference pricing">
               <span class="part-price-pill">
                 <span class="part-price-pill__label">EUR</span>
-                <strong class="part-price-pill__value">147.5</strong>
+                <strong class="part-price-pill__value" data-package-price-currency="eur">TBD</strong>
               </span>
               <span class="part-price-pill">
                 <span class="part-price-pill__label">USD</span>
-                <strong class="part-price-pill__value">172</strong>
+                <strong class="part-price-pill__value" data-package-price-currency="usd">TBD</strong>
               </span>
             </div>
           </div>
@@ -122,14 +122,14 @@
           <div class="purchase-package-list" aria-label="Regular package contents">
             <a class="purchase-package-item" href="../parts/#part-10300">
               <div class="purchase-package-item-thumb">
-                <img src="../../../images/pop-up-controller-v10/parts/10300-pop-up-controller-v10/catalog.png" alt="Part 10300, Pop-up Controller V10.">
+                <img src="../../../images/pop-up-controller-v10/parts/10300-pop-up-controller-v10/catalog.png" alt="Part 10300, Pop-up Controller V10 - Revision E.">
               </div>
               <div class="purchase-package-item-copy">
                 <div class="purchase-package-item-title">
                   <span class="guide-inline-value">PN 10300</span>
-                  <h3>Pop-up Controller V10</h3>
+                  <h3>Pop-up Controller V10 - Revision E</h3>
                 </div>
-                <p>Main controller unit for the Pop-up Controller V10 system.</p>
+                <p>Main controller unit for the current Pop-up Controller V10 system.</p>
               </div>
             </a>
 
@@ -187,7 +187,7 @@
           </div>
         </article>
 
-        <article class="purchase-package-card">
+        <article class="purchase-package-card" data-package-key="complete">
           <div class="purchase-package-head">
             <div class="purchase-package-copy">
               <div class="card-top">
@@ -212,11 +212,11 @@
             <div class="purchase-package-pricing" aria-label="Complete package reference pricing">
               <span class="part-price-pill">
                 <span class="part-price-pill__label">EUR</span>
-                <strong class="part-price-pill__value">172.5</strong>
+                <strong class="part-price-pill__value" data-package-price-currency="eur">TBD</strong>
               </span>
               <span class="part-price-pill">
                 <span class="part-price-pill__label">USD</span>
-                <strong class="part-price-pill__value">201</strong>
+                <strong class="part-price-pill__value" data-package-price-currency="usd">TBD</strong>
               </span>
             </div>
           </div>
@@ -224,14 +224,14 @@
           <div class="purchase-package-list" aria-label="Complete package contents">
             <a class="purchase-package-item" href="../parts/#part-10300">
               <div class="purchase-package-item-thumb">
-                <img src="../../../images/pop-up-controller-v10/parts/10300-pop-up-controller-v10/catalog.png" alt="Part 10300, Pop-up Controller V10.">
+                <img src="../../../images/pop-up-controller-v10/parts/10300-pop-up-controller-v10/catalog.png" alt="Part 10300, Pop-up Controller V10 - Revision E.">
               </div>
               <div class="purchase-package-item-copy">
                 <div class="purchase-package-item-title">
                   <span class="guide-inline-value">PN 10300</span>
-                  <h3>Pop-up Controller V10</h3>
+                  <h3>Pop-up Controller V10 - Revision E</h3>
                 </div>
-                <p>Main controller unit for the Pop-up Controller V10 system.</p>
+                <p>Main controller unit for the current Pop-up Controller V10 system.</p>
               </div>
             </a>
 
@@ -349,5 +349,7 @@
   </main>
   <script src="../../../assets/scripts/site-config.js"></script>
   <script src="../../../assets/scripts/site-shell.js"></script>
+  <script src="./pricing-data.js"></script>
+  <script src="../../../assets/scripts/package-pricing.js"></script>
 </body>
 </html>

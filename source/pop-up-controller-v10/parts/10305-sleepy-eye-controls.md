@@ -36,7 +36,7 @@ NOTE The two small slots under the steering wheel may not be suitable for all in
 
 ## Related Parts
 
-- `10300` Pop-up Controller V10
+- `10300` Pop-up Controller V10 - Revision E
 - `10322` Sleepy Eye Controls Cable
 
 ## Pricing

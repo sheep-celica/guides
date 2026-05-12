@@ -35,7 +35,7 @@ Supports various LED colors.
 
 ## Related Parts
 
-- `10300` Pop-up Controller V10
+- `10300` Pop-up Controller V10 - Revision E
 - `10321` Wink Button Cable
 
 ## Pricing
