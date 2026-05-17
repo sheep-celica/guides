@@ -322,6 +322,13 @@ a {
   pointer-events: none;
 }
 
+.hero-label-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
 .eyebrow,
 .badge,
 .crumb {
@@ -580,6 +587,18 @@ h3 {
   border-color: var(--danger-line);
 }
 
+.badge--development {
+  color: #ffe8a8;
+  background: rgba(224, 190, 88, 0.16);
+  border-color: rgba(224, 190, 88, 0.38);
+}
+
+.badge--optional {
+  color: #cfe7ff;
+  background: rgba(103, 164, 236, 0.16);
+  border-color: rgba(103, 164, 236, 0.38);
+}
+
 .card-top {
   display: flex;
   justify-content: space-between;
@@ -628,6 +647,20 @@ h3 {
 
 .note-card {
   padding: 1.1rem 1.15rem;
+}
+
+.page-note {
+  margin-top: 1.25rem;
+  padding: 0.8rem 1rem;
+}
+
+.note-card.page-note h3 {
+  margin-bottom: 0.35rem;
+}
+
+.note-card.page-note p {
+  margin: 0;
+  line-height: 1.45;
 }
 
 .note-card--info {
@@ -1322,6 +1355,31 @@ h3 {
   display: grid;
   gap: 0.8rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+}
+
+.feature-card-grid .guide-mini-card figure {
+  min-height: 9rem;
+  display: grid;
+  place-items: center;
+}
+
+.feature-card-grid .guide-mini-card img {
+  width: auto;
+  max-width: min(100%, 11rem);
+  max-height: 8rem;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.feature-card-grid #oled-display img {
+  max-width: min(100%, 17rem);
+  max-height: 9rem;
 }
 
 .guide-detail-grid > :only-child {

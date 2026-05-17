@@ -152,7 +152,7 @@
     "</span>" +
     "</div>" +
     "</div>" +
-    '<p class="site-footer-copy">Guides, parts notes, and support details for Sheep Celica projects.</p>' +
+    '<p class="site-footer-copy">Guides, parts, notes and support details for Sheep Celica projects.</p>' +
     "</section>" +
     '<section class="site-footer-panel">' +
     "<h2>Contact</h2>" +
