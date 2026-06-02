@@ -24,8 +24,8 @@
       </div>
       <h1>OLED Display Module</h1>
       <p class="lede">
-        Plug and play replacement for the factory clock module in the center dash above the vents.
-        Developement started in May 2026 and is expected to complete sometime in 2026.
+        Plug-and-play replacement for the factory clock module in the center dash above the vents.
+        Development started in May 2026 and is expected to complete sometime in 2026.
       </p>
       <div class="hero-actions">
         <a class="button" href="#features">Features</a>
@@ -54,7 +54,7 @@
           </figure>
           <h3>OLED Display</h3>
           <p>
-            Module comes with an 100x16 px OLED Graphical display that deliveres superior
+            Module comes with a 16 x 100 px OLED graphical display that delivers superior
             brightness and viewing angles compared to a traditional LCD display.
           </p>
           <p>
@@ -113,28 +113,28 @@
           </p>
         </article>
 
-        <article class="guide-mini-card" id="temperature-monitoring">
+        <article class="guide-mini-card guide-mini-card--optional" id="temperature-monitoring">
+          <span class="badge badge--optional">Additional Parts</span>
           <figure>
             <img
               src="../../images/oled-display-module/features/temperature_sensors.png"
               alt="Temperature Monitoring feature image"
             >
           </figure>
-          <span class="badge badge--optional">Additional Parts</span>
           <h3>Temperature Monitoring</h3>
           <p>
             Up to 4 NTC temperature sensors to measure outside and inside temperatures.
           </p>
         </article>
 
-        <article class="guide-mini-card" id="current-sensor">
+        <article class="guide-mini-card guide-mini-card--optional" id="current-sensor">
+          <span class="badge badge--optional">Additional Parts</span>
           <figure>
             <img
               src="../../images/oled-display-module/features/current_sensor.png"
               alt="Current Sensor feature image"
             >
           </figure>
-          <span class="badge badge--optional">Additional Parts</span>
           <h3>Current Sensor</h3>
           <p>
             Connection for an external Hall Effect sensor to measure current up to 100 Amps.
@@ -144,14 +144,14 @@
           </p>
         </article>
 
-        <article class="guide-mini-card" id="co2-sensor">
+        <article class="guide-mini-card guide-mini-card--optional" id="co2-sensor">
+          <span class="badge badge--optional">Additional Parts</span>
           <figure>
             <img
               src="../../images/oled-display-module/features/CO2_sensor.png"
               alt="CO2 Sensor feature image"
             >
           </figure>
-          <span class="badge badge--optional">Additional Parts</span>
           <h3>CO2 Sensor</h3>
           <p>
             Connection for an external O2 Sensor such as SCD41 to monitor CO2 levels in the cabin.
@@ -180,6 +180,60 @@
         securing sensors.
       </p>
     </article>
+
+    <section class="section" id="module-overview">
+      <div class="guide-card-grid">
+        <article class="guide-mini-card guide-mini-card--full module-overview-card">
+          <h2>Module Overview</h2>
+          <figure class="module-overview-figure">
+            <img
+              src="../../images/oled-display-module/overview.png"
+              alt="Exploded overview of the OLED Display Module assembly"
+            >
+          </figure>
+          <div class="module-overview-parts" aria-label="OLED Display Module highlighted parts">
+            <div class="module-overview-part">
+              <span class="overview-number">1</span>
+              <h3>Plexiglass cover</h3>
+              <p>
+                Dark-tinted plexiglass cover that protects the display and hides imperfections.
+              </p>
+            </div>
+            <div class="module-overview-part">
+              <span class="overview-number">2</span>
+              <h3>Gasket</h3>
+              <p>
+                3D printed gasket that helps prevent dust from getting between the display and
+                plexiglass cover.
+              </p>
+            </div>
+            <div class="module-overview-part">
+              <span class="overview-number">3</span>
+              <h3>OLED Module</h3>
+              <p>16 x 100 px OLED module.</p>
+            </div>
+            <div class="module-overview-part">
+              <span class="overview-number">4</span>
+              <h3>3D printed fixtures</h3>
+              <p>3D printed covers with heat-set inserts.</p>
+            </div>
+            <div class="module-overview-part">
+              <span class="overview-number">5</span>
+              <h3>Main PCB</h3>
+              <p>
+                Contains the ESP32-S3, GNSS, ADS, RTC, USB-C connector for firmware flashing, and
+                the 16-pin header for the OLED display connection.
+              </p>
+            </div>
+            <div class="module-overview-part">
+              <span class="overview-number">6</span>
+              <h3>Daughterboard</h3>
+              <p>Houses the external connectors and power supplies.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
   <script src="../../assets/scripts/site-config.js"></script>
   <script src="../../assets/scripts/site-shell.js"></script>

@@ -13,7 +13,7 @@
 
 - Main unit
 - X1 to X6 accessories
-- Drawing coming soon
+- PDF drawing
 
 ## Card Summary
 
@@ -49,8 +49,7 @@ Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-d
 
 ## Downloads
 
-- Technical drawing PDF: `N/A`
-- Note: Revision E technical drawing is coming soon.
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10300-pop-up-controller-v10/technical-drawing-revision-e.pdf`
 
 ## Images
 

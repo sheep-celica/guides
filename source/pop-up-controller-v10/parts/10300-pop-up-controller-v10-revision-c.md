@@ -51,7 +51,7 @@ Obsolete revision. Current pricing is not shown for this entry.
 
 ## Downloads
 
-- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10300-pop-up-controller-v10/technical-drawing.pdf`
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10300-pop-up-controller-v10/technical-drawing-revision-c.pdf`
 
 ## Images
 
