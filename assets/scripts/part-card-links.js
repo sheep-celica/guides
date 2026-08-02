@@ -1,9 +1,20 @@
 (function () {
   var cards;
-  var toggleAllButton;
+  var toggleAllButtons;
 
   cards = Array.prototype.slice.call(document.querySelectorAll(".part-card"));
-  toggleAllButton = document.querySelector("[data-part-toggle-all]");
+  toggleAllButtons = Array.prototype.slice.call(document.querySelectorAll("[data-part-toggle-all]"));
+
+  function getCardsForButton(button) {
+    var targetId = button.getAttribute("aria-controls");
+    var target = targetId && document.getElementById(targetId);
+
+    if (!target) {
+      return cards;
+    }
+
+    return Array.prototype.slice.call(target.querySelectorAll(".part-card"));
+  }
 
   function getTargetCard(hash) {
     var id;
@@ -33,36 +44,40 @@
     }
 
     card.open = true;
-    updateToggleAllButton();
+    updateToggleAllButtons();
   }
 
-  function hasOpenCards() {
-    return cards.some(function (card) {
+  function hasOpenCards(cardsForButton) {
+    return cardsForButton.some(function (card) {
       return card.open;
     });
   }
 
-  function updateToggleAllButton() {
-    if (!toggleAllButton) {
+  function updateToggleAllButton(button) {
+    var cardsForButton = getCardsForButton(button);
+
+    if (hasOpenCards(cardsForButton)) {
+      button.textContent = "Collapse All";
+      button.setAttribute("aria-label", "Collapse all part cards");
       return;
     }
 
-    if (hasOpenCards()) {
-      toggleAllButton.textContent = "Collapse All";
-      toggleAllButton.setAttribute("aria-label", "Collapse all part cards");
-      return;
-    }
-
-    toggleAllButton.textContent = "Expand All";
-    toggleAllButton.setAttribute("aria-label", "Expand all part cards");
+    button.textContent = "Expand All";
+    button.setAttribute("aria-label", "Expand all part cards");
   }
 
-  function setAllCards(isOpen) {
-    cards.forEach(function (card) {
+  function updateToggleAllButtons() {
+    toggleAllButtons.forEach(function (button) {
+      updateToggleAllButton(button);
+    });
+  }
+
+  function setAllCards(cardsForButton, isOpen) {
+    cardsForButton.forEach(function (card) {
       card.open = isOpen;
     });
 
-    updateToggleAllButton();
+    updateToggleAllButtons();
   }
 
   document.addEventListener("click", function (event) {
@@ -84,20 +99,22 @@
     openTargetCard(href);
   });
 
-  if (toggleAllButton) {
-    toggleAllButton.addEventListener("click", function () {
-      setAllCards(!hasOpenCards());
+  toggleAllButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var cardsForButton = getCardsForButton(button);
+
+      setAllCards(cardsForButton, !hasOpenCards(cardsForButton));
     });
-  }
+  });
 
   cards.forEach(function (card) {
-    card.addEventListener("toggle", updateToggleAllButton);
+    card.addEventListener("toggle", updateToggleAllButtons);
   });
 
   window.addEventListener("hashchange", function () {
     openTargetCard(window.location.hash);
   });
 
-  updateToggleAllButton();
+  updateToggleAllButtons();
   openTargetCard(window.location.hash);
 })();

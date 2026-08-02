@@ -2,7 +2,7 @@
 
 Published page: `/products/pop-up-controller-v10/purchase/`
 
-Use this page for customer-facing ordering details, current batch timing, reference pricing notes, and
+Use this page for customer-facing ordering details, current batch timing, pricing notes, and
 the package contents that can be ordered.
 
 ## Order Form
@@ -11,19 +11,14 @@ the package contents that can be ordered.
 
 ## Availability Notice
 
-- Next manufacturing batches are planned for `Summer 2026`.
-- There is no active production until that batch window.
+- Manufacturing has started and consistent stock will be maintained.
+- Restocking will take about a month in case it ever runs out.
 
 ## Pricing Notice
 
-- All published pricing on this page is reference only.
-- Final pricing will be revealed once production starts.
+- The prices may change in time. Contact me if you wish to confirm the current pricing.
+- Estimated shipping cost is `EUR 20-30` within Europe and `USD 60` to USA.
 - Fixed package prices are loaded from `products/pop-up-controller-v10/purchase/pricing-data.js`.
-
-## Shipping Cost
-
-- Estimated shipping within Europe is around `EUR 20` to `EUR 30`.
-- Estimated shipping to the USA is around `USD 60`.
 
 ## Packages
 
@@ -36,11 +31,11 @@ the package contents that can be ordered.
 
 Contents:
 
-- `10300` Pop-up Controller V10 - Revision E
-- `10302` Wink Button - Large Slot
-- `10305` Sleepy Eye Controls
-- `10321` Wink Button Cable x3
-- `10322` Sleepy Eye Controls Cable
+- `10300E` Pop-up Controller V10
+- `10302A` Wink Button - Large Slot
+- `10305A` Sleepy Eye Controls
+- `10321B` Wink Button Cable x3
+- `10322B` Sleepy Eye Controls Cable
 
 Published package item links should point to the matching card anchors on the parts page:
 
@@ -60,15 +55,15 @@ Published package item links should point to the matching card anchors on the pa
 
 Contents:
 
-- `10300` Pop-up Controller V10 - Revision E
-- `10302` Wink Button - Large Slot
-- `10305` Sleepy Eye Controls
-- `10321` Wink Button Cable x3
-- `10322` Sleepy Eye Controls Cable
-- `10341` Remote Receiver Module
-- `10342` 4-button Remote Transmitter
-- `10343` Expansion Cable
-- `10344` Antenna
+- `10300E` Pop-up Controller V10
+- `10302A` Wink Button - Large Slot
+- `10305A` Sleepy Eye Controls
+- `10321B` Wink Button Cable x3
+- `10322B` Sleepy Eye Controls Cable
+- `10341A` Remote Receiver Module
+- `10342A` 4-button Remote Transmitter
+- `10343A` Expansion Cable
+- `10344A` Antenna
 
 Published package item links should point to the matching card anchors on the parts page:
 

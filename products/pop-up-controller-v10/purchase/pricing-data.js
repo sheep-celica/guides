@@ -2,10 +2,10 @@
 window.POPUP_CONTROLLER_V10_PACKAGE_PRICING = {
   regular: {
     eur: "140",
-    usd: "168"
+    usd: "165"
   },
   complete: {
     eur: "160",
-    usd: "188"
+    usd: "185"
   }
 };

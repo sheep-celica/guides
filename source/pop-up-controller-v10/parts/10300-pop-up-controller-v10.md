@@ -1,4 +1,4 @@
-# 10300 - Pop-up Controller V10 - Revision E
+# 10300E - Pop-up Controller V10
 
 ## Status
 
@@ -11,9 +11,9 @@
 
 ## Summary Badges
 
+- Revision E
 - Main unit
 - X1 to X6 accessories
-- PDF drawing
 
 ## Card Summary
 
@@ -33,12 +33,12 @@ Additionally, several accessories can be connected to it to allow more customiza
 
 ## Related Parts
 
-- `10302` Wink Button - Large Slot
-- `10305` Sleepy Eye Controls
-- `10321` Wink Button Cable
-- `10322` Sleepy Eye Controls Cable
-- `10341` Remote Receiver Module
-- `10343` Expansion Cable
+- `10302A` Wink Button - Large Slot
+- `10305A` Sleepy Eye Controls
+- `10321B` Wink Button Cable
+- `10322B` Sleepy Eye Controls Cable
+- `10341A` Remote Receiver Module
+- `10343A` Expansion Cable
 
 ## Pricing
 
@@ -47,10 +47,6 @@ Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-d
 - EUR: `TBD`
 - USD: `TBD`
 
-## Downloads
-
-- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10300-pop-up-controller-v10/technical-drawing-revision-e.pdf`
-
 ## Images
 
-- Main image: `images/pop-up-controller-v10/parts/10300-pop-up-controller-v10/catalog.png`
+- Main image: `images/pop-up-controller-v10/parts/10300e-pop-up-controller-v10/catalog.png`

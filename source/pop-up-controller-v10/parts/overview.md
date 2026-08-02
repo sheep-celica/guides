@@ -16,10 +16,11 @@ page per part.
 - Short intro: Part numbers below match the Sheep Celica catalogue numbering for the Pop-up
   Controller V10 system and its matching accessories.
 
-## Variant Note
+## Revision Note
 
-- Variant suffixes such as `A` or `B` can stay inside the base part listing when they share the
-  same core product and wiring.
+- Part-number suffixes identify the revision, such as `10300E`, `10305A`, or `10322B`.
+- Current parts appear in the main catalogue. Obsolete revisions appear in the separate Obsolete
+  Parts catalogue.
 
 ## Pricing Note
 
@@ -37,9 +38,9 @@ page per part.
 - Rebuild `products/pop-up-controller-v10/parts/index.html` from this overview plus the individual
   part files.
 - The published page uses expandable cards with normal badge tags, a `WIP` badge while unfinished,
-  a heading that carries the part number, visible EUR and USD pricing in the collapsed summary,
-  quick fact cards, an optional related parts section, a technical drawing PDF button, and one or
-  more images inside the expanded card.
+  a heading that carries the part number and revision, visible EUR and USD pricing in the collapsed
+  summary, quick fact cards, an optional related parts section, and one or more images inside the
+  expanded card.
 - The published page also uses a light JS-enhanced expand/collapse animation for the part cards
   while preserving native `details` behavior as the fallback.
 
@@ -51,7 +52,7 @@ page per part.
 - Ignore blank `## Related Parts` sections when converting Markdown into the published HTML.
 - When the section has entries, render it inside the expanded part card below the fact cards as
   links to the matching part cards on the same catalogue page.
-- Prefer simple bullet items such as ``- `10300` Pop-up Controller V10`` in the source Markdown.
+- Prefer simple bullet items such as ``- `10300E` Pop-up Controller V10`` in the source Markdown.
 
 ## Current Part Files
 
@@ -82,24 +83,13 @@ Use simple stable filenames inside each part folder, for example:
 Use one main display image by default. Add more images only when a part needs variant views,
 comparison images, or extra detail shots.
 
-## PDF Convention
-
-Store downloadable technical drawings under:
-
-`downloads/pop-up-controller-v10/parts/<part-number>-<slug>/`
-
-Use:
-
-- `technical-drawing.pdf`
-- optional additional files only when needed
-
 ## Pricing Convention
 
 Display prices on the published page from:
 
 - `products/pop-up-controller-v10/parts/pricing-data.js`
 
-Use one entry per part number with:
+Use one entry per live part number with:
 
 - `EUR`
 - `USD`

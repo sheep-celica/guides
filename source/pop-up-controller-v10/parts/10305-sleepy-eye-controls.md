@@ -1,4 +1,4 @@
-# 10305 - Sleepy Eye Controls
+# 10305A - Sleepy Eye Controls
 
 ## Status
 
@@ -11,8 +11,8 @@
 
 ## Summary Badges
 
+- Revision A
 - Small slot
-- PDF drawing
 - Sleepy eye mode
 - LEDs
 
@@ -30,14 +30,14 @@ NOTE The two small slots under the steering wheel may not be suitable for all in
 ## Fact Cards
 
 - Use: Pop-up Sleepy Eye mode control
-- Works with: `10322` Sleepy Eye Controls Cable and the controller's 'X5' input.
+- Works with: `10322B` Sleepy Eye Controls Cable and the controller's 'X5' input.
 - Install style: Accessory panel control for compatible interior mounting.
 - Compatibility: V8 and V10 Controllers
 
 ## Related Parts
 
-- `10300` Pop-up Controller V10 - Revision E
-- `10322` Sleepy Eye Controls Cable
+- `10300E` Pop-up Controller V10
+- `10322B` Sleepy Eye Controls Cable
 
 ## Pricing
 
@@ -45,10 +45,6 @@ Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-d
 
 - EUR: `TBD`
 - USD: `TBD`
-
-## Downloads
-
-- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10305-sleepy-eye-controls/technical-drawing.pdf`
 
 ## Images
 

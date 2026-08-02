@@ -1,4 +1,4 @@
-# 10344 - Antenna
+# 10344A - Antenna
 
 ## Status
 
@@ -11,9 +11,9 @@
 
 ## Summary Badges
 
+- Revision A
 - Antenna lead
 - Remote system
-- PDF drawing
 
 ## Card Summary
 
@@ -27,12 +27,12 @@ for Pop-up Controller V10.
 ## Fact Cards
 
 - Use: Remote system antenna for the matching receiver module.
-- Works with: `10341` Remote Receiver Module.
+- Works with: `10341A` Remote Receiver Module.
 - Format: Antenna lead assembly for remote accessory installs.
 
 ## Related Parts
 
-- `10341` Remote Receiver Module
+- `10341A` Remote Receiver Module
 
 ## Pricing
 
@@ -40,10 +40,6 @@ Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-d
 
 - EUR: `TBD`
 - USD: `TBD`
-
-## Downloads
-
-- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10344-antenna/technical-drawing.pdf`
 
 ## Images
 

@@ -1,4 +1,4 @@
-# 10302 - Wink Button - Large Slot
+# 10302A - Wink Button - Large Slot
 
 ## Status
 
@@ -11,8 +11,8 @@
 
 ## Summary Badges
 
+- Revision A
 - Large slot
-- PDF drawing
 - Wink Control
 - LEDs
 
@@ -29,14 +29,14 @@ Supports various LED colors.
 ## Fact Cards
 
 - Use: Pop-up wink control
-- Works with: `10321` Wink Button Cable and the controller's wink inputs 'X1' to 'X4'.
+- Works with: `10321B` Wink Button Cable and the controller's wink inputs 'X1' to 'X4'.
 - Install style: Accessory panel control for compatible interior mounting.
 - Compatibility: V8 and V10 Controllers
 
 ## Related Parts
 
-- `10300` Pop-up Controller V10 - Revision E
-- `10321` Wink Button Cable
+- `10300E` Pop-up Controller V10
+- `10321B` Wink Button Cable
 
 ## Pricing
 
@@ -44,10 +44,6 @@ Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-d
 
 - EUR: `TBD`
 - USD: `TBD`
-
-## Downloads
-
-- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10302-wink-button-large-slot/technical-drawing.pdf`
 
 ## Images
 

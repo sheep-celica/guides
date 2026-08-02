@@ -1,4 +1,4 @@
-# 10343 - Expansion Cable
+# 10343A - Expansion Cable
 
 ## Status
 
@@ -11,9 +11,9 @@
 
 ## Summary Badges
 
+- Revision A
 - Cable assembly
 - Remote system
-- PDF drawing
 
 ## Card Summary
 
@@ -28,14 +28,14 @@ The cable serves to expand the I2c system. Can be used to connect any I2c module
 ## Fact Cards
 
 - Use: Remote Receiver-to-controller cable.
-- Works with: `10341` Remote Receiver Module and Pop-up Controller V10.
+- Works with: `10341A` Remote Receiver Module and Pop-up Controller V10.
 - Length: 200 milimeters
 - Compatibility: V10 Controllers
 
 ## Related Parts
 
-- `10300` Pop-up Controller V10 - Revision E
-- `10341` Remote Receiver Module
+- `10300E` Pop-up Controller V10
+- `10341A` Remote Receiver Module
 
 ## Pricing
 
@@ -43,10 +43,6 @@ Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-d
 
 - EUR: `TBD`
 - USD: `TBD`
-
-## Downloads
-
-- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10343-expansion-cable/technical-drawing.pdf`
 
 ## Images
 
