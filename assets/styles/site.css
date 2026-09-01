@@ -550,7 +550,7 @@ h3 {
 }
 
 .product-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .guide-grid {
@@ -560,6 +560,10 @@ h3 {
 .guide-grid.page-card-grid {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 15rem));
   justify-content: start;
+}
+
+.guide-grid.guide-grid--product-size {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .notes {
@@ -1116,6 +1120,10 @@ h3 {
   .product-grid,
   .guide-grid,
   .notes {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-grid.guide-grid--product-size {
     grid-template-columns: 1fr;
   }
 
@@ -1752,6 +1760,271 @@ h3 {
 
 .guide-table tr:last-child td {
   border-bottom: 0;
+}
+
+/* Instrument cluster guide */
+.instrument-guide-section {
+  --instrument-section-padding: clamp(1.25rem, 2vw, 1.6rem);
+  position: relative;
+  padding: var(--instrument-section-padding);
+  border-color: rgba(138, 164, 200, 0.24);
+  background:
+    linear-gradient(90deg, rgba(138, 164, 200, 0.2), rgba(138, 164, 200, 0)) top / 100% 3px no-repeat,
+    linear-gradient(180deg, rgba(20, 28, 38, 0.96), rgba(11, 17, 23, 0.94));
+  box-shadow:
+    0 24px 52px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.instrument-guide-section > .section-heading {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 8;
+  align-items: center;
+  margin:
+    calc(var(--instrument-section-padding) * -1)
+    calc(var(--instrument-section-padding) * -1)
+    1.5rem;
+  padding: 1rem var(--instrument-section-padding);
+  border-bottom: 1px solid rgba(138, 164, 200, 0.28);
+  border-radius: var(--radius-xl) var(--radius-xl) 14px 14px;
+  background: rgba(13, 20, 28, 0.94);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+.instrument-guide-section > .section-heading h2 {
+  color: var(--accent-strong);
+  font-size: clamp(1.55rem, 2.5vw, 2.05rem);
+}
+
+.instrument-guide-section > .section-heading p {
+  max-width: 56rem;
+}
+
+.instrument-cluster-hero {
+  display: grid;
+  grid-template-columns: minmax(22rem, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+}
+
+.page--instrument-cluster-guide .instrument-cluster-hero h1 {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(2.4rem, 4.4vw, 3.55rem);
+}
+
+.instrument-cluster-hero__copy,
+.instrument-cluster-hero__figure {
+  position: relative;
+  z-index: 1;
+}
+
+.instrument-cluster-hero__copy a,
+.guide-subsection a {
+  color: var(--accent-strong);
+}
+
+.instrument-cluster-hero__figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(8, 11, 15, 0.9);
+}
+
+.instrument-cluster-hero__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.guide-subsection-list {
+  display: grid;
+  gap: 0;
+  margin-top: 2rem;
+}
+
+.guide-subsection {
+  scroll-margin-top: 1rem;
+}
+
+.guide-subsection + .guide-subsection {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(138, 164, 200, 0.22);
+}
+
+.guide-subsection h3 {
+  margin: 0;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(138, 164, 200, 0.28);
+}
+
+.guide-subsection p,
+.guide-subsection ol,
+.guide-subsection ul {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.guide-subsection ol,
+.guide-subsection ul {
+  padding-left: 1.25rem;
+}
+
+.guide-subsection li + li {
+  margin-top: 0.65rem;
+}
+
+.guide-subsection :is(ol, p) + .notice {
+  margin-top: 1rem;
+}
+
+.guide-subsection .notice h3 {
+  margin: 0 0 0.45rem;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.guide-subsection .notice p {
+  margin: 0;
+  color: var(--text);
+}
+
+.guide-subsection .notice + :is(ol, .guide-inline-figure),
+.guide-subsection :is(ol, p, .guide-inline-figure) + .guide-inline-figure,
+.guide-subsection .guide-inline-figure + :is(ol, .notice) {
+  margin-top: 1rem;
+}
+
+.guide-subsection > h3 + .notice {
+  margin-top: 1rem;
+}
+
+.guide-image-sequence {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.guide-image-sequence figure,
+.guide-inline-figure,
+.guide-inline-video {
+  margin: 0;
+}
+
+.guide-image-sequence img,
+.guide-inline-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(8, 11, 15, 0.9);
+}
+
+.guide-image-sequence figcaption,
+.guide-inline-figure figcaption,
+.guide-inline-video figcaption {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.guide-inline-video {
+  margin-top: 1rem;
+}
+
+.guide-subsection li > .guide-inline-figure {
+  margin-top: 1rem;
+}
+
+.guide-inline-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #000;
+}
+
+.guide-youtube-embed {
+  width: min(100%, 52rem);
+  margin: 1rem 0 0;
+}
+
+.guide-youtube-embed--overview {
+  margin: 1.25rem auto 0;
+}
+
+.guide-youtube-embed__player {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.guide-youtube-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.guide-youtube-embed figcaption {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .guide-image-sequence {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guide-subsection .table-wrap {
+  margin-top: 0.9rem;
+}
+
+.guide-table .guide-table-group-heading th {
+  padding: 0.65rem 1rem;
+  border-top: 1px solid rgba(138, 164, 200, 0.28);
+  border-bottom: 1px solid rgba(138, 164, 200, 0.18);
+  background: rgba(138, 164, 200, 0.08);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.guide-table-optional td {
+  color: color-mix(in srgb, var(--muted) 88%, var(--text));
+}
+
+@media (max-width: 800px) {
+  .instrument-guide-section > .section-heading {
+    top: 0.35rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .instrument-cluster-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .page--instrument-cluster-guide .instrument-cluster-hero h1 {
+    font-size: clamp(1.95rem, 9.3vw, 2.75rem);
+  }
 }
 
 .light-switch-table {
