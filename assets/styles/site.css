@@ -1172,6 +1172,11 @@ h3 {
   max-width: 24rem;
 }
 
+.step-figure--half {
+  width: 50%;
+  justify-self: start;
+}
+
 .step-image-flow {
   display: grid;
   gap: 1rem;
@@ -2385,6 +2390,10 @@ h3 {
 
   .troubleshooting-checklist li:last-child:nth-child(odd) {
     grid-column: auto;
+  }
+
+  .step-figure--half {
+    width: 100%;
   }
 
   .guide-table {
