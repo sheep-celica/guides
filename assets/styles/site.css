@@ -1046,6 +1046,44 @@ h3 {
   overflow: hidden;
 }
 
+.step-card[open] {
+  border-color: rgba(138, 164, 200, 0.3);
+}
+
+.step-summary {
+  position: relative;
+  padding: 1.2rem 3.5rem 1.2rem 1.2rem;
+  list-style: none;
+  cursor: pointer;
+}
+
+.step-summary::-webkit-details-marker {
+  display: none;
+}
+
+.step-summary::marker {
+  content: "";
+}
+
+.step-summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  color: var(--muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.step-card[open] > .step-summary::after {
+  content: "−";
+}
+
+.step-card[open] > .step-summary {
+  border-bottom: 1px solid var(--line);
+}
+
 .step-body {
   padding: 1.2rem;
   display: grid;
@@ -1408,6 +1446,42 @@ h3 {
 
 .guide-block li + li {
   margin-top: 0.65rem;
+}
+
+.troubleshooting-checklist ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.troubleshooting-checklist li {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  padding: 0.85rem 0.95rem 0.85rem 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.troubleshooting-checklist li::before {
+  content: "✓";
+  position: absolute;
+  top: 0.82rem;
+  left: 0.9rem;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.troubleshooting-checklist li + li {
+  margin-top: 0;
+}
+
+.troubleshooting-checklist li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .section > :is(.guide-grid-two, .guide-intro-grid, .guide-block, .guide-card-grid, .guide-stack) + :is(.guide-grid-two, .guide-intro-grid, .guide-block, .guide-card-grid, .guide-stack) {
@@ -2303,6 +2377,14 @@ h3 {
   .guide-intro-grid,
   .guide-detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .troubleshooting-checklist ul {
+    grid-template-columns: 1fr;
+  }
+
+  .troubleshooting-checklist li:last-child:nth-child(odd) {
+    grid-column: auto;
   }
 
   .guide-table {

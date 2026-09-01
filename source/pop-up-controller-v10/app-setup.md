@@ -9,15 +9,6 @@ This guide covers downloading the Pop-up Controller V10 desktop app, preparing t
 - A USB-C cable that supports data transfer
 - A Pop-up Controller V10
 
-## Step Overview
-
-1. Download the latest desktop app release.
-2. Extract the downloaded files.
-3. Open the extracted `.exe`.
-4. Connect the controller with a `USB-C` data cable.
-5. Open the app and connect to the controller.
-6. Confirm that the controller information appears.
-
 ## Download the App
 
 Download the latest release here:
@@ -58,6 +49,8 @@ You can connect the controller directly to your PC or while it is installed in t
 
 Use a USB-C cable that supports data transfer. A charge-only cable will not work.
 
+> **Warning:** Connecting the USB-C cable while the controller is powered by 12V through the main connector is not recommended and may damage the controller.
+
 ## Connect to the Controller
 
 Open the desktop app and click **Find controller**.
@@ -76,9 +69,3 @@ Wait a few seconds for the app to detect the controller and update the device in
 - Reconnect the controller and try **Find controller** again
 - Close and reopen the app, then try again
 - Try different USB ports on your PC
-- Last resort is to attempt installation of CH340 drivers
-
-## Next Steps
-
-- For firmware updates, continue with the [App Flashing Guide](app-flashing.md)
-- For day-to-day features, continue with the [App Usage Guide](app-usage.md)
