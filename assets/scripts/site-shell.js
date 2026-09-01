@@ -16,9 +16,7 @@
       logoPath: "",
       supportEmail: "",
       youtubeUrl: "",
-      githubUrl: "https://github.com/sheep-celica/guides",
-      featuredProductLabel: "Pop-up Controller V10",
-      featuredProductPath: "products/pop-up-controller-v10/",
+      githubUrl: "https://github.com/sheep-celica",
       countryFlag: "",
       countryLabel: ""
     },
@@ -26,7 +24,6 @@
   );
 
   const homeHref = rootPrefix || "./";
-  const productHref = rootPrefix + config.featuredProductPath;
   const aboutHref = rootPrefix + "products/pop-up-controller-v10/about/";
   const logoPath = String(config.logoPath || "").trim();
   const logoSrc = logoPath ? rootPrefix + logoPath.replace(/^\.?\//, "") : "";
@@ -103,7 +100,6 @@
     "</span>" +
     "</a>" +
     '<div class="site-frame-links">' +
-    buildInternalLink(productHref, config.featuredProductLabel) +
     buildInternalLink(aboutHref, "About Me") +
     buildExternalLink(config.githubUrl, "GitHub") +
     "</div>" +
@@ -152,33 +148,12 @@
     "</span>" +
     "</div>" +
     "</div>" +
-    '<p class="site-footer-copy">Guides, parts, notes and support details for Sheep Celica projects.</p>' +
     "</section>" +
     '<section class="site-footer-panel">' +
     "<h2>Contact</h2>" +
     emailMarkup +
     youtubeMarkup +
-    '<p class="site-footer-copy">Use email for support questions, pricing checks, or availability updates.</p>' +
     "</section>" +
-    '<nav class="site-footer-panel" aria-label="Footer">' +
-    "<h2>Quick Links</h2>" +
-    '<div class="site-footer-links">' +
-    '<a href="' +
-    escapeHtml(homeHref) +
-    '">Documentation Home</a>' +
-    '<a href="' +
-    escapeHtml(productHref) +
-    '">' +
-    escapeHtml(config.featuredProductLabel) +
-    "</a>" +
-    '<a href="' +
-    escapeHtml(aboutHref) +
-    '">About Me</a>' +
-    '<a href="' +
-    escapeHtml(config.githubUrl) +
-    '" target="_blank" rel="noopener">Guides Repository</a>' +
-    "</div>" +
-    "</nav>" +
     "</div>" +
     '<div class="site-footer-meta">' +
     "<span>" +

@@ -10,31 +10,33 @@
   >
   <link rel="stylesheet" href="../../assets/styles/site.css">
 </head>
-<body>
-  <main class="page page--wide-guide">
+<body class="body--development">
+  <main class="page page--wide-guide page--development" data-product-status="in-development">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a class="crumb" href="../../">Documentation Home</a>
       <span class="crumb">OLED Display Module</span>
     </nav>
 
-    <section class="hero">
-      <div class="hero-label-row">
-        <div class="eyebrow">Product Documentation</div>
-        <span class="badge badge--development">In Development</span>
-      </div>
+    <section class="hero hero--product-title">
       <h1>OLED Display Module</h1>
       <p class="lede">
         Plug-and-play replacement for the factory clock module in the center dash above the vents.
         Development started in May 2026 and is expected to complete sometime in 2026.
       </p>
-      <div class="hero-actions">
-        <a class="button" href="#features">Features</a>
-      </div>
     </section>
 
     <article class="note-card note-card--warning page-note">
       <h3>IN DEVELOPMENT</h3>
       <p>This product is still being developed.</p>
+    </article>
+
+    <article class="note-card note-card--info page-note">
+      <h3>September 2026 Update</h3>
+      <p>
+        I have verified all features on a prototype, but I have decided to redesign the module
+        from the ground up. There are issues with space constraints, and it also ended up being
+        more expensive than I hoped for. I plan to resolve both problems with the redesign.
+      </p>
     </article>
 
     <section class="section" id="features">
@@ -113,6 +115,19 @@
           </p>
         </article>
 
+        <article class="guide-mini-card" id="phone-setup">
+          <figure>
+            <img
+              src="../../images/oled-display-module/features/phone_setup_icon.png"
+              alt="Phone Setup feature image"
+            >
+          </figure>
+          <h3>Phone Setup</h3>
+          <p>
+            Possibility to modify and configure the module via phone.
+          </p>
+        </article>
+
         <article class="guide-mini-card guide-mini-card--optional" id="temperature-monitoring">
           <span class="badge badge--optional">Additional Parts</span>
           <figure>
@@ -158,18 +173,6 @@
           </p>
         </article>
 
-        <article class="guide-mini-card" id="phone-setup">
-          <figure>
-            <img
-              src="../../images/oled-display-module/features/phone_setup_icon.png"
-              alt="Phone Setup feature image"
-            >
-          </figure>
-          <h3>Phone Setup</h3>
-          <p>
-            Possibility to modify and configure the module via phone.
-          </p>
-        </article>
       </div>
     </section>
 
@@ -195,9 +198,7 @@
             <div class="module-overview-part">
               <span class="overview-number">1</span>
               <h3>Plexiglass cover</h3>
-              <p>
-                Dark-tinted plexiglass cover that protects the display and hides imperfections.
-              </p>
+              <p>Dark-tinted plexiglass cover that protects the display.</p>
             </div>
             <div class="module-overview-part">
               <span class="overview-number">2</span>
@@ -221,8 +222,7 @@
               <span class="overview-number">5</span>
               <h3>Main PCB</h3>
               <p>
-                Contains the ESP32-S3, GNSS, ADS, RTC, USB-C connector for firmware flashing, and
-                the 16-pin header for the OLED display connection.
+                Contains the ESP32-S3, GNSS, ADS, RTC, and USB-C connector for firmware flashing.
               </p>
             </div>
             <div class="module-overview-part">
