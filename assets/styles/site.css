@@ -763,6 +763,10 @@ h3 {
   object-fit: contain;
 }
 
+.app-guide-card-grid .card-link h3 {
+  text-align: center;
+}
+
 .product-card-preview {
   position: relative;
   display: grid;
