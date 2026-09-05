@@ -62,7 +62,7 @@ Contents:
 - `10322B` Sleepy Eye Controls Cable
 - `10341A` Remote Receiver Module
 - `10342A` 4-button Remote Transmitter
-- `10343A` Expansion Cable
+- `10343B` Expansion Cable
 - `10344A` Antenna
 
 Published package item links should point to the matching card anchors on the parts page:

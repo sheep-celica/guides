@@ -35,15 +35,16 @@ Supports various LED colors.
 
 ## Related Parts
 
-- `10300E` Pop-up Controller V10
-- `10321B` Wink Button Cable
-
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.
 
 - EUR: `TBD`
 - USD: `TBD`
+
+## Downloads
+
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10302-wink-button-large-slot/technical-drawing.pdf`
 
 ## Images
 

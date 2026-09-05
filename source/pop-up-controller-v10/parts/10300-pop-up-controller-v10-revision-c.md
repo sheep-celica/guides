@@ -37,17 +37,13 @@ This revision is obsolete and remains listed for reference only.
 
 ## Related Parts
 
-- `10300E` Pop-up Controller V10
-- `10302A` Wink Button - Large Slot
-- `10305A` Sleepy Eye Controls
-- `10321B` Wink Button Cable
-- `10322B` Sleepy Eye Controls Cable
-- `10341A` Remote Receiver Module
-- `10343A` Expansion Cable
-
 ## Pricing
 
 Obsolete revision. Current pricing is not shown for this entry.
+
+## Downloads
+
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10300-pop-up-controller-v10/technical-drawing-revision-c.pdf`
 
 ## Images
 

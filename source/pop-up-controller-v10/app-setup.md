@@ -1,7 +1,5 @@
 # App Setup Guide
 
-This guide covers downloading the Pop-up Controller V10 desktop app, preparing the controller connection, and confirming that the app can detect the controller.
-
 ## What You Need
 
 - A Windows 10 or Windows 11 PC
@@ -48,6 +46,8 @@ Connect your controller to your computer.
 You can connect the controller directly to your PC or while it is installed in the car.
 
 Use a USB-C cable that supports data transfer. A charge-only cable will not work.
+
+![Pop-up Controller V10 connected to a computer with a USB-C data cable.](../../images/pop-up-controller-v10/screenshots/app-setup/connect-controller.png)
 
 > **Warning:** Connecting the USB-C cable while the controller is powered by 12V through the main connector is not recommended and may damage the controller.
 

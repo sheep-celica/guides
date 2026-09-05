@@ -33,19 +33,16 @@ Additionally, several accessories can be connected to it to allow more customiza
 
 ## Related Parts
 
-- `10302A` Wink Button - Large Slot
-- `10305A` Sleepy Eye Controls
-- `10321B` Wink Button Cable
-- `10322B` Sleepy Eye Controls Cable
-- `10341A` Remote Receiver Module
-- `10343A` Expansion Cable
-
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.
 
 - EUR: `TBD`
 - USD: `TBD`
+
+## Downloads
+
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10300-pop-up-controller-v10/technical-drawing-revision-e.pdf`
 
 ## Images
 

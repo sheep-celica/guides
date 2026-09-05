@@ -28,7 +28,7 @@ window.POPUP_CONTROLLER_V10_PART_PRICING = {
     eur: "5",
     usd: "5.8"
   },
-  "10343A": {
+  "10343B": {
     eur: "2.5",
     usd: "2.9"
   },

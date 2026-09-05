@@ -33,15 +33,16 @@ Same connector on both ends. Doesn't matter which end goes to the Pop-up control
 
 ## Related Parts
 
-- `10300E` Pop-up Controller V10
-- `10305A` Sleepy Eye Controls
-
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.
 
 - EUR: `TBD`
 - USD: `TBD`
+
+## Downloads
+
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10322-sleepy-eye-controls-cable/technical-drawing.pdf`
 
 ## Images
 

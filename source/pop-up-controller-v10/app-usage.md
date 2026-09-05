@@ -1,18 +1,8 @@
 # App Usage Guide
 
-This guide is the technical reference for the Pop-up Controller V10 desktop app after the initial setup is complete.
+> **Warning - Precondition:** Complete the [App Setup Guide](app-setup.md) first.
 
-## Start Here
-
-Before using any instructions in this guide, complete the [App Setup Guide](app-setup.md).
-
-This guide assumes:
-
-- The desktop app is already downloaded and opens correctly
-- The controller can be found and connected in the app
-- The controller information appears normally after connection
-
-## Guide Sections
+## Sections
 
 1. Basic Information
 2. Serial Connection

@@ -24,7 +24,7 @@ Controls for toggling and adjusting the Sleepy Eye mode positions
 
 Small-slot panel with a button to toggle Sleepy Eye mode and a switch to adjust the sleepy eye pop-up position.
 Supports various LED colors.  
-This panel can fit in any of the four small slots in the car.
+[This panel can fit in any of the four small slots in the car.](../../../images/pop-up-controller-v10/parts/10305-sleepy-eye-controls/installable-slots.png)
 NOTE The two small slots under the steering wheel may not be suitable for all installations.
 
 ## Fact Cards
@@ -36,9 +36,6 @@ NOTE The two small slots under the steering wheel may not be suitable for all in
 
 ## Related Parts
 
-- `10300E` Pop-up Controller V10
-- `10322B` Sleepy Eye Controls Cable
-
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.
@@ -46,6 +43,11 @@ Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-d
 - EUR: `TBD`
 - USD: `TBD`
 
+## Downloads
+
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10305-sleepy-eye-controls/technical-drawing.pdf`
+
 ## Images
 
 - Main image: `images/pop-up-controller-v10/parts/10305-sleepy-eye-controls/catalog.png`
+- Installable slots diagram: `images/pop-up-controller-v10/parts/10305-sleepy-eye-controls/installable-slots.png`

@@ -32,14 +32,16 @@ for Pop-up Controller V10.
 
 ## Related Parts
 
-- `10341A` Remote Receiver Module
-
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.
 
 - EUR: `TBD`
 - USD: `TBD`
+
+## Downloads
+
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10344-antenna/technical-drawing.pdf`
 
 ## Images
 

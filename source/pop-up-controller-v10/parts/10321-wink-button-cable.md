@@ -35,15 +35,16 @@ An adapter is needed if the AliExpress variant of the `10302A` Wink Button is us
 
 ## Related Parts
 
-- `10300E` Pop-up Controller V10
-- `10302A` Wink Button - Large Slot
-
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.
 
 - EUR: `TBD`
 - USD: `TBD`
+
+## Downloads
+
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10321-wink-button-cable/technical-drawing.pdf`
 
 ## Images
 

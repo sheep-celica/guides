@@ -1,4 +1,4 @@
-# 10343A - Expansion Cable
+# 10343B - Expansion Cable
 
 ## Status
 
@@ -11,7 +11,7 @@
 
 ## Summary Badges
 
-- Revision A
+- Revision B
 - Cable assembly
 - Remote system
 
@@ -34,15 +34,16 @@ The cable serves to expand the I2c system. Can be used to connect any I2c module
 
 ## Related Parts
 
-- `10300E` Pop-up Controller V10
-- `10341A` Remote Receiver Module
-
 ## Pricing
 
 Displayed prices are loaded from `products/pop-up-controller-v10/parts/pricing-data.js`.
 
 - EUR: `TBD`
 - USD: `TBD`
+
+## Downloads
+
+- Technical drawing PDF: `downloads/pop-up-controller-v10/parts/10343-expansion-cable/technical-drawing.pdf`
 
 ## Images
 

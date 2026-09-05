@@ -1,6 +1,4 @@
-# Pop-up Controller V10 User Guide
-
-This guide explains the main parts, controls, and behavior of the Pop-up Controller V10 system.
+# Pop-up Controller V10 User Guide — Revision E
 
 ## Safety
 
@@ -13,6 +11,18 @@ A malfunction of this device could prevent you from controlling the pop-up posit
 ![RTR fuse and Junction Block No. 2 location.](../../images/pop-up-controller-v10/user-guide/rtr-fuse-location.png)
 
 It is located on the left side of the battery.
+
+## Behavior
+
+### Light-Switch
+
+### Winking
+
+### Sleepy Eye Mode
+
+### Remote Controls
+
+> **Work in progress:** Content below this point is temporary.
 
 ## Clarifications
 
@@ -45,7 +55,9 @@ The controller is a plug-and-play replacement for the factory light retractor re
 
 In theory it may also work with some other pop-up cars if a custom wiring adapter and mounting bracket are made.
 
-The firmware source code is publicly available on GitHub: [sheep-celica/pop-up-controller-v10](https://github.com/sheep-celica/pop-up-controller-v10)
+### GitHub
+
+The firmware source code is publicly available at [sheep-celica/pop-up-controller-v10](https://github.com/sheep-celica/pop-up-controller-v10).
 
 A desktop application is available for flashing new firmware, reading data, and changing settings. More details are in [Pop-up controller Application](#pop-up-controller-application).
 
@@ -157,8 +169,6 @@ The controller responds to all light switch positions, but only `HEAD` and `OFF`
 | `HOLD` | ![HOLD light switch icon](../../images/pop-up-controller-v10/user-guide/light-switch-hold-icon.png) | No change to pop-up position |
 | `OFF` | ![OFF light switch icon](../../images/pop-up-controller-v10/user-guide/light-switch-off-icon.png) | Pop-ups go `DOWN` |
 
-> **Note:** `HOLD` and `TAIL` do not interrupt an in-progress move. They simply stop requesting a new position change.
-
 ## Sleepy Eye Mode
 
 ![Sleepy eye mode overview.](../../images/pop-up-controller-v10/user-guide/sleepy-eye-mode-overview.png)
@@ -248,8 +258,6 @@ Use any one of the following methods to restart the controller and clear the tim
 - Disconnecting the controller from the 12-pin connector on the wiring harness
 - Removing the `MAIN` or `LOGIC` fuse from the controller
 - Holding the debug button for more than 5 seconds
-
-> **Note:** More safety features may be added in future firmware versions.
 
 ## Revision History
 
