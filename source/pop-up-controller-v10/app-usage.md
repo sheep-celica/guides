@@ -8,11 +8,10 @@
 2. Serial Connection
 3. Statistical Data
 4. Settings
-5. Direct Controls
-6. Errors
-7. Manufacture Data
-8. Service
-9. Firmware
+5. Errors
+6. Manufacture Data
+7. Service
+8. Firmware
 
 ## Basic Information
 
@@ -62,9 +61,7 @@ This section covers the Statistical Data dialog.
 
 ## Settings
 
-This section covers the Settings dialog overview and the individual settings categories.
-
-![Settings dialog overview.](../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_overview.PNG)
+This section covers the individual settings categories in the Settings dialog.
 
 ### Safety
 
@@ -77,11 +74,12 @@ This section covers the Settings dialog overview and the individual settings cat
 
 ![Pop-up settings category in the Settings dialog.](../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_popups.PNG)
 
-**Warning:** It is not recommended to adjust the following two settings without consulting me first.
+**Warning:** It is not recommended to adjust the following settings without consulting me first.
 
 - **Minimum time to change states:** The minimum amount of time the mechanical switch needs to maintain a position before it becomes valid.
 - **Pop-up sensing delay:** The amount of time a sensing impulse is settling during a pop-up position readout.
-- **Pop-up timing calibration:** The separate Sleepy Eye Mode guide covers automatic calibration in more detail. That guide is currently `WIP` and is shared by direct link only. These calibrations are solely used to improve the quality of the Sleepy Eye mode positions.
+- **Motor Stall Protection:** Toggle and configuration for pop-up stall protection.
+- **Pop-up timing calibration:** Stored timing data to improve the precision of sleepy eye mode.
 
 ### Remote
 
@@ -102,25 +100,16 @@ This section covers the Settings dialog overview and the individual settings cat
 
 ![Other category in the Settings dialog.](../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_other.PNG)
 
-**Info:** These constants are calibrated in manufacturing and represent the slope/gain (`a`) and offset (`b`).
-
 - **Battery voltage calibration:** Allows getting live readings of voltage and adjustments of calibration constants.
 
-## Direct Controls
+### Potentiometers
 
-This section covers the direct-control actions that can be triggered from the app.
+![Potentiometers category in the Settings dialog.](../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_potentiometers.png)
 
-![Direct Controls dialog overview.](../../images/pop-up-controller-v10/screenshots/app-usage/direct_controls_dialog.PNG)
+![Live potentiometer positions in the Settings dialog.](../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_potentiometers_2.png)
 
-**Info:** This section is only available if the controller is in the `RUNNING` mode.
-
-### Available Actions
-
-- **RH Wink:** Winks `RH` Pop-up.
-- **LH Wink:** Winks `LH` Pop-up.
-- **Both Wink:** Winks both Pop-ups.
-- **Toggle Sleepy Eye Mode:** Toggles Sleepy Eye mode on or off.
-- **Toggle Both:** Moves both Pop-ups to the opposite position if the light-switch is in `HOLD`.
+- **RH offset:** Time offset of RH Pop-up when going into Sleepy Eye mode position.
+- **LED Adjust:** LED brightness.
 
 ## Errors
 
@@ -128,13 +117,12 @@ This section covers the Errors dialog.
 
 ![Errors dialog overview.](../../images/pop-up-controller-v10/screenshots/app-usage/error_dialog.PNG)
 
-**Info:** Right now only the `RH Timeout` and `LH Timeout` errors are supported in firmware.
-
 ### Main Areas
 
 - **Headlight / pop-up stored errors:** Shows stored errors related to the pop-up mechanisms.
 - **Other module stored errors:** Shows other stored controller errors that do not belong to the pop-up mechanism section.
-- **Action:** Allows clearing the error list.
+- **Clear errors:** Allows clearing the error list.
+- **Refresh errors:** Refreshes the error list.
 
 ## Manufacture Data
 
@@ -146,7 +134,6 @@ This section covers the Manufacture Data dialog.
 
 - **Overview:** Shows serial number, manufacture date, and initial firmware version.
 - **Board identity:** Shows board serial, board revision, and car model.
-- **Typical use:** Useful for confirming controller identity or answering support questions.
 
 ## Service
 

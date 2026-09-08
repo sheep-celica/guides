@@ -1921,17 +1921,6 @@ h3 {
   color: #bfeccc;
 }
 
-.page--app-usage-guide #direct-controls .guide-card-grid > .guide-mini-card {
-  border-color: rgba(99, 186, 143, 0.24);
-  background: linear-gradient(180deg, rgba(99, 186, 143, 0.12), rgba(99, 186, 143, 0.05));
-}
-
-.page--app-usage-guide #direct-controls .guide-card-grid > .guide-mini-card .guide-mini-kicker {
-  border-color: rgba(99, 186, 143, 0.28);
-  background: rgba(99, 186, 143, 0.14);
-  color: #bfeccc;
-}
-
 .guide-checklist {
   list-style: none;
   margin: 0;
@@ -2755,8 +2744,8 @@ h3 {
   box-shadow: 0 8px 18px rgba(23, 61, 108, 0.28);
 }
 
-.page--app-usage-guide .guide-section-content > .guide-figure + *,
-.page--app-usage-guide .guide-section-content .guide-block > .guide-figure + * {
+.page--app-usage-guide .guide-section-content > .guide-figure + :not(.guide-figure),
+.page--app-usage-guide .guide-section-content .guide-block > .guide-figure + :not(.guide-figure) {
   margin-top: 0.35rem;
   padding-top: 1.25rem;
   border-top: 1px solid rgba(138, 164, 200, 0.32);
