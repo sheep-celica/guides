@@ -24,7 +24,7 @@
   );
 
   const homeHref = rootPrefix || "./";
-  const aboutHref = rootPrefix + "products/pop-up-controller-v10/about/";
+  const aboutHref = rootPrefix + "about/";
   const logoPath = String(config.logoPath || "").trim();
   const logoSrc = logoPath ? rootPrefix + logoPath.replace(/^\.?\//, "") : "";
   const email = String(config.supportEmail || "").trim();
