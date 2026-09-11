@@ -27,6 +27,15 @@ Supports various LED colors.
 [This panel can fit in any of the four small slots in the car.](../../../images/pop-up-controller-v10/parts/10305-sleepy-eye-controls/installable-slots.png)
 NOTE The two small slots under the steering wheel may not be suitable for all installations.
 
+## LED Colors
+
+- Red
+- Green
+- Retro Green
+- Blue
+- White
+- Yellow
+
 ## Fact Cards
 
 - Use: Pop-up Sleepy Eye mode control

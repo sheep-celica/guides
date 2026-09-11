@@ -25,6 +25,16 @@ Large-slot panel with three wink buttons, available in two variants.
 Installs in the large slot next to the parking brake and provides three wink buttons.  
 It comes with either my custom 3D-printed buttons or custom AliExpress buttons.  
 Supports various LED colors.  
+NOTE Available as a single large slot with 3 buttons or 2 small slots with up to 2 buttons per slot.
+
+## LED Colors
+
+- Red
+- Green
+- Retro Green
+- Blue
+- White
+- Yellow
 
 ## Fact Cards
 

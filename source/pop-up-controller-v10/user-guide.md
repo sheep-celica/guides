@@ -1,14 +1,12 @@
-# Pop-up Controller V10 User Guide — Revision E
+# User Guide - Revision E
 
 ## Safety
 
-A malfunction of this device could prevent you from controlling the pop-up position and could severely affect visibility at night.
-
-> **Important:** Disconnect the RTR fuse (fuse box next to the battery, Junction Block No. 2) or disconnect the controller before doing any work on the pop-ups, including headlight replacement, bulb replacement, or other service work. This disables the controller and helps prevent the pop-ups from accidentally closing on your hands.
+> **Important:** Always remove controller power before working on or near pop-ups. You can either: disconnect battery, remove RTR fuse, or disconnect the controller
 > 
 > **First-week check:** After installation, avoid driving at night or in poor visibility for at least the first week so you can confirm the controller is working correctly.
 >
-![RTR fuse and Junction Block No. 2 location.](../../images/pop-up-controller-v10/user-guide/rtr-fuse-location.png)
+![RTR fuse location.](../../images/pop-up-controller-v10/user-guide/rtr-fuse-location.png)
 
 It is located on the left side of the battery.
 
@@ -16,11 +14,187 @@ It is located on the left side of the battery.
 
 ### Light-Switch
 
+![Light switch behavior reference.](../../images/pop-up-controller-v10/user-guide/light-switch-behavior-overview.png)
+
+| Position | Icon | Behavior |
+| --- | --- | --- |
+| `HEAD` | ![HEAD light switch icon](../../images/pop-up-controller-v10/user-guide/light-switch-head-icon.png) | Pop-ups go `UP` |
+| `TAIL` | ![TAIL light switch icon](../../images/pop-up-controller-v10/user-guide/light-switch-tail-icon.png) | No change to pop-up position |
+| `HOLD` | ![HOLD light switch icon](../../images/pop-up-controller-v10/user-guide/light-switch-hold-icon.png) | No change to pop-up position |
+| `OFF` | ![OFF light switch icon](../../images/pop-up-controller-v10/user-guide/light-switch-off-icon.png) | Pop-ups go `DOWN` |
+
+> **Warning:** Light-switch should be left in the `OFF` position when car is idle. Otherwise the controller will never enter sleep. See *PLACEHOLDER*
+
 ### Winking
+
+![10302 Wink Button - Large Slot.](../../images/pop-up-controller-v10/parts/10302-wink-button-large-slot/catalog.png)
+
+Winking makes a pop-up or both pop-ups go to the opposite state and then back. This can be done either pressing a wink button or by using remote controls.
+
+#### Controller wink button connectors
+
+| Connector | Function |
+| --- | --- |
+| `X1` | Winks RH pop-up |
+| `X2` | Winks LH pop-up |
+| `X3` | Winks Both pop-ups |
+| `X4` | Toggles both pop-ups* |
+
+> **Pop-up toggle:** Toggling a pop-up makes it go to the opposite position and stay there. For example if your Pop-ups are `UP` and you toggle them, they will go `DOWN` and stay there.
+>
+> **Exceptions:** If the light-switch is in the `OFF` or `HEAD` position or when Sleepy eye mode is active, the toggle will behave as a wink instead.
 
 ### Sleepy Eye Mode
 
+![Sleepy Eye button and knob.](../../images/pop-up-controller-v10/user-guide/sleepy-eye-mode-overview.png)
+
+This mode allows pop-ups to reach a position between `UP` and `DOWN`.
+
+#### Usage
+
+Use the knob to choose one of the 7 available pop-up positions.
+
+##### Activating
+
+1. Press the button / remote control
+2. Button LED turns on
+3. Pop-ups move to the Sleepy Eye Mode position
+4. Light-switch input is now ignored
+
+##### De-activating
+
+1. Press the button / remote control
+2. Button LED turns off
+3. Pop-ups are no longer restricted in the Sleepy Eye Mode position
+
+> **Winking:** This mode supports Winking.
+
+> **Restrictions:** This mode cannot be activated unless the light-switch is in the `OFF` position
+
 ### Remote Controls
+
+![10341 Remote Receiver Module.](../../images/pop-up-controller-v10/parts/10341-remote-receiver-module/catalog.png)
+![10342 Remote Transmitter - 4 Buttons.](../../images/pop-up-controller-v10/parts/10342-remote-transmitter-4-buttons/catalog.png)
+
+Optional addon for controlling your pop-ups from a distance.<br>
+Up to 4 different inputs can be registered.
+
+#### Default button mapping
+
+| Button | Action |
+| --- | --- |
+| `1` | Wink RH pop-up |
+| `2` | Wink LH pop-up |
+| `3` | Wink Both pop-ups |
+| `4` | Toggle Sleepy Eye Mode |
+
+> **Note:** This is a separate module that can be added to your controller later.
+
+> **Wake-up from sleep:** Remote inputs will work even while the controller sleeps.
+
+## Controller
+
+### Overview
+
+![Pop-up Controller V10 overview.](../../images/pop-up-controller-v10/user-guide/controller-overview.png)
+
+Plug and play replacement for the T18 Celica's light retractor relay with support for several accessories.
+
+#### Features
+
+- Fully custom PCB without relays
+- 100% individual pop-up control
+- Support for remote module addon
+- Up to 4 wink buttons
+- Custom Sleepy Eye Mode
+- Tracks statistics
+- Desktop app for data readout / setting changes
+
+### Fuses
+
+![Controller fuses.](../../images/pop-up-controller-v10/user-guide/controller-fuses.png)
+
+There are 4 replaceable automotive fuses on board.
+
+- **MAIN — 20 A:** Main power fuse for the entire controller
+- **LOGIC — 1 A:** Protects the non-motor 3.3V and 12V rails
+- **LEFT — 10 A:** Fuse for the left pop-up motor
+- **RIGHT — 10 A:** Fuse for the right pop-up motor
+
+> **Warning:** Do not exceed fuse rating when replacing blown fuses.
+
+### Indicator LEDs
+
+![Controller indicator LEDs.](../../images/pop-up-controller-v10/user-guide/controller-indicator-leds.png)
+
+Several LEDs on the top of the controller case can help with troubleshooting.
+
+- **Green — LEFT:** Lights up when the left pop-up motor is being powered.
+- **Green — RIGHT:** Lights up when the right pop-up motor is being powered.
+- **Blue — STATUS:** Lights up when the controller is running. Off during sleep. Flashing in debug mode.
+- **Red — ERROR:** Turns on when an error occurs. After power on or wake-up from sleep, this LED will flash the amount of errors stored.
+- **White — INPUT:** Flashes briefly when any input changes state (button press or release).
+
+### Connectors
+
+![Controller connectors.](../../images/pop-up-controller-v10/user-guide/controller-connectors.png)
+
+There are several connectors to connect additional accessories.
+
+| Connector | Function |
+| --- | --- |
+| 12-pin Toyota Connector | Connects to the car's wiring harness |
+| X1 | Right pop-up wink button |
+| X2 | Left pop-up wink button |
+| X3 | Both pop-ups wink button |
+| X4 | Both pop-ups toggle button |
+| X5 | Sleepy Eye Controls |
+| X6 | I2C expansion / Remote control module |
+| USB-C | Allows connecting controller to PC |
+
+> Additional connector image placeholder.
+
+### Debug & Adjustment
+
+![Controller buttons and potentiometers.](../../images/pop-up-controller-v10/user-guide/controller-buttons-potentiometers.png)
+
+#### Buttons
+
+- **RESET:** Reset button of the ESP32 module. Reboots the controller without saving data.
+- **BOOT:** Can help during firmware flashing to enter boot mode
+- **DEBUG:** Hold over 5 seconds to save data and reboot. Located between the Left LED and the potentiometers.
+
+#### Potentiometers
+
+- **LED:** Adjusts the LED brightness of the wink buttons and sleepy eye controls
+- **OFFSET:** Adjusts offset of the RH pop-up in Sleepy Eye Mode
+
+## Power draw
+
+## Application
+
+## Safety features
+
+### Stall protection
+
+- Controller detects stalls and disconnects motor power to prevent damage
+- These events are stored in memory and trigger errors, blocking pop-up movement until reboot
+
+### Timeout
+
+- Pop-up movement will be stopped if it cannot reach the desired target within 2.5 seconds
+- These events are stored in memory and trigger errors that block pop-up movement until reboot
+- This prevents pop-ups moving forever in case of malfunctions
+
+### Sleepy Eye mode restrictions
+
+- Sleepy Eye mode can only be activated with the light-switch in the `OFF` position
+- This prevents an accidental button press or hardware malfunction from effectively disabling your headlights while driving at night
+
+### Remote control restrictions
+
+- Remote controls are processed only when the light switch is in the `OFF` position
+- Prevents accidental remote presses or some other remote signals from potentially controlling the headlights during drive
 
 > **Work in progress:** Content below this point is temporary.
 

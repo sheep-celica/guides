@@ -15,8 +15,6 @@
 
 ## Basic Information
 
-This section covers the header shown near the top of the main app window after the controller is connected.
-
 ![Header information area from the main app window.](../../images/pop-up-controller-v10/screenshots/app-usage/overview_information.png)
 
 ### Header Values
@@ -34,8 +32,6 @@ This section covers the header shown near the top of the main app window after t
 
 ## Serial Connection
 
-This section covers controller detection, connection state, and the connection control buttons.
-
 ![Serial connection area from the main app window.](../../images/pop-up-controller-v10/screenshots/app-usage/serial_section.png)
 
 ### Main Areas
@@ -48,8 +44,6 @@ This section covers controller detection, connection state, and the connection c
 
 ## Statistical Data
 
-This section covers the Statistical Data dialog.
-
 ![Statistical Data dialog overview.](../../images/pop-up-controller-v10/screenshots/app-usage/statistical_dialog.PNG)
 
 ### Main Areas
@@ -60,8 +54,6 @@ This section covers the Statistical Data dialog.
 - **Input activity:** Shows activity counters for physical buttons and remote inputs.
 
 ## Settings
-
-This section covers the individual settings categories in the Settings dialog.
 
 ### Safety
 
@@ -113,8 +105,6 @@ This section covers the individual settings categories in the Settings dialog.
 
 ## Errors
 
-This section covers the Errors dialog.
-
 ![Errors dialog overview.](../../images/pop-up-controller-v10/screenshots/app-usage/error_dialog.PNG)
 
 ### Main Areas
@@ -126,8 +116,6 @@ This section covers the Errors dialog.
 
 ## Manufacture Data
 
-This section covers the Manufacture Data dialog.
-
 ![Manufacture Data dialog overview.](../../images/pop-up-controller-v10/screenshots/app-usage/manufacture_dialog.PNG)
 
 ### Main Areas
@@ -137,8 +125,6 @@ This section covers the Manufacture Data dialog.
 
 ## Service
 
-This section covers the Service access dialog.
-
 Contains service actions intended during manufacturing to load manufacturing data and setup calibrations.
 
 **Warning:** This section is not intended for users.
@@ -146,8 +132,6 @@ Contains service actions intended during manufacturing to load manufacturing dat
 ![Service access dialog.](../../images/pop-up-controller-v10/screenshots/app-usage/service_dialog.PNG)
 
 ## Firmware
-
-This section covers the firmware area in the app and how it relates to the separate flashing guide.
 
 ![Firmware area from the main app window.](../../images/pop-up-controller-v10/screenshots/app-usage/firmware_section.png)
 
