@@ -435,6 +435,8 @@ h1 {
 
 .home-title {
   margin-top: 0;
+  max-width: none;
+  white-space: normal;
 }
 
 h2 {
@@ -1461,6 +1463,20 @@ h3 {
   margin: 0;
 }
 
+.about-copy {
+  scroll-margin-top: 1rem;
+}
+
+.about-copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.68;
+}
+
+.about-copy p + p {
+  margin-top: 0.9rem;
+}
+
 .guide-block ul,
 .guide-block ol {
   margin: 0;
@@ -2354,28 +2370,6 @@ h3 {
   display: block;
 }
 
-.user-guide-wip-break {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1.25rem 0;
-  padding: 0.8rem 1rem;
-  border-block: 1px solid rgba(224, 190, 88, 0.38);
-  color: #ffe6a8;
-}
-
-.user-guide-wip-break span {
-  flex: 0 0 auto;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.user-guide-wip-break p {
-  margin: 0;
-  color: var(--muted);
-}
-
 .page--user-guide #power-draw > .notice,
 .page--user-guide #power-draw > .power-draw-table-block,
 .page--user-guide #power-draw > .power-calculator {
@@ -2384,6 +2378,10 @@ h3 {
 
 .page--user-guide #power-draw > .section-heading p {
   max-width: 52rem;
+}
+
+.power-draw-table-block > h3 {
+  margin-bottom: 0.9rem;
 }
 
 .power-calculator {
@@ -2482,6 +2480,49 @@ h3 {
 }
 
 .power-calculator__summary {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.power-calculator__summary-title {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.power-calculator__result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.power-calculator__result-card {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.power-calculator__result-card span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.power-calculator__result-card strong {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.power-calculator__summary-message {
   margin: 0;
   color: var(--accent-strong);
   font-size: 0.9rem;
@@ -2637,7 +2678,7 @@ h3 {
 
 .controller-feature-list li {
   position: relative;
-  padding: 0.72rem 0.8rem;
+  padding: 0.72rem 0.8rem 0.72rem 2.1rem;
   border: 1px solid rgba(99, 186, 143, 0.24);
   border-radius: 12px;
   background: linear-gradient(180deg, rgba(99, 186, 143, 0.11), rgba(99, 186, 143, 0.035));
@@ -2646,7 +2687,27 @@ h3 {
 }
 
 .controller-feature-list li::before {
-  display: none;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0.8rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent-strong);
+  transform: translateY(-50%);
+}
+
+.desktop-app-figure {
+  align-self: start;
+  margin: 0;
+}
+
+.desktop-app-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
 }
 
 .controller-led-color {
@@ -3146,6 +3207,10 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .power-calculator__result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .behavior-usage-grid {
     grid-template-columns: 1fr;
   }
@@ -3187,6 +3252,11 @@ h3 {
   .power-calculator__form {
     grid-template-columns: 1fr;
   }
+
+  .power-calculator__result-grid {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 
@@ -3197,6 +3267,10 @@ h3 {
 
 .guide-link-list {
   margin-top: 0.9rem;
+}
+
+.guide-link-list.desktop-app-link-list {
+  margin-top: 0;
 }
 
 .guide-section-list {
@@ -3822,6 +3896,10 @@ h3 {
   gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
+}
+
+.purchase-package-section {
+  margin-top: 1.25rem;
 }
 
 .purchase-package-card {

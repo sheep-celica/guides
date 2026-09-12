@@ -3,11 +3,13 @@
   var reduceMotionQuery;
 
   if (!("animate" in Element.prototype) || !("matchMedia" in window)) {
+    window.partCardAnimationEnabled = false;
     return;
   }
 
   cards = document.querySelectorAll(".part-card");
   reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  window.partCardAnimationEnabled = !reduceMotionQuery.matches;
 
   function PartCardAnimator(card) {
     this.card = card;
@@ -17,6 +19,7 @@
     this.contentAnimation = null;
     this.isClosing = false;
     this.isExpanding = false;
+    this.card._partCardAnimator = this;
 
     if (!this.summary || !this.content) {
       return;
@@ -114,6 +117,23 @@
 
   PartCardAnimator.prototype.open = function () {
     var startHeight;
+
+    Array.prototype.forEach.call(cards, function (otherCard) {
+      var otherAnimator;
+
+      if (otherCard === this.card || !otherCard.open) {
+        return;
+      }
+
+      otherAnimator = otherCard._partCardAnimator;
+
+      if (otherAnimator && !otherAnimator.isClosing) {
+        otherAnimator.close();
+        return;
+      }
+
+      otherCard.open = false;
+    }, this);
 
     this.isClosing = false;
     this.isExpanding = true;

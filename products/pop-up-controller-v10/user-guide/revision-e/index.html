@@ -10,7 +10,7 @@
   >
   <link rel="stylesheet" href="../../../../assets/styles/site.css">
 </head>
-<body class="body--development">
+<body>
   <main class="page page--wide-guide page--user-guide">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a class="crumb" href="../../../../">Documentation Home</a>
@@ -121,8 +121,9 @@
               >
             </figure>
 
-            <div class="table-wrap">
-              <table class="guide-table light-switch-table">
+            <div class="guide-stack">
+              <div class="table-wrap">
+                <table class="guide-table light-switch-table">
                 <thead>
                   <tr>
                     <th>Position</th>
@@ -168,12 +169,16 @@
                     <td>Pop-ups go DOWN.</td>
                   </tr>
                 </tbody>
-              </table>
+                </table>
+              </div>
+              <div class="notice notice--subtle behavior-toggle-note">
+                <p>Reaction to OFF position is only 100ms - The pop-ups should go DOWN as soon as you put the light-switch into the OFF position.</p>
+              </div>
             </div>
           </div>
 
           <div class="notice notice--warning">
-            <p>Light-switch should be left in the OFF position when car is idle. Otherwise the controller will never enter sleep. See <em>PLACEHOLDER</em></p>
+            <p>Light-switch should be left in the OFF position when car is idle. Otherwise the controller will never enter sleep. See the <a href="#power-draw">Power section</a>.</p>
           </div>
         </section>
         <hr class="behavior-divider">
@@ -638,10 +643,8 @@
         <article class="guide-block">
           <h3>Sleep mode</h3>
           <p>
-            Once the light switch is in the <strong>OFF</strong> position, a timer starts counting
-            down from <strong>15 minutes</strong> (<strong>30 seconds</strong> in firmware versions
-            earlier than 2.3.0). When the timer reaches zero, the controller enters Sleep mode and
-            most circuits are put into standby to reduce power draw.
+            Once the light switch is in the OFF position, a timer starts counting down from 15 minutes* and once it reaches 0, the controller enters Sleep mode.<br>
+            *Earlier firmware versions used 30 seconds
           </p>
         </article>
       </div>
@@ -651,7 +654,7 @@
         <p>Putting the light switch in any other position resets the timer and disables the countdown. Any pop-up movement also resets the timer.</p>
       </div>
 
-      <article class="guide-block power-draw-table-block">
+      <div class="power-draw-table-block">
         <h3>Power draw table</h3>
         <div class="table-wrap">
           <table class="guide-table">
@@ -691,18 +694,18 @@
             </tbody>
           </table>
         </div>
-      </article>
+      </div>
 
       <div class="notice notice--info">
         <h3>Lower-power prototype</h3>
         <p>It is possible to reduce power draw further. My prototype ESP32 board reduced power draw to approximately 1.2 mA standalone or 2.6 mA with the remote addon. Contact me for more details.</p>
       </div>
 
-      <article class="guide-block power-calculator" data-power-calculator>
+      <div class="power-calculator" data-power-calculator>
         <div class="power-calculator__heading">
           <div>
             <h3>Battery life calculation</h3>
-            <p>Estimate how long the battery will take to reach the selected threshold. The controller values use the listed maximum currents as a conservative estimate. Battery disconnected assumes 5% self-discharge per month and no parasitic current. Replace the example battery and parasitic-current values with your own measurements.</p>
+            <p>Estimate how long the battery will take to reach the selected threshold. The controller values use the listed maximum currents as a conservative estimate. Every scenario includes 5% self-discharge per month; Battery disconnected assumes no parasitic current. Replace the example battery and parasitic-current values with your own measurements.</p>
           </div>
         </div>
 
@@ -746,11 +749,32 @@
           <div class="power-calculator__chart" data-power-calculator-chart role="img" aria-label="Interactive battery level estimate chart"></div>
           <p class="power-calculator__fallback" data-power-calculator-fallback hidden>Interactive chart unavailable. Check your connection and reload the page.</p>
         </div>
-        <p class="power-calculator__summary" data-power-calculator-summary aria-live="polite"></p>
+        <div class="power-calculator__summary" data-power-calculator-summary aria-live="polite">
+          <p class="power-calculator__summary-title" data-power-calculator-summary-title>Time until battery discharges to 50%</p>
+          <div class="power-calculator__result-grid" data-power-calculator-results>
+            <article class="power-calculator__result-card">
+              <span>Controller Disconnected</span>
+              <strong data-power-result="noController">—</strong>
+            </article>
+            <article class="power-calculator__result-card">
+              <span>Controller Sleep</span>
+              <strong data-power-result="controllerAsleep">—</strong>
+            </article>
+            <article class="power-calculator__result-card">
+              <span>Controller Idle</span>
+              <strong data-power-result="controllerIdle">—</strong>
+            </article>
+            <article class="power-calculator__result-card">
+              <span>Battery disconnected</span>
+              <strong data-power-result="batteryDisconnected">—</strong>
+            </article>
+          </div>
+          <p class="power-calculator__summary-message" data-power-calculator-summary-message hidden></p>
+        </div>
 
         <div class="notice notice--subtle">
           <h3>Disclaimer</h3>
-          <p>These values are generic estimates. A self-discharge rate of 5% per month has been used for the disconnected battery case.</p>
+          <p>These values are generic estimates. A self-discharge rate of 5% per month is included in every calculation.</p>
         </div>
 
         <div class="notice notice--warning">
@@ -760,14 +784,40 @@
             <li>Disconnecting the battery significantly prolongs its life because it bypasses the parasitic current.</li>
           </ul>
         </div>
-      </article>
+      </div>
     </section>
 
-    <section class="section user-guide-placeholder" id="application">
+    <section class="section" id="application">
       <div class="section-heading">
         <div>
-          <h2>Application</h2>
+          <h2>Desktop App</h2>
         </div>
+      </div>
+      <div class="guide-intro-grid">
+        <div class="guide-stack">
+          <p>There is a custom desktop app that can be used to read or write information to the controller.</p>
+
+          <h3>Relevant links</h3>
+          <div class="guide-link-list desktop-app-link-list">
+            <a href="../../app-guides/">App Guides</a>
+            <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases">Download on GitHub</a>
+          </div>
+
+          <h3>Features</h3>
+          <ul class="controller-feature-list">
+            <li>Read Errors</li>
+            <li>Display Statistics</li>
+            <li>Adjust Settings</li>
+            <li>Update Firmware</li>
+          </ul>
+        </div>
+
+        <figure class="desktop-app-figure">
+          <img
+            src="../../../../images/pop-up-controller-v10/user-guide/app-preview-rev-e.png"
+            alt="Desktop app preview for Pop-up Controller V10."
+          >
+        </figure>
       </div>
     </section>
 
@@ -794,9 +844,9 @@
           </ul>
         </article>
         <article class="safety-feature-card">
-          <h3>Sleepy Eye mode restrictions</h3>
+          <h3>Sleepy Eye Mode restrictions</h3>
           <ul>
-            <li>Sleepy Eye mode can only be activated with the light-switch in the OFF position.</li>
+            <li>Sleepy Eye Mode can only be activated with the light-switch in the OFF position.</li>
             <li>This prevents an accidental button press or hardware malfunction from effectively disabling your headlights while driving at night.</li>
           </ul>
         </article>
@@ -810,550 +860,6 @@
       </div>
     </section>
 
-    <div class="user-guide-wip-break" role="note" aria-label="Work in progress boundary">
-      <span>Work in progress</span>
-      <p>Content below this point is temporary.</p>
-    </div>
-
-    <section class="section" id="clarifications">
-      <div class="section-heading">
-        <div>
-          <h2>Clarifications</h2>
-          <p>
-            These terms are used throughout the guide to describe switch positions and pop-up
-            movement.
-          </p>
-        </div>
-      </div>
-      <div class="guide-grid-two">
-        <article class="guide-block">
-            <figure class="guide-figure">
-            <img
-              src="../../../../images/pop-up-controller-v10/user-guide/clarifications-light-switch-states.png"
-              alt="Light switch positions used by the Pop-up Controller V10 guide."
-            >
-            <figcaption>From top to bottom: HEAD, TAIL, HOLD, and OFF.</figcaption>
-          </figure>
-          <h3>Light switch states</h3>
-          <ul>
-            <li><strong>HEAD</strong> is the full headlight-on position.</li>
-            <li><strong>TAIL</strong> and <strong>HOLD</strong> are treated the same by the controller.</li>
-            <li><strong>OFF</strong> is the fully off position.</li>
-          </ul>
-          <p>The controller cannot distinguish between TAIL and HOLD, so both are handled as HOLD.</p>
-        </article>
-
-        <article class="guide-block">
-          <h3>Pop-up states</h3>
-          <div class="guide-detail-grid pop-up-state-card-list">
-            <div class="guide-mini-card guide-mini-card--info">
-              <h4 class="guide-mini-title">UP</h4>
-              <p>The pop-up is in the fully raised position.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--info">
-              <h4 class="guide-mini-title">DOWN</h4>
-              <p>The pop-up is in the fully retracted position.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--info guide-mini-card--full">
-              <h4 class="guide-mini-title">IN-BETWEEN</h4>
-              <p>The pop-up is somewhere between the UP and DOWN end positions.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="pop-up-controller">
-      <div class="section-heading">
-        <div>
-          <h2>Pop-up Controller</h2>
-        </div>
-      </div>
-      <div class="guide-intro-grid">
-        <figure class="guide-figure">
-          <img
-            src="../../../../images/pop-up-controller-v10/user-guide/controller-overview.png"
-            alt="Pop-up Controller V10 overview image."
-          >
-        </figure>
-
-        <article class="guide-block">
-          <h3>What the controller does</h3>
-          <p>
-            The controller replaces the factory light retractor relay and handles pop-up movement,
-            button inputs, sleepy eye controls, error storage, and USB communication with a PC.
-          </p>
-          <p>
-            In theory it may also work with some other pop-up headlight cars if a custom wiring
-            adapter and mounting bracket are made.
-          </p>
-          <h4 class="guide-github-title">GitHub</h4>
-          <div class="guide-link-list">
-            <a href="https://github.com/sheep-celica/pop-up-controller-v10">Firmware repository</a>
-            <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application">Desktop app repository</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="guide-grid-two">
-        <article class="guide-block" id="fuses">
-          <figure class="guide-figure">
-            <img
-              src="../../../../images/pop-up-controller-v10/user-guide/controller-fuses.png"
-              alt="Fuse locations on the Pop-up Controller V10."
-            >
-            <figcaption>All four onboard fuses are replaceable automotive fuses.</figcaption>
-          </figure>
-          <h3>Fuses</h3>
-          <p>
-            The controller has four replaceable onboard fuses. In general, increasing the fuse
-            rating is not recommended.
-          </p>
-          <p>
-            The entire light retractor circuit is also protected by a
-            <span class="guide-inline-value">30 A RTR fuse</span> in the engine bay.
-          </p>
-          <div class="guide-detail-grid">
-            <div class="guide-mini-card">
-              <div class="guide-mini-kicker">1 A</div>
-              <strong>LOGIC</strong>
-              <p>Protects the 3.3 V and 12 V rails, excluding the pop-up motors.</p>
-            </div>
-            <div class="guide-mini-card">
-              <div class="guide-mini-kicker">15 A</div>
-              <strong>MAIN</strong>
-              <p>Protects everything after the power connector, including the main TVS diode.</p>
-            </div>
-            <div class="guide-mini-card">
-              <div class="guide-mini-kicker">5 A</div>
-              <strong>LEFT</strong>
-              <p>Protects the left pop-up motor.</p>
-            </div>
-            <div class="guide-mini-card">
-              <div class="guide-mini-kicker">5 A</div>
-              <strong>RIGHT</strong>
-              <p>Protects the right pop-up motor.</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="guide-block" id="indicator-leds">
-          <figure class="guide-figure guide-figure--leds">
-            <img
-              src="../../../../images/pop-up-controller-v10/user-guide/controller-indicator-leds.png"
-              alt="Indicator LEDs on the Pop-up Controller V10 case."
-            >
-            <figcaption>The top cover LEDs show power, input, and error status.</figcaption>
-          </figure>
-          <h3>Indicator LEDs</h3>
-          <div class="guide-detail-grid">
-            <div class="guide-mini-card guide-mini-card--green">
-              <h4 class="guide-mini-title">LEFT</h4>
-              <p>Lights while the left pop-up motor is being powered.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--green">
-              <h4 class="guide-mini-title">RIGHT</h4>
-              <p>Lights while the right pop-up motor is being powered.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--blue">
-              <h4 class="guide-mini-title">STATUS</h4>
-              <p>Solid when the controller is running. Flashes when the debug button is pressed.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--red">
-              <h4 class="guide-mini-title">ERROR</h4>
-              <p>Turns on when an error occurs and flashes stored error count on startup.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--white">
-              <h4 class="guide-mini-title">INPUT</h4>
-              <p>Flashes briefly when an input change is registered.</p>
-            </div>
-          </div>
-          <h4>Additional LED behaviors</h4>
-          <ul>
-            <li>Rapid INPUT and STATUS flashing means battery voltage is below 7 V. This should only happen when connected directly to a PC.</li>
-            <li>All LEDs turn on for about 2 seconds at startup as a basic lamp test, excluding LEFT and RIGHT.</li>
-          </ul>
-        </article>
-
-        <article class="guide-block" id="buttons-and-potentiometers">
-          <figure class="guide-figure">
-            <img
-              src="../../../../images/pop-up-controller-v10/user-guide/controller-buttons-potentiometers.png"
-              alt="Buttons and potentiometers on the Pop-up Controller V10 case."
-            >
-            <figcaption>The debug button sits between the OFFSET potentiometer and the LEDs.</figcaption>
-          </figure>
-          <h3>Buttons and potentiometers</h3>
-          <div class="guide-detail-grid">
-            <div class="guide-mini-card">
-              <div class="guide-mini-kicker">Buttons</div>
-              <ul class="guide-checklist">
-                <li><strong>RESET</strong>: Brief press power cycles the controller.</li>
-                <li><strong>BOOT</strong>: Only use when flashing firmware and troubleshooting connection issues.</li>
-                <li><strong>DEBUG</strong>: Hold for more than 5 seconds to save data and reboot. Press it 3 times quickly to toggle sleepy eye availability outside the OFF switch position.</li>
-              </ul>
-            </div>
-            <div class="guide-mini-card">
-              <div class="guide-mini-kicker">Potentiometers</div>
-              <ul class="guide-checklist">
-                <li><strong>LED</strong>: Adjusts illumination LED brightness in the wink buttons and sleepy eye controls.</li>
-                <li><strong>OFFSET</strong>: Adjusts right-hand pop-up timing while moving to the sleepy eye position.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="guide-block" id="connectors">
-          <figure class="guide-figure">
-            <img
-              src="../../../../images/pop-up-controller-v10/user-guide/controller-connectors.png"
-              alt="Connector overview for the Pop-up Controller V10."
-            >
-            <figcaption>Main car-harness input and accessory ports X1 through X6.</figcaption>
-          </figure>
-          <h3>Connectors</h3>
-          <p>
-            The controller includes the main Toyota harness connector, a USB-C port for computer
-            communication, and six Micro-Fit accessory connectors.
-          </p>
-          <div class="table-wrap">
-            <table class="guide-table">
-              <thead>
-                <tr>
-                  <th>Connector</th>
-                  <th>Function</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Main</strong></td>
-                  <td>12-pin Toyota connector</td>
-                  <td>Uses the same connector and pinout as the original Light Retractor Relay.</td>
-                </tr>
-                <tr>
-                  <td><strong>X1</strong></td>
-                  <td>RH wink button</td>
-                  <td>Accessory connector.</td>
-                </tr>
-                <tr>
-                  <td><strong>X2</strong></td>
-                  <td>LH wink button</td>
-                  <td>Accessory connector.</td>
-                </tr>
-                <tr>
-                  <td><strong>X3</strong></td>
-                  <td>Both wink button</td>
-                  <td>Accessory connector.</td>
-                </tr>
-                <tr>
-                  <td><strong>X4</strong></td>
-                  <td>Both toggle button</td>
-                  <td>Acts like both-wink, but in HOLD it toggles pop-up position between UP and DOWN.</td>
-                </tr>
-                <tr>
-                  <td><strong>X5</strong></td>
-                  <td>Sleepy eye controls</td>
-                  <td>Accessory connector.</td>
-                </tr>
-                <tr>
-                  <td><strong>X6</strong></td>
-                  <td>Expansion</td>
-                  <td>Used for accessories such as the remote receiver module.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="wink-buttons">
-      <div class="section-heading">
-        <div>
-          <h2>Wink Buttons</h2>
-          <p>
-            Up to four wink-related inputs can be connected, with the fourth input acting as a
-            toggle button on X4.
-          </p>
-        </div>
-      </div>
-      <div class="guide-grid-two">
-        <article class="guide-block">
-          <figure class="guide-figure">
-            <img
-              src="../../../../images/pop-up-controller-v10/user-guide/wink-buttons-overview.png"
-              alt="Overview of wink button positions and connections."
-            >
-            <figcaption>Wink buttons connect to X1, X2, X3, and X4.</figcaption>
-          </figure>
-          <h3>Button behavior</h3>
-          <p>
-            Wink buttons all use the same connector type, and their cables can be interchanged if
-            needed. Pressing a wink button makes one pop-up or both pop-ups wink.
-          </p>
-          <p>The fourth button on X4 is a toggle button rather than a standard wink input.</p>
-        </article>
-
-        <article class="guide-block">
-          <h3>Wink cycle</h3>
-          <p>The wink cycle starts when a pop-up button is pressed and released.</p>
-          <ol>
-            <li>Move the targeted pop-up to the opposite state. If it is IN-BETWEEN, it is treated as UP.</li>
-            <li>Once it reaches the opposite state, move it back to its original state.</li>
-          </ol>
-          <p>Multiple wink cycles can run at the same time, so one pop-up can move while the other is already in motion.</p>
-          <div class="notice notice--tip">
-            <h3>Sleepy eye support</h3>
-            <p>
-              If a pop-up starts in the sleepy eye position, the wink cycle will return it to that
-              same position at the end of the cycle.
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="light-switch-behavior">
-      <div class="section-heading">
-        <div>
-          <h2>Light Switch Behavior</h2>
-          <p>
-            The controller reacts to all light-switch positions, but only HEAD and OFF actively
-            change the pop-up target state.
-          </p>
-        </div>
-      </div>
-      <div class="guide-grid-two">
-        <div class="guide-stack">
-          <figure class="guide-figure">
-            <img
-              src="../../../../images/pop-up-controller-v10/user-guide/light-switch-behavior-overview.png"
-              alt="Light switch behavior overview for the Pop-up Controller V10."
-            >
-          </figure>
-
-          <article class="guide-block">
-            <h3>Quick Summary</h3>
-            <div class="guide-detail-grid">
-              <div class="guide-mini-card guide-mini-card--info">
-                <h4 class="guide-mini-title">Moves</h4>
-                <p><strong>HEAD</strong> raises the pop-ups.</p>
-                <p><strong>OFF</strong> retracts the pop-ups.</p>
-              </div>
-              <div class="guide-mini-card guide-mini-card--info">
-                <h4 class="guide-mini-title">No Change</h4>
-                <p><strong>TAIL</strong> and <strong>HOLD</strong> keep the current target state.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <article class="guide-block">
-          <h3>How the controller reacts</h3>
-            <div class="table-wrap">
-            <table class="guide-table light-switch-table">
-                <thead>
-                  <tr>
-                    <th>Position</th>
-                    <th class="switch-icon-heading">Icon</th>
-                    <th>Behavior</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>HEAD</strong></td>
-                    <td class="switch-icon-cell">
-                      <span class="switch-icon is-head" aria-hidden="true">
-                        <img src="../../../../images/pop-up-controller-v10/user-guide/light-switch-head-icon.png" alt="">
-                      </span>
-                    </td>
-                    <td>Pop-ups go UP.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>TAIL</strong></td>
-                    <td class="switch-icon-cell">
-                      <span class="switch-icon is-tail" aria-hidden="true">
-                        <img src="../../../../images/pop-up-controller-v10/user-guide/light-switch-tail-icon.png" alt="">
-                      </span>
-                    </td>
-                    <td>No change to pop-up position.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>HOLD</strong></td>
-                    <td class="switch-icon-cell">
-                      <span class="switch-icon is-hold" aria-hidden="true">
-                        <img src="../../../../images/pop-up-controller-v10/user-guide/light-switch-hold-icon.png" alt="">
-                      </span>
-                    </td>
-                    <td>No change to pop-up position.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>OFF</strong></td>
-                    <td class="switch-icon-cell">
-                      <span class="switch-icon is-off" aria-hidden="true">
-                        <img src="../../../../images/pop-up-controller-v10/user-guide/light-switch-off-icon.png" alt="">
-                      </span>
-                    </td>
-                    <td>Pop-ups go DOWN.</td>
-                  </tr>
-                </tbody>
-            </table>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="sleepy-eye-mode">
-      <div class="section-heading">
-        <div>
-          <h2>Sleepy Eye Mode</h2>
-          <p>
-            Sleepy eye mode lets the pop-ups stop at a partial angle set by the sleepy eye control
-            knob.
-          </p>
-        </div>
-      </div>
-      <div class="guide-intro-grid">
-        <figure class="guide-figure guide-figure--sleepy-eye">
-          <img
-            src="../../../../images/pop-up-controller-v10/user-guide/sleepy-eye-mode-overview.png"
-            alt="Sleepy eye controls and position overview."
-          >
-          <figcaption>The rotary control selects one of seven available partial-open positions.</figcaption>
-        </figure>
-
-        <article class="guide-block">
-          <h3>Mode overview</h3>
-          <p>
-            Use the sleepy eye button to toggle the mode on or off. The knob on the sleepy eye
-            controls selects how far the pop-ups continue moving after first reaching UP.
-          </p>
-          <div class="notice notice--subtle">
-            <h3>Default restriction</h3>
-            <p>
-              By default, sleepy eye mode can only be enabled while the light switch is in the OFF
-              position. This can be changed in the desktop app.
-            </p>
-          </div>
-        </article>
-      </div>
-
-      <div class="guide-grid-two">
-        <article class="guide-block guide-block--mode-on">
-          <h3>Turning the mode on</h3>
-          <ul>
-            <li>An LED lights up under the sleepy eye button.</li>
-            <li>The pop-ups first go to UP and then continue for a set amount of time.</li>
-            <li>Light-switch commands no longer change pop-up position while the mode is active.</li>
-            <li>Wink buttons still work normally.</li>
-          </ul>
-        </article>
-
-        <article class="guide-block guide-block--mode-off">
-          <h3>Turning the mode off</h3>
-          <ul>
-            <li>The LED under the sleepy eye button turns off.</li>
-            <li>Normal light-switch control is restored.</li>
-            <li>If the switch is in OFF, the pop-ups go DOWN right away.</li>
-            <li>If the switch is in HEAD, the pop-ups go UP right away.</li>
-          </ul>
-        </article>
-      </div>
-
-      <article class="guide-block">
-        <h3>Adjusting RH pop-up offset</h3>
-        <p>
-          If the pop-ups do not stop at the same angle in sleepy eye mode, adjust the OFFSET
-          potentiometer on the controller. The setting can add a fixed timing offset from
-          <span class="guide-inline-value">-50 ms</span> to
-          <span class="guide-inline-value">+50 ms</span>, with the middle position equal to
-          <span class="guide-inline-value">0 ms</span>.
-        </p>
-      </article>
-    </section>
-
-    <section class="section" id="pop-up-controller-application">
-      <div class="section-heading">
-        <div>
-          <h2>Pop-up Controller Application</h2>
-          <p>
-            The desktop application provides a simple way to read controller data, adjust settings,
-            and flash firmware updates. Dedicated setup, flashing, and usage guides are also
-            available from the App Guides page.
-          </p>
-        </div>
-      </div>
-      <div class="guide-intro-grid">
-        <article class="guide-block">
-          <h3>What the app can do</h3>
-          <div class="guide-detail-grid">
-            <div class="guide-mini-card guide-mini-card--info">
-              <h4 class="guide-mini-title">Stats</h4>
-              <p>Read statistical data from the controller.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--info">
-              <h4 class="guide-mini-title">Errors</h4>
-              <p>Read stored errors and clear them when needed.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--info">
-              <h4 class="guide-mini-title">Settings</h4>
-              <p>Review and adjust controller settings.</p>
-            </div>
-            <div class="guide-mini-card guide-mini-card--info">
-              <h4 class="guide-mini-title">Firmware</h4>
-              <p>Flash new firmware revisions from your computer.</p>
-            </div>
-          </div>
-          <div class="guide-link-list">
-            <a href="https://github.com/sheep-celica/Pop-up-controller-V10-Application/releases">Desktop app downloads</a>
-            <a href="https://github.com/sheep-celica/pop-up-controller-v10/releases">Firmware release downloads</a>
-            <a href="../../app-guides/">Open all app guides</a>
-            <a href="../../app-flashing/">Open the app flashing guide</a>
-          </div>
-        </article>
-
-        <figure class="guide-figure">
-          <img
-            src="../../../../images/pop-up-controller-v10/user-guide/desktop-app-overview.png"
-            alt="Desktop application overview for the Pop-up Controller V10."
-          >
-          <figcaption>The app handles settings, diagnostics, and firmware updates.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="section" id="additional-features">
-      <div class="section-heading">
-        <div>
-          <h2>Additional Features</h2>
-        </div>
-      </div>
-      <div class="guide-grid-two">
-        <article class="guide-block">
-          <h3>Pop-up timeout</h3>
-            <p>
-              If a pop-up cannot reach its target position within
-              <span class="guide-inline-value">2.5 seconds</span>, the controller enters a timeout
-              state and stops movement. The ERROR LED turns on and an error code is stored in the
-              error log.
-            </p>
-            <div class="guide-detail-grid">
-              <div class="guide-mini-card">
-                <div class="guide-mini-kicker">Clearing Timeout State</div>
-                <p>Use any one of the following methods to restart the controller and clear the timeout state:</p>
-                <ul class="guide-checklist">
-                  <li>Disconnect the battery</li>
-                  <li>Remove the RTR fuse</li>
-                  <li>Disconnect the controller from the 12-pin wiring harness connector</li>
-                <li>Remove the MAIN or LOGIC fuse from the controller</li>
-                <li>Hold the debug button for more than 5 seconds</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
   </main>
   <script src="../../../../assets/scripts/site-config.js"></script>
   <script src="../../../../assets/scripts/behavior-tabs.js"></script>

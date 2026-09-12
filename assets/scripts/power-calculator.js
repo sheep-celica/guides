@@ -26,6 +26,12 @@
     };
     const selfDischargeRate = 0.05;
     const daysPerMonth = 30.4375;
+    const selfDischargeConstant = -Math.log(1 - selfDischargeRate) / daysPerMonth;
+
+    const summaryTitle = summary && summary.querySelector("[data-power-calculator-summary-title]");
+    const summaryResults = summary && summary.querySelector("[data-power-calculator-results]");
+    const summaryMessage = summary && summary.querySelector("[data-power-calculator-summary-message]");
+    const resultValues = summary ? summary.querySelectorAll("[data-power-result]") : [];
 
     function numberValue(field) {
       return Number.parseFloat(field.value);
@@ -56,15 +62,29 @@
     }
 
     function batteryLevel(current, days, capacity) {
-      return Math.max(0, 100 - (current * days * 24 * 100) / (capacity * 1000));
+      const loadRate = (current * 24) / (capacity * 1000);
+      const loadRatio = loadRate / selfDischargeConstant;
+
+      return Math.max(
+        0,
+        100 * ((1 + loadRatio) * Math.exp(-selfDischargeConstant * days) - loadRatio)
+      );
     }
 
-    function disconnectedBatteryLevel(days) {
-      return 100 * Math.pow(1 - selfDischargeRate, days / daysPerMonth);
+    function timeToThreshold(current, capacity, threshold) {
+      const thresholdFraction = threshold / 100;
+      const loadRate = (current * 24) / (capacity * 1000);
+      const loadRatio = loadRate / selfDischargeConstant;
+
+      if (current <= 0) {
+        return threshold > 0 ? -Math.log(thresholdFraction) / selfDischargeConstant : Infinity;
+      }
+
+      return -Math.log((thresholdFraction + loadRatio) / (1 + loadRatio)) / selfDischargeConstant;
     }
 
-    function linearBatterySeries(current, capacity, days, chartDays) {
-      const fullDischargeDays = current > 0 ? (capacity * 1000) / (current * 24) : Infinity;
+    function batterySeries(current, capacity, days, chartDays) {
+      const fullDischargeDays = timeToThreshold(current, capacity, 0);
       const visibleDays = days.filter(function (day) {
         return day < fullDischargeDays;
       });
@@ -85,10 +105,21 @@
       setPresetState();
 
       if (!form.checkValidity()) {
-        if (summary) {
-          summary.textContent = "Enter valid values to update the calculation.";
+        if (summaryMessage) {
+          summaryMessage.textContent = "Enter valid values to update the calculation.";
+          summaryMessage.hidden = false;
+        }
+        if (summaryResults) {
+          summaryResults.hidden = true;
         }
         return;
+      }
+
+      if (summaryMessage) {
+        summaryMessage.hidden = true;
+      }
+      if (summaryResults) {
+        summaryResults.hidden = false;
       }
 
       const capacity = numberValue(fields.capacity);
@@ -102,11 +133,9 @@
         controllerAsleep: parasitic + sleep
       };
       const crossingDays = Object.values(currents).map(function (current) {
-        return current > 0 ? (capacity * 1000 * (100 - threshold)) / (current * 24 * 100) : Infinity;
+        return timeToThreshold(current, capacity, threshold);
       });
-      crossingDays.push(
-        (daysPerMonth * Math.log(threshold / 100)) / Math.log(1 - selfDischargeRate)
-      );
+      crossingDays.push(timeToThreshold(0, capacity, threshold));
       const finiteCrossings = crossingDays.filter(Number.isFinite);
       const longestCrossing = finiteCrossings.length > 0 ? Math.max.apply(null, finiteCrossings) : 30;
       const chartDays = Math.min(3650, Math.max(30, longestCrossing * 1.15));
@@ -117,7 +146,7 @@
 
       const traces = [
         {
-          name: "No Controller",
+          name: "Controller Disconnected",
           current: currents.noController,
           color: "#79baff"
         },
@@ -132,7 +161,7 @@
           color: "#ff9c72"
         }
       ].map(function (trace) {
-        const series = linearBatterySeries(trace.current, capacity, days, chartDays);
+        const series = batterySeries(trace.current, capacity, days, chartDays);
 
         return {
           x: series.x,
@@ -146,7 +175,9 @@
 
       traces.push({
         x: days,
-        y: days.map(disconnectedBatteryLevel),
+        y: days.map(function (day) {
+          return batteryLevel(0, day, capacity);
+        }),
         name: "Battery disconnected",
         mode: "lines",
         line: { color: "#c6a4f5", width: 3, dash: "dot" },
@@ -227,11 +258,21 @@
       }
 
       if (summary) {
-        summary.textContent =
-          "Time to " + threshold + "%: No controller " + formatDuration(crossingDays[0]) +
-          "; Controller Sleep " + formatDuration(crossingDays[2]) +
-          "; Controller Idle " + formatDuration(crossingDays[1]) +
-          "; Battery disconnected " + formatDuration(crossingDays[3]) + ".";
+        if (summaryTitle) {
+          summaryTitle.textContent = "Time until battery discharges to " + threshold + "%";
+        }
+
+        resultValues.forEach(function (valueNode) {
+          const resultKey = valueNode.getAttribute("data-power-result");
+          const resultIndex = {
+            noController: 0,
+            controllerAsleep: 2,
+            controllerIdle: 1,
+            batteryDisconnected: 3
+          }[resultKey];
+
+          valueNode.textContent = formatDuration(crossingDays[resultIndex]);
+        });
       }
     }
 

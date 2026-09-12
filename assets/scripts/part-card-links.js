@@ -43,27 +43,33 @@
       return;
     }
 
+    closeOtherCards(card);
     card.open = true;
     updateToggleAllButtons();
   }
 
-  function hasOpenCards(cardsForButton) {
-    return cardsForButton.some(function (card) {
-      return card.open;
+  function closeOtherCards(card) {
+    cards.forEach(function (otherCard) {
+      if (otherCard !== card) {
+        closeCard(otherCard);
+      }
     });
   }
 
-  function updateToggleAllButton(button) {
-    var cardsForButton = getCardsForButton(button);
+  function closeCard(card) {
+    var animator = card._partCardAnimator;
 
-    if (hasOpenCards(cardsForButton)) {
-      button.textContent = "Collapse All";
-      button.setAttribute("aria-label", "Collapse all part cards");
+    if (window.partCardAnimationEnabled && animator && !animator.isClosing) {
+      animator.close();
       return;
     }
 
-    button.textContent = "Expand All";
-    button.setAttribute("aria-label", "Expand all part cards");
+    card.open = false;
+  }
+
+  function updateToggleAllButton(button) {
+    button.textContent = "Collapse All";
+    button.setAttribute("aria-label", "Collapse all part cards");
   }
 
   function updateToggleAllButtons() {
@@ -72,9 +78,9 @@
     });
   }
 
-  function setAllCards(cardsForButton, isOpen) {
+  function setAllCards(cardsForButton) {
     cardsForButton.forEach(function (card) {
-      card.open = isOpen;
+      closeCard(card);
     });
 
     updateToggleAllButtons();
@@ -103,12 +109,18 @@
     button.addEventListener("click", function () {
       var cardsForButton = getCardsForButton(button);
 
-      setAllCards(cardsForButton, !hasOpenCards(cardsForButton));
+      setAllCards(cardsForButton);
     });
   });
 
   cards.forEach(function (card) {
-    card.addEventListener("toggle", updateToggleAllButtons);
+    card.addEventListener("toggle", function () {
+      if (card.open && !window.partCardAnimationEnabled) {
+        closeOtherCards(card);
+      }
+
+      updateToggleAllButtons();
+    });
   });
 
   window.addEventListener("hashchange", function () {
