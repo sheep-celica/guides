@@ -21,6 +21,17 @@
   --radius-lg: 18px;
   --radius-md: 14px;
   --max-width: 1120px;
+  --font-size-body: 1rem;
+  --font-size-display: clamp(2.3rem, 5.5vw, 4.2rem);
+  --font-size-section: clamp(1.7rem, 2.8vw, 2.2rem);
+  --font-size-card-title: 1.125rem;
+  --font-size-lede: clamp(1.02rem, 1.55vw, 1.12rem);
+  --line-height-body: 1.65;
+  --space-card: 1rem;
+  --tone-info: 103, 164, 236;
+  --tone-warning: 224, 190, 88;
+  --tone-danger: 255, 110, 110;
+  --tone-success: 99, 186, 143;
 }
 
 * {
@@ -35,6 +46,8 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: var(--sans);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   color: var(--text);
   background:
     radial-gradient(circle at top center, rgba(138, 164, 200, 0.09), transparent 34%),
@@ -400,7 +413,7 @@ h3 {
 
 h1 {
   margin-top: 0.85rem;
-  font-size: clamp(2.3rem, 5.5vw, 4.2rem);
+  font-size: var(--font-size-display);
   max-width: 13ch;
 }
 
@@ -440,7 +453,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  font-size: var(--font-size-section);
 }
 
 h3 {
@@ -459,7 +472,7 @@ h3 {
 .lede {
   margin: 1rem 0 0;
   max-width: 52rem;
-  font-size: clamp(1.02rem, 1.55vw, 1.12rem);
+  font-size: var(--font-size-lede);
   line-height: 1.7;
 }
 
@@ -636,6 +649,10 @@ h3 {
 
 .notes {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.notes--standalone {
+  margin-top: 1.25rem;
 }
 
 .card-link,
@@ -834,7 +851,14 @@ h3 {
 }
 
 .note-card {
-  padding: 1.1rem 1.15rem;
+  padding: var(--space-card);
+}
+
+.note-card > h3,
+.guide-mini-card > h3,
+.safety-feature-card > h3 {
+  font-size: var(--font-size-card-title);
+  line-height: 1.3;
 }
 
 .page-note {
@@ -851,24 +875,28 @@ h3 {
   line-height: 1.45;
 }
 
-.note-card--info {
-  border-color: rgba(103, 164, 236, 0.24);
-  background: linear-gradient(180deg, rgba(103, 164, 236, 0.12), rgba(103, 164, 236, 0.05));
-}
+/* Shared note severity. The same tones work in page notes, inline notices, and compact notes. */
+.note-card--info,
+.notice--info,
+.guide-mini-card--info { --note-tone: var(--tone-info); }
 
-.note-card--warning {
-  border-color: rgba(224, 190, 88, 0.26);
-  background: linear-gradient(180deg, rgba(224, 190, 88, 0.12), rgba(224, 190, 88, 0.05));
-}
+.note-card--warning,
+.notice--warning,
+.guide-mini-card--warning { --note-tone: var(--tone-warning); }
 
-.note-card--success {
-  border-color: rgba(99, 186, 143, 0.3);
-  background: linear-gradient(180deg, rgba(99, 186, 143, 0.16), rgba(99, 186, 143, 0.06));
-}
+.note-card--serious,
+.notice--serious,
+.guide-mini-card--serious { --note-tone: var(--tone-danger); }
 
-.note-card--serious {
-  border-color: rgba(255, 110, 110, 0.24);
-  background: linear-gradient(180deg, rgba(255, 110, 110, 0.12), rgba(255, 110, 110, 0.05));
+.note-card--success,
+.notice--tip { --note-tone: var(--tone-success); }
+
+:is(.note-card, .notice, .guide-mini-card):is(
+    .note-card--info, .note-card--warning, .note-card--serious, .note-card--success,
+    .notice--info, .notice--warning, .notice--serious, .notice--tip,
+    .guide-mini-card--info, .guide-mini-card--warning, .guide-mini-card--serious) {
+  border-color: rgba(var(--note-tone), 0.28);
+  background: linear-gradient(180deg, rgba(var(--note-tone), 0.12), rgba(var(--note-tone), 0.05));
 }
 
 .body--development .note-card {
@@ -936,6 +964,10 @@ h3 {
   background: linear-gradient(180deg, rgba(138, 164, 200, 0.11), rgba(138, 164, 200, 0.05));
 }
 
+.notice--standalone {
+  margin-top: 1.25rem;
+}
+
 .notice::before {
   content: "";
   position: absolute;
@@ -944,40 +976,8 @@ h3 {
   background: rgba(138, 164, 200, 0.75);
 }
 
-.notice--info {
-  border-color: rgba(103, 164, 236, 0.24);
-  background: linear-gradient(180deg, rgba(103, 164, 236, 0.12), rgba(103, 164, 236, 0.05));
-}
-
-.notice--info::before {
-  background: #67a4ec;
-}
-
-.notice--warning {
-  border-color: rgba(224, 190, 88, 0.24);
-  background: linear-gradient(180deg, rgba(224, 190, 88, 0.12), rgba(224, 190, 88, 0.05));
-}
-
-.notice--warning::before {
-  background: #e0be58;
-}
-
-.notice--serious {
-  border-color: rgba(255, 110, 110, 0.24);
-  background: linear-gradient(180deg, rgba(255, 110, 110, 0.12), rgba(255, 110, 110, 0.05));
-}
-
-.notice--serious::before {
-  background: #ff6969;
-}
-
-.notice--tip {
-  border-color: rgba(99, 186, 143, 0.24);
-  background: linear-gradient(180deg, rgba(99, 186, 143, 0.12), rgba(99, 186, 143, 0.05));
-}
-
-.notice--tip::before {
-  background: #63ba8f;
+.notice:is(.notice--info, .notice--warning, .notice--serious, .notice--tip)::before {
+  background: rgb(var(--note-tone));
 }
 
 .notice--subtle {
@@ -1440,6 +1440,7 @@ h3 {
 .guide-block ol + h4,
 .guide-block figure + h3,
 .guide-block .guide-figure + .guide-note-card,
+.guide-block .guide-figure + .notice,
 .guide-block .guide-note-card + .guide-card-grid,
 .guide-block .guide-note-card + .guide-detail-grid,
 .guide-block .guide-note-card + p,
@@ -1452,6 +1453,14 @@ h3 {
   margin-top: 0.9rem;
 }
 
+.guide-block > .notice:not(:first-child) {
+  margin-top: 1.25rem;
+}
+
+.guide-block > .notice:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
 .guide-block p,
 .guide-block li,
 .guide-block figcaption {
@@ -1461,6 +1470,14 @@ h3 {
 
 .guide-block p {
   margin: 0;
+}
+
+.guide-block .notice h3 {
+  margin-bottom: 0.45rem;
+}
+
+.guide-block .notice p {
+  color: var(--text);
 }
 
 .about-copy {
@@ -1606,11 +1623,12 @@ h3 {
   margin: 0;
 }
 
-.page--app-usage-guide .guide-section-content > .guide-figure,
-.page--app-usage-guide .guide-block > .guide-figure {
+.guide-figure--plain,
+.user-guide-behavior .guide-figure {
   padding: 0;
   border: 0;
   background: transparent;
+  box-shadow: none;
 }
 
 .diagram-stage {
@@ -1676,13 +1694,17 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
 }
 
-.feature-card-grid .guide-mini-card figure {
+.feature-card {
+  gap: 0.7rem;
+}
+
+.feature-card figure {
   min-height: 9rem;
   display: grid;
   place-items: center;
 }
 
-.feature-card-grid .guide-mini-card img {
+.guide-mini-card.feature-card img {
   width: auto;
   max-width: min(100%, 11rem);
   max-height: 8rem;
@@ -1692,7 +1714,7 @@ h3 {
   background: transparent;
 }
 
-.feature-card-grid #oled-display img {
+.feature-card--wide-image img {
   max-width: min(100%, 17rem);
   max-height: 9rem;
 }
@@ -1747,7 +1769,7 @@ h3 {
   display: grid;
   gap: 0.45rem;
   align-content: start;
-  padding: 0.9rem 0.95rem;
+  padding: var(--space-card);
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
@@ -1761,24 +1783,9 @@ h3 {
   padding: 1rem 1.05rem;
 }
 
-.guide-mini-card--warning {
-  border-color: rgba(224, 190, 88, 0.26);
-  background: linear-gradient(180deg, rgba(224, 190, 88, 0.12), rgba(224, 190, 88, 0.05));
-}
-
-.guide-mini-card--info {
-  border-color: rgba(103, 164, 236, 0.24);
-  background: linear-gradient(180deg, rgba(103, 164, 236, 0.12), rgba(103, 164, 236, 0.05));
-}
-
 .guide-mini-card--optional {
   border-color: rgba(103, 164, 236, 0.26);
   background: linear-gradient(180deg, rgba(103, 164, 236, 0.14), rgba(103, 164, 236, 0.06));
-}
-
-.guide-mini-card--serious {
-  border-color: rgba(255, 110, 110, 0.24);
-  background: linear-gradient(180deg, rgba(255, 110, 110, 0.12), rgba(255, 110, 110, 0.05));
 }
 
 .guide-mini-card--button {
@@ -1809,8 +1816,8 @@ h3 {
 .guide-mini-card > .guide-mini-title {
   display: block;
   width: auto;
-  margin: -0.9rem -0.95rem 0;
-  padding: 0.55rem 0.95rem;
+  margin: calc(-1 * var(--space-card)) calc(-1 * var(--space-card)) 0;
+  padding: 0.55rem var(--space-card);
   border-bottom: 1px solid rgba(103, 164, 236, 0.28);
   border-radius: 13px 13px 0 0;
   background: linear-gradient(90deg, rgba(103, 164, 236, 0.2), rgba(103, 164, 236, 0.08));
@@ -1825,7 +1832,7 @@ h3 {
   margin-top: 0;
 }
 
-.page--user-guide .pop-up-state-card-list {
+.pop-up-state-card-list {
   grid-template-columns: 1fr;
 }
 
@@ -1929,17 +1936,6 @@ h3 {
   color: #ffffff;
 }
 
-.page--app-usage-guide #settings .guide-card-grid > .guide-mini-card:not(.guide-note-card) {
-  border-color: rgba(99, 186, 143, 0.24);
-  background: linear-gradient(180deg, rgba(99, 186, 143, 0.12), rgba(99, 186, 143, 0.05));
-}
-
-.page--app-usage-guide #settings .guide-card-grid > .guide-mini-card:not(.guide-note-card) .guide-mini-kicker {
-  border-color: rgba(99, 186, 143, 0.28);
-  background: rgba(99, 186, 143, 0.14);
-  color: #bfeccc;
-}
-
 .guide-checklist {
   list-style: none;
   margin: 0;
@@ -2011,56 +2007,11 @@ h3 {
 }
 
 /* Instrument cluster guide */
-.instrument-guide-section {
-  --instrument-section-padding: clamp(1.25rem, 2vw, 1.6rem);
-  position: relative;
-  padding: var(--instrument-section-padding);
-  border-color: rgba(138, 164, 200, 0.24);
-  background:
-    linear-gradient(90deg, rgba(138, 164, 200, 0.2), rgba(138, 164, 200, 0)) top / 100% 3px no-repeat,
-    linear-gradient(180deg, rgba(20, 28, 38, 0.96), rgba(11, 17, 23, 0.94));
-  box-shadow:
-    0 24px 52px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-}
-
-.instrument-guide-section > .section-heading {
-  position: sticky;
-  top: 0.5rem;
-  z-index: 8;
-  align-items: center;
-  margin:
-    calc(var(--instrument-section-padding) * -1)
-    calc(var(--instrument-section-padding) * -1)
-    1.5rem;
-  padding: 1rem var(--instrument-section-padding);
-  border-bottom: 1px solid rgba(138, 164, 200, 0.28);
-  border-radius: var(--radius-xl) var(--radius-xl) 14px 14px;
-  background: rgba(13, 20, 28, 0.94);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
-  backdrop-filter: blur(14px);
-}
-
-.instrument-guide-section > .section-heading h2 {
-  color: var(--accent-strong);
-  font-size: clamp(1.55rem, 2.5vw, 2.05rem);
-}
-
-.instrument-guide-section > .section-heading p {
-  max-width: 56rem;
-}
-
 .instrument-cluster-hero {
   display: grid;
   grid-template-columns: minmax(22rem, 0.9fr) minmax(0, 1.1fr);
   gap: clamp(1.25rem, 3vw, 2.5rem);
   align-items: center;
-}
-
-.page--instrument-cluster-guide .instrument-cluster-hero h1 {
-  max-width: none;
-  white-space: nowrap;
-  font-size: clamp(2.4rem, 4.4vw, 3.55rem);
 }
 
 .instrument-cluster-hero__copy,
@@ -2260,18 +2211,8 @@ h3 {
 }
 
 @media (max-width: 800px) {
-  .instrument-guide-section > .section-heading {
-    top: 0.35rem;
-    padding-top: 0.85rem;
-    padding-bottom: 0.85rem;
-  }
-
   .instrument-cluster-hero {
     grid-template-columns: 1fr;
-  }
-
-  .page--instrument-cluster-guide .instrument-cluster-hero h1 {
-    font-size: clamp(1.95rem, 9.3vw, 2.75rem);
   }
 }
 
@@ -2360,7 +2301,7 @@ h3 {
   text-transform: uppercase;
 }
 
-.page--user-guide > .hero h1 {
+.hero--user-guide h1 {
   max-width: none;
   white-space: normal;
   font-size: clamp(2rem, 5.5vw, 4.2rem);
@@ -2370,13 +2311,13 @@ h3 {
   display: block;
 }
 
-.page--user-guide #power-draw > .notice,
-.page--user-guide #power-draw > .power-draw-table-block,
-.page--user-guide #power-draw > .power-calculator {
+.power-draw-section > .notice,
+.power-draw-section > .power-draw-table-block,
+.power-draw-section > .power-calculator {
   margin-top: 1rem;
 }
 
-.page--user-guide #power-draw > .section-heading p {
+.power-draw-section > .section-heading p {
   max-width: 52rem;
 }
 
@@ -2542,11 +2483,11 @@ h3 {
   align-items: start;
 }
 
-#behavior-light-switch .guide-grid-two > .table-wrap {
+.guide-grid-two--table-first > .table-wrap {
   order: 1;
 }
 
-#behavior-light-switch .guide-grid-two > .guide-figure {
+.guide-grid-two--table-first > .guide-figure {
   order: 2;
 }
 
@@ -2747,7 +2688,7 @@ h3 {
   color: #ffffff;
 }
 
-.page--user-guide .controller-indicator-leds-image {
+.controller-indicator-leds-image {
   width: 50%;
   margin-inline: auto;
 }
@@ -2775,7 +2716,7 @@ h3 {
   display: grid;
   align-content: start;
   gap: 0.8rem;
-  padding: 1.1rem 1.15rem;
+  padding: var(--space-card);
   border: 1px solid rgba(224, 190, 88, 0.3);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(224, 190, 88, 0.12), rgba(224, 190, 88, 0.04));
@@ -2786,7 +2727,7 @@ h3 {
   padding-bottom: 0.7rem;
   border-bottom: 1px solid rgba(224, 190, 88, 0.34);
   color: #ffe9ad;
-  font-size: 1.05rem;
+  font-size: var(--font-size-card-title);
 }
 
 .safety-feature-card ul {
@@ -2939,25 +2880,25 @@ h3 {
   left: auto;
 }
 
-.page--user-guide .guide-github-title {
+.guide-github-title {
   margin-top: 1.4rem;
 }
 
-.page--user-guide .guide-github-title + .guide-link-list {
+.guide-github-title + .guide-link-list {
   margin-top: 0.7rem;
 }
 
-.page--user-guide .guide-figure--leds img {
+.guide-figure--leds img {
   width: 60%;
   margin-inline: auto;
 }
 
-.page--user-guide .guide-figure--sleepy-eye img {
+.guide-figure--sleepy-eye img {
   width: 50%;
   margin-inline: auto;
 }
 
-.page--user-guide .guide-figure--wink-button img {
+.guide-figure--wink-button img {
   width: 80%;
   margin-inline: auto;
 }
@@ -2968,15 +2909,7 @@ h3 {
   background: transparent;
 }
 
-.page--user-guide .user-guide-behavior .guide-figure,
-.page--user-guide #controller .guide-figure {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.page--user-guide .user-guide-behavior .remote-controls-visual {
+.user-guide-behavior .remote-controls-visual {
   padding: 0;
   border: 0;
   background: transparent;
@@ -3018,21 +2951,21 @@ h3 {
   transform: rotate(8deg);
 }
 
-.page--user-guide .guide-block--mode-on {
+.guide-block--mode-on {
   border-color: rgba(99, 186, 143, 0.3);
   background: linear-gradient(180deg, rgba(99, 186, 143, 0.14), rgba(99, 186, 143, 0.05));
 }
 
-.page--user-guide .guide-block--mode-on > h3 {
+.guide-block--mode-on > h3 {
   color: #bfeccc;
 }
 
-.page--user-guide .guide-block--mode-off {
+.guide-block--mode-off {
   border-color: rgba(255, 110, 110, 0.3);
   background: linear-gradient(180deg, rgba(255, 110, 110, 0.14), rgba(255, 110, 110, 0.05));
 }
 
-.page--user-guide .guide-block--mode-off > h3 {
+.guide-block--mode-off > h3 {
   color: #ffc7c7;
 }
 
@@ -3279,23 +3212,31 @@ h3 {
 }
 
 .guide-section-card {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(103, 164, 236, 0.2);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, rgba(20, 28, 37, 0.96), rgba(13, 19, 26, 0.96));
   overflow: hidden;
   scroll-margin-top: 1rem;
+  box-shadow: inset 4px 0 0 rgba(103, 164, 236, 0.42);
   transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
 .guide-section-card[open] {
-  border-color: rgba(138, 164, 200, 0.35);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
+  border-color: rgba(103, 164, 236, 0.42);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24), inset 4px 0 0 rgba(103, 164, 236, 0.72);
 }
 
 .guide-section-card summary {
   list-style: none;
   cursor: pointer;
   padding: 1.2rem;
+  background: linear-gradient(90deg, rgba(103, 164, 236, 0.1), rgba(103, 164, 236, 0.025) 58%);
+  transition: background-color 160ms ease;
+}
+
+.guide-section-card summary:hover,
+.guide-section-card summary:focus-visible {
+  background: linear-gradient(90deg, rgba(103, 164, 236, 0.17), rgba(103, 164, 236, 0.045) 64%);
 }
 
 .guide-section-card summary::-webkit-details-marker {
@@ -3332,17 +3273,20 @@ h3 {
 .guide-section-toggle {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.45rem;
+  min-width: 5.6rem;
   padding: 0.42rem 0.75rem;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(137, 186, 246, 0.48);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--muted);
+  background: linear-gradient(180deg, rgba(77, 137, 209, 0.82), rgba(48, 91, 148, 0.86));
+  color: #ffffff;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   flex: 0 0 auto;
+  box-shadow: 0 8px 18px rgba(23, 61, 108, 0.28);
 }
 
 .guide-section-toggle::after {
@@ -3362,48 +3306,18 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
-.page--app-usage-guide .guide-section-card {
-  border-color: rgba(103, 164, 236, 0.2);
-  box-shadow: inset 4px 0 0 rgba(103, 164, 236, 0.42);
-}
-
-.page--app-usage-guide .guide-section-card[open] {
-  border-color: rgba(103, 164, 236, 0.42);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24), inset 4px 0 0 rgba(103, 164, 236, 0.72);
-}
-
-.page--app-usage-guide .guide-section-card summary {
-  background: linear-gradient(90deg, rgba(103, 164, 236, 0.1), rgba(103, 164, 236, 0.025) 58%);
-  transition: background-color 160ms ease;
-}
-
-.page--app-usage-guide .guide-section-card summary:hover,
-.page--app-usage-guide .guide-section-card summary:focus-visible {
-  background: linear-gradient(90deg, rgba(103, 164, 236, 0.17), rgba(103, 164, 236, 0.045) 64%);
-}
-
-.page--app-usage-guide .guide-section-toggle {
-  min-width: 5.6rem;
-  justify-content: space-between;
-  border-color: rgba(137, 186, 246, 0.48);
-  background: linear-gradient(180deg, rgba(77, 137, 209, 0.82), rgba(48, 91, 148, 0.86));
-  color: #ffffff;
-  box-shadow: 0 8px 18px rgba(23, 61, 108, 0.28);
-}
-
-.page--app-usage-guide .guide-section-content > .guide-figure + :not(.guide-figure),
-.page--app-usage-guide .guide-section-content .guide-block > .guide-figure + :not(.guide-figure) {
+.guide-section-content > .guide-figure + :not(.guide-figure),
+.guide-section-content .guide-block > .guide-figure + :not(.guide-figure) {
   margin-top: 0.35rem;
   padding-top: 1.25rem;
   border-top: 1px solid rgba(138, 164, 200, 0.32);
 }
 
-.page--app-usage-guide .guide-card-grid > .guide-mini-card > .guide-mini-kicker,
-.page--app-usage-guide .guide-grid-two > .guide-stack > .guide-mini-card > .guide-mini-kicker {
+.guide-mini-card > .guide-mini-kicker {
   display: block;
-  width: calc(100% + 1.9rem);
-  margin: -0.9rem -0.95rem 0;
-  padding: 0.55rem 0.95rem;
+  width: calc(100% + 2 * var(--space-card));
+  margin: calc(-1 * var(--space-card)) calc(-1 * var(--space-card)) 0;
+  padding: 0.55rem var(--space-card);
   border: 0;
   border-bottom: 1px solid rgba(103, 164, 236, 0.28);
   border-radius: 13px 13px 0 0;
@@ -3415,19 +3329,19 @@ h3 {
   text-transform: none;
 }
 
-.page--app-usage-guide .guide-card-grid > .guide-mini-card > .guide-mini-kicker.is-green {
+.guide-mini-card > .guide-mini-kicker.is-green {
   border-bottom-color: rgba(99, 186, 143, 0.32);
   background: linear-gradient(90deg, rgba(99, 186, 143, 0.22), rgba(99, 186, 143, 0.08));
   color: #d8f5e1;
 }
 
-.page--app-usage-guide .guide-card-grid > .guide-mini-card > .guide-mini-kicker.is-yellow {
+.guide-mini-card > .guide-mini-kicker.is-yellow {
   border-bottom-color: rgba(224, 190, 88, 0.34);
   background: linear-gradient(90deg, rgba(224, 190, 88, 0.22), rgba(224, 190, 88, 0.08));
   color: #fff0bd;
 }
 
-.page--app-usage-guide .guide-card-grid > .guide-mini-card > .guide-mini-kicker.is-red {
+.guide-mini-card > .guide-mini-kicker.is-red {
   border-bottom-color: rgba(255, 110, 110, 0.32);
   background: linear-gradient(90deg, rgba(255, 110, 110, 0.2), rgba(255, 110, 110, 0.07));
   color: #ffd7d7;
@@ -3668,24 +3582,9 @@ h3 {
   align-content: start;
 }
 
-.part-copy-stack .guide-mini-card {
-  min-height: 0;
-}
-
-.part-copy-stack .guide-mini-kicker {
-  display: block;
-  width: calc(100% + 1.9rem);
-  margin: -0.9rem -0.95rem 0;
-  padding: 0.55rem 0.95rem;
-  border: 0;
-  border-bottom: 1px solid rgba(103, 164, 236, 0.28);
-  border-radius: 13px 13px 0 0;
-  background: linear-gradient(90deg, rgba(103, 164, 236, 0.2), rgba(103, 164, 236, 0.08));
-  color: #dceaff;
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-  line-height: 1.3;
-  text-transform: none;
+.part-fact-card {
+  border-color: rgba(186, 206, 235, 0.3);
+  background: linear-gradient(180deg, rgba(31, 42, 56, 0.98), rgba(18, 27, 37, 0.98));
 }
 
 .part-price-pill {

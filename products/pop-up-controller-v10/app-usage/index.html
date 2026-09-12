@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../../assets/styles/site.css">
 </head>
 <body>
-  <main class="page page--wide-guide page--app-usage-guide">
+  <main class="page page--wide-guide">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a class="crumb" href="../../../">Documentation Home</a>
       <a class="crumb" href="../">Pop-up Controller V10</a>
@@ -23,14 +23,10 @@
       <h1>App Usage Guide</h1>
     </section>
 
-    <section class="section">
-      <article class="guide-mini-card guide-note-card guide-mini-card--warning">
-        <div class="guide-mini-kicker is-yellow">Precondition</div>
-        <p>
-          Complete the <a href="../app-setup/">App Setup Guide</a> first.
-        </p>
-      </article>
-    </section>
+    <aside class="notice notice--warning notice--standalone" aria-label="Precondition warning">
+      <h3>Precondition</h3>
+      <p>Complete the <a href="../app-setup/">App Setup Guide</a> first.</p>
+    </aside>
 
     <section class="section" id="guide-sections">
       <div class="section-heading">
@@ -49,7 +45,7 @@
             </div>
           </summary>
           <div class="guide-section-content">
-            <figure class="guide-figure">
+            <figure class="guide-figure guide-figure--plain">
               <img
                 src="../../../images/pop-up-controller-v10/screenshots/app-usage/overview_information.png"
                 alt="Main information header from the Pop-up Controller V10 desktop app."
@@ -77,13 +73,11 @@
                 <p>Controller board temperature.</p>
               </article>
             </div>
-            <article class="guide-block">
-              <div class="notice notice--subtle">
-                <h3>Controller States</h3>
-                <p><strong>BENCH MODE:</strong> Voltage &lt; 7 Volts. Controller runs in limited functionality, pop-up control is disabled.</p>
-                <p><strong>RUNNING:</strong> Controller is running in the standard mode as is expected in the car.</p>
-              </div>
-            </article>
+            <div class="notice notice--subtle">
+              <h3>Controller States</h3>
+              <p><strong>BENCH MODE:</strong> Voltage &lt; 7 Volts. Controller runs in limited functionality, pop-up control is disabled.</p>
+              <p><strong>RUNNING:</strong> Controller is running in the standard mode as is expected in the car.</p>
+            </div>
           </div>
         </details>
 
@@ -97,7 +91,7 @@
             </div>
           </summary>
           <div class="guide-section-content">
-            <figure class="guide-figure">
+            <figure class="guide-figure guide-figure--plain">
               <img
                 src="../../../images/pop-up-controller-v10/screenshots/app-usage/serial_section.png"
                 alt="Serial connection area from the Pop-up Controller V10 desktop app."
@@ -139,7 +133,7 @@
           </summary>
           <div class="guide-section-content">
             <div class="guide-grid-two guide-grid-two--sidebar-right">
-              <figure class="guide-figure">
+              <figure class="guide-figure guide-figure--plain">
                 <img
                   src="../../../images/pop-up-controller-v10/screenshots/app-usage/statistical_dialog.PNG"
                   alt="Statistical Data dialog in the Pop-up Controller V10 desktop app."
@@ -177,7 +171,7 @@
             <div class="guide-stack">
               <article class="guide-block">
                 <h3>Safety</h3>
-                <figure class="guide-figure">
+                <figure class="guide-figure guide-figure--plain">
                   <img
                     src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_safety.PNG"
                     alt="Safety category highlighted in the Settings dialog."
@@ -197,16 +191,16 @@
 
               <article class="guide-block">
                 <h3>Pop-up Settings</h3>
-                <figure class="guide-figure">
+                <figure class="guide-figure guide-figure--plain">
                   <img
                     src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_popups.PNG"
                     alt="Pop-up settings category highlighted in the Settings dialog."
                   >
                 </figure>
-                <article class="guide-mini-card guide-note-card guide-mini-card--warning">
-                  <div class="guide-mini-kicker is-yellow">Warning</div>
+                <aside class="notice notice--warning">
+                  <h3>Warning</h3>
                   <p>It is not recommended to adjust the following settings without consulting me first.</p>
-                </article>
+                </aside>
                 <div class="guide-card-grid">
                   <article class="guide-mini-card">
                     <div class="guide-mini-kicker">Minimum time to change states</div>
@@ -229,7 +223,7 @@
 
               <article class="guide-block">
                 <h3>Remote</h3>
-                <figure class="guide-figure">
+                <figure class="guide-figure guide-figure--plain">
                   <img
                     src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_remote.PNG"
                     alt="Remote category highlighted in the Settings dialog."
@@ -249,17 +243,17 @@
 
               <article class="guide-block">
                 <h3>Idle</h3>
-                <figure class="guide-figure">
+                <figure class="guide-figure guide-figure--plain">
                   <img
                     src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_idle.PNG"
                     alt="Idle category highlighted in the Settings dialog."
                   >
                 </figure>
+                <aside class="notice notice--info">
+                  <h3>Info</h3>
+                  <p>This time is only incremented while the light-switch is in the <span class="guide-inline-value">OFF</span> position. Any input or pop-up movement resets it.</p>
+                </aside>
                 <div class="guide-card-grid">
-                  <article class="guide-mini-card guide-note-card guide-mini-card--info">
-                    <div class="guide-mini-kicker is-blue">Info</div>
-                    <p>This time is only incremented while the light-switch is in the <span class="guide-inline-value">OFF</span> position. Any input or pop-up movement resets it.</p>
-                  </article>
                   <article class="guide-mini-card">
                     <div class="guide-mini-kicker">Idle time to power off</div>
                     <p>The amount of idle time needed for the controller to shutdown.</p>
@@ -269,7 +263,7 @@
 
               <article class="guide-block">
                 <h3>Other</h3>
-                <figure class="guide-figure">
+                <figure class="guide-figure guide-figure--plain">
                   <img
                     src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_other.PNG"
                     alt="Other category highlighted in the Settings dialog."
@@ -289,13 +283,13 @@
 
               <article class="guide-block">
                 <h3>Potentiometers</h3>
-                <figure class="guide-figure">
+                <figure class="guide-figure guide-figure--plain">
                   <img
                     src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_potentiometers.png"
                     alt="Potentiometers category highlighted in the Settings dialog."
                   >
                 </figure>
-                <figure class="guide-figure">
+                <figure class="guide-figure guide-figure--plain">
                   <img
                     src="../../../images/pop-up-controller-v10/screenshots/app-usage/settings_dialog_potentiometers_2.png"
                     alt="Live potentiometer positions in the Settings dialog."
@@ -326,7 +320,7 @@
             </div>
           </summary>
           <div class="guide-section-content">
-            <figure class="guide-figure">
+            <figure class="guide-figure guide-figure--plain">
               <img
                 src="../../../images/pop-up-controller-v10/screenshots/app-usage/error_dialog.PNG"
                 alt="Errors dialog in the Pop-up Controller V10 desktop app."
@@ -363,7 +357,7 @@
             </div>
           </summary>
           <div class="guide-section-content">
-            <figure class="guide-figure">
+            <figure class="guide-figure guide-figure--plain">
               <img
                 src="../../../images/pop-up-controller-v10/screenshots/app-usage/manufacture_dialog.PNG"
                 alt="Manufacture Data dialog in the Pop-up Controller V10 desktop app."
@@ -395,11 +389,11 @@
             <article class="guide-block">
               <p>Contains service actions intended during manufacturing to load manufacturing data and setup calibrations.</p>
             </article>
-            <article class="guide-mini-card guide-note-card guide-mini-card--warning">
-              <div class="guide-mini-kicker is-yellow">Warning</div>
+            <aside class="notice notice--warning">
+              <h3>Warning</h3>
               <p>This section is not intended for users.</p>
-            </article>
-            <figure class="guide-figure guide-figure--compact">
+            </aside>
+            <figure class="guide-figure guide-figure--plain guide-figure--compact">
               <img
                 src="../../../images/pop-up-controller-v10/screenshots/app-usage/service_dialog.PNG"
                 alt="Service access dialog in the Pop-up Controller V10 desktop app."
@@ -418,16 +412,16 @@
             </div>
           </summary>
           <div class="guide-section-content">
-            <figure class="guide-figure">
+            <figure class="guide-figure guide-figure--plain">
               <img
                 src="../../../images/pop-up-controller-v10/screenshots/app-usage/firmware_section.png"
                 alt="Firmware area from the Pop-up Controller V10 desktop app."
               >
             </figure>
-            <article class="guide-mini-card guide-note-card guide-mini-card--info">
-              <div class="guide-mini-kicker is-blue">Info</div>
+            <aside class="notice notice--info">
+              <h3>Info</h3>
               <p>Follow the <a href="../app-flashing/">App Flashing Guide</a> for more detailed instructions.</p>
-            </article>
+            </aside>
             <div class="guide-card-grid">
               <article class="guide-mini-card">
                 <div class="guide-mini-kicker">Firmware file</div>
