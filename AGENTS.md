@@ -51,7 +51,7 @@ When asked to turn Markdown into HTML:
 
 1. Read the Markdown file from `source/...`.
 2. Update or create the matching published page under `products/...`.
-3. Preserve the existing site visual language from `assets/styles/site.css`.
+3. Reuse the shared components and typography in `assets/styles/site.css` according to the style rules below.
 4. Keep the content customer-facing and easy to scan on mobile.
 5. Prefer short sections, clear headings, numbered steps where appropriate, and simple warning/notes wording.
 6. Add or update breadcrumbs and product-page links when needed.
@@ -88,11 +88,17 @@ When asked to update the `pop-up-controller-v10` parts section:
 - This website is primarily technical documentation. Favor precise, information-dense content over promotional or decorative copy.
 - Keep pages simple. Avoid extra filler sections unless they help the customer.
 - Avoid needless fluff. If a sentence or section does not add technical clarity, guidance, or customer value, leave it out.
-- Use note severity consistently across guides: `Info` = blue, `Warning` = yellow, `Serious Warning` = red.
-- Use `Info` for neutral clarifications and troubleshooting hand-offs, `Warning` for prerequisites and cautions, and `Serious Warning` for safety-critical or high-risk situations.
 - Favor HTML pages over PDFs unless the user explicitly asks for a PDF.
-- Reuse the existing card, hero, notes, breadcrumb, and button patterns where they fit.
 - Keep filenames and URLs stable once a page is published.
+
+## Shared HTML Styling
+
+- Treat `assets/styles/site.css` as the styling source of truth. Before adding a class or page-specific CSS, check its existing components and a comparable published page. Extend a shared component only when the content needs a genuinely new presentation; avoid copied rules, inline styles for ordinary layout, and per-page font, color, or heading overrides.
+- Use the site's single `--font-family` stack. Keep body text, headings, cards, and controls on that stack. Use the existing type scale (`--font-size-body`, `--font-size-display`, `--font-size-section`, `--font-size-card-title`, and `--font-size-lede`) rather than introducing near-duplicate sizes for the same role.
+- Use one semantic `h1` in the page hero, `h2` for main sections, and `h3` for cards or subsections. Use `.hero` with `.eyebrow` and `.lede` where needed, `.section` with `.section-heading` for main content, and `.breadcrumb` for navigation. Do not choose heading levels for visual size alone.
+- Use `.guide-card-grid` with `.guide-mini-card` for information or fact cards. For feature cards with an image, add `.feature-card-grid` to the grid and `.feature-card` to each `.guide-mini-card`; use `.feature-card--wide-image` only when the image needs the wider treatment. Use `.card-link` for linked navigation cards rather than making an informational card look clickable.
+- Use `.notice` for notes within guide content, `.note-card` for standalone or grouped notes, and `.page-note` for a compact note directly below a hero. Apply the existing severity modifiers: `--info` (blue) for neutral clarification or troubleshooting hand-off, `--warning` (yellow) for prerequisites and cautions, and `--serious` (red) for safety-critical or high-risk instructions. Use `.notice--subtle` for unaccented supporting text and `.notice--tip` or `.note-card--success` only for a genuine positive tip or status. Keep the visible note title consistent with its severity (`Info`, `Warning`, or `Serious Warning`) when a title is shown.
+- Reuse `.button`, `.button-secondary`, `.badge`, `.guide-figure`, and the existing grid classes for their respective roles. Keep spacing, radius, color, and responsive behavior in the shared stylesheet. If a new pattern is necessary, define it there with a clear purpose and use it consistently on comparable pages.
 
 ## Supplemental Agent Instructions
 

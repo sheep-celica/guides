@@ -96,7 +96,7 @@ Up to 4 different inputs can be registered.
 
 ### Overview
 
-![Pop-up Controller V10 overview.](../../images/pop-up-controller-v10/user-guide/controller-overview.png)
+![Pop-up Controller V10 overview.](../../images/pop-up-controller-v10/screenshots/rev-e-overview.png)
 
 Plug and play replacement for the T18 Celica's light retractor relay with support for several accessories.
 
@@ -112,7 +112,7 @@ Plug and play replacement for the T18 Celica's light retractor relay with suppor
 
 ### Fuses
 
-![Controller fuses.](../../images/pop-up-controller-v10/user-guide/controller-fuses.png)
+![Controller fuses.](../../images/pop-up-controller-v10/screenshots/rev-e-fuses.png)
 
 There are 4 replaceable automotive fuses on board.
 
@@ -125,7 +125,7 @@ There are 4 replaceable automotive fuses on board.
 
 ### Indicator LEDs
 
-![Controller indicator LEDs.](../../images/pop-up-controller-v10/user-guide/controller-indicator-leds.png)
+![Controller indicator LEDs.](../../images/pop-up-controller-v10/screenshots/rev-e-indicator-leds.png)
 
 Several LEDs on the top of the controller case can help with troubleshooting.
 
@@ -152,11 +152,11 @@ There are several connectors to connect additional accessories.
 | X6 | I2C expansion / Remote control module |
 | USB-C | Allows connecting controller to PC |
 
-> Additional connector image placeholder.
+![Front view of the controller's 12-pin Toyota connector and USB-C port.](../../images/pop-up-controller-v10/screenshots/rev-e-connector-front.png)
 
 ### Debug & Adjustment
 
-![Controller buttons and potentiometers.](../../images/pop-up-controller-v10/user-guide/controller-buttons-potentiometers.png)
+![Controller buttons and potentiometers.](../../images/pop-up-controller-v10/screenshots/rev-e-buttons-pots.png)
 
 #### Buttons
 

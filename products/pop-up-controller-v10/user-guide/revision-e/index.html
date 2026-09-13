@@ -446,7 +446,7 @@
             </div>
             <figure class="guide-figure">
               <img
-                src="../../../../images/pop-up-controller-v10/user-guide/controller-overview.png"
+                src="../../../../images/pop-up-controller-v10/screenshots/rev-e-overview.png"
                 alt="Pop-up Controller V10 overview."
               >
             </figure>
@@ -482,7 +482,7 @@
             </div>
             <figure class="guide-figure">
               <img
-                src="../../../../images/pop-up-controller-v10/user-guide/controller-fuses.png"
+                src="../../../../images/pop-up-controller-v10/screenshots/rev-e-fuses.png"
                 alt="Replaceable fuses on the Pop-up Controller V10."
               >
             </figure>
@@ -519,7 +519,7 @@
             <figure class="guide-figure">
               <img
                 class="controller-indicator-leds-image"
-                src="../../../../images/pop-up-controller-v10/user-guide/controller-indicator-leds.png"
+                src="../../../../images/pop-up-controller-v10/screenshots/rev-e-indicator-leds.png"
                 alt="Indicator LEDs on the top of the Pop-up Controller V10."
               >
             </figure>
@@ -580,7 +580,10 @@
                 src="../../../../images/pop-up-controller-v10/user-guide/controller-connectors.png"
                 alt="Controller connectors on the Pop-up Controller V10."
               >
-              <div class="controller-image-placeholder" role="img" aria-label="Placeholder for an additional controller connector image">Additional connector image placeholder</div>
+              <img
+                src="../../../../images/pop-up-controller-v10/screenshots/rev-e-connector-front.png"
+                alt="Front view of the controller's 12-pin Toyota connector and USB-C port."
+              >
             </figure>
           </div>
         </section>
@@ -617,7 +620,7 @@
             </div>
             <figure class="guide-figure">
               <img
-                src="../../../../images/pop-up-controller-v10/user-guide/controller-buttons-potentiometers.png"
+                src="../../../../images/pop-up-controller-v10/screenshots/rev-e-buttons-pots.png"
                 alt="Buttons and potentiometers on the Pop-up Controller V10."
               >
             </figure>
@@ -705,7 +708,7 @@
         <div class="power-calculator__heading">
           <div>
             <h3>Battery life calculation</h3>
-            <p>Estimate how long the battery will take to reach the selected threshold. The controller values use the listed maximum currents as a conservative estimate. Every scenario includes 5% self-discharge per month; Battery disconnected assumes no parasitic current. Replace the example battery and parasitic-current values with your own measurements.</p>
+            <p>Estimate how long the battery will take to reach the selected threshold. Battery disconnected assumes no parasitic current. Replace the example battery and parasitic-current values with your own measurements.</p>
           </div>
         </div>
 
@@ -752,19 +755,19 @@
         <div class="power-calculator__summary" data-power-calculator-summary aria-live="polite">
           <p class="power-calculator__summary-title" data-power-calculator-summary-title>Time until battery discharges to 50%</p>
           <div class="power-calculator__result-grid" data-power-calculator-results>
-            <article class="power-calculator__result-card">
+            <article class="power-calculator__result-card power-calculator__result-card--disconnected">
               <span>Controller Disconnected</span>
               <strong data-power-result="noController">—</strong>
             </article>
-            <article class="power-calculator__result-card">
+            <article class="power-calculator__result-card power-calculator__result-card--sleep">
               <span>Controller Sleep</span>
               <strong data-power-result="controllerAsleep">—</strong>
             </article>
-            <article class="power-calculator__result-card">
+            <article class="power-calculator__result-card power-calculator__result-card--idle">
               <span>Controller Idle</span>
               <strong data-power-result="controllerIdle">—</strong>
             </article>
-            <article class="power-calculator__result-card">
+            <article class="power-calculator__result-card power-calculator__result-card--battery-disconnected">
               <span>Battery disconnected</span>
               <strong data-power-result="batteryDisconnected">—</strong>
             </article>

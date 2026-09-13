@@ -143,22 +143,23 @@
       const days = Array.from({ length: pointCount }, function (_, index) {
         return (chartDays * index) / (pointCount - 1);
       });
+      const chartColors = getComputedStyle(calculator);
 
       const traces = [
         {
           name: "Controller Disconnected",
           current: currents.noController,
-          color: "#79baff"
+          color: chartColors.getPropertyValue("--power-color-disconnected").trim()
         },
         {
           name: "Controller Sleep",
           current: currents.controllerAsleep,
-          color: "#72d89d"
+          color: chartColors.getPropertyValue("--power-color-sleep").trim()
         },
         {
           name: "Controller Idle",
           current: currents.controllerIdle,
-          color: "#ff9c72"
+          color: chartColors.getPropertyValue("--power-color-idle").trim()
         }
       ].map(function (trace) {
         const series = batterySeries(trace.current, capacity, days, chartDays);
@@ -180,7 +181,7 @@
         }),
         name: "Battery disconnected",
         mode: "lines",
-        line: { color: "#c6a4f5", width: 3, dash: "dot" },
+        line: { color: chartColors.getPropertyValue("--power-color-battery-disconnected").trim(), width: 3, dash: "dot" },
         hovertemplate: "%{y:.1f}%<extra>Battery disconnected</extra>"
       });
 
