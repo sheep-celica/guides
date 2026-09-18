@@ -6,7 +6,6 @@ window.SheepSiteConfig = {
   logoPath: "images/site/sheep-celica-logo.png",
   supportEmail: "sheep.celica@gmail.com",
   youtubeUrl: "https://www.youtube.com/@SheepCelica",
-  githubUrl: "https://github.com/sheep-celica",
   countryFlag: "🇨🇿",
   countryLabel: "Czechia"
 };

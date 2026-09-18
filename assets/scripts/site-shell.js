@@ -16,7 +16,6 @@
       logoPath: "",
       supportEmail: "",
       youtubeUrl: "",
-      githubUrl: "https://github.com/sheep-celica",
       countryFlag: "",
       countryLabel: ""
     },
@@ -62,19 +61,9 @@
     );
   }
 
-  function buildExternalLink(href, label) {
-    return (
-      '<a class="site-shell-link" href="' +
-      escapeHtml(href) +
-      '" target="_blank" rel="noopener">' +
-      escapeHtml(label) +
-      "</a>"
-    );
-  }
-
   function buildInternalLink(href, label) {
     return (
-      '<a class="site-shell-link" href="' +
+      '<a class="site-shell-link site-shell-link--primary" href="' +
       escapeHtml(href) +
       '">' +
       escapeHtml(label) +
@@ -101,7 +90,6 @@
     "</a>" +
     '<div class="site-frame-links">' +
     buildInternalLink(aboutHref, "About Me") +
-    buildExternalLink(config.githubUrl, "GitHub") +
     "</div>" +
     "</header>";
 

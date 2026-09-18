@@ -95,10 +95,20 @@ When asked to update the `pop-up-controller-v10` parts section:
 
 - Treat `assets/styles/site.css` as the styling source of truth. Before adding a class or page-specific CSS, check its existing components and a comparable published page. Extend a shared component only when the content needs a genuinely new presentation; avoid copied rules, inline styles for ordinary layout, and per-page font, color, or heading overrides.
 - Use the site's single `--font-family` stack. Keep body text, headings, cards, and controls on that stack. Use the existing type scale (`--font-size-body`, `--font-size-display`, `--font-size-section`, `--font-size-card-title`, and `--font-size-lede`) rather than introducing near-duplicate sizes for the same role.
-- Use one semantic `h1` in the page hero, `h2` for main sections, and `h3` for cards or subsections. Use `.hero` with `.eyebrow` and `.lede` where needed, `.section` with `.section-heading` for main content, and `.breadcrumb` for navigation. Do not choose heading levels for visual size alone.
+- Use one semantic `h1` in the page hero, `h2` for main sections, and `h3` for cards or subsections. Use `.hero` with `.eyebrow` and `.lede` where needed, `.section-heading` for main content headings, and `.breadcrumb` for navigation. Do not choose heading levels for visual size alone.
 - Use `.guide-card-grid` with `.guide-mini-card` for information or fact cards. For feature cards with an image, add `.feature-card-grid` to the grid and `.feature-card` to each `.guide-mini-card`; use `.feature-card--wide-image` only when the image needs the wider treatment. Use `.card-link` for linked navigation cards rather than making an informational card look clickable.
 - Use `.notice` for notes within guide content, `.note-card` for standalone or grouped notes, and `.page-note` for a compact note directly below a hero. Apply the existing severity modifiers: `--info` (blue) for neutral clarification or troubleshooting hand-off, `--warning` (yellow) for prerequisites and cautions, and `--serious` (red) for safety-critical or high-risk instructions. Use `.notice--subtle` for unaccented supporting text and `.notice--tip` or `.note-card--success` only for a genuine positive tip or status. Keep the visible note title consistent with its severity (`Info`, `Warning`, or `Serious Warning`) when a title is shown.
 - Reuse `.button`, `.button-secondary`, `.badge`, `.guide-figure`, and the existing grid classes for their respective roles. Keep spacing, radius, color, and responsive behavior in the shared stylesheet. If a new pattern is necessary, define it there with a clear purpose and use it consistently on comparable pages.
+
+## Page Layout And Card Hierarchy
+
+- Keep top-level page structure visually unboxed. Page titles, introductions, and main section wrappers should sit directly on the page background instead of being placed inside large parent cards.
+- For product and guide pages, use the established unboxed patterns such as `.hero--unnested`, `.product-landing-section`, and `.guide-page-section`. Do not restore the bordered, shadowed `.hero` or `.section` presentation around these top-level areas unless the user explicitly requests it.
+- Reserve cards for content that benefits from a distinct boundary or interaction: linked navigation items, notices, warnings, expandable steps, catalogue entries, fact cards, and individual package or part items.
+- Avoid stacking a grid of cards inside another decorative parent card. The section heading and card grid should normally be direct children of an unboxed section.
+- Keep the site header as a card. Keep the site footer outer container unboxed on every page; its useful inner panels and links may remain grouped.
+- On landing-page image cards, let the image area share the parent card background without a separate outline or contrasting fill. A subtle divider between the card title and image is acceptable.
+- When regenerating HTML from Markdown, preserve this unboxed page hierarchy even if an older page or template still uses `.section` as a decorative outer card.
 
 ## Supplemental Agent Instructions
 
