@@ -96,15 +96,6 @@ a {
   background: linear-gradient(180deg, rgba(17, 24, 33, 0.94), rgba(10, 15, 21, 0.94));
 }
 
-.home-page .site-footer {
-  padding-right: 0;
-  padding-left: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
 .home-page .site-frame + .home-section {
   margin-top: 3rem;
 }
@@ -244,9 +235,11 @@ a {
 
 .site-footer {
   margin-top: 1.25rem;
-  padding: clamp(1.25rem, 2vw, 1.6rem);
-  border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, rgba(16, 22, 30, 0.96), rgba(11, 16, 23, 0.96));
+  padding: clamp(1.25rem, 2vw, 1.6rem) 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .site-footer-grid {
@@ -335,6 +328,20 @@ a {
   background: linear-gradient(180deg, rgba(18, 24, 32, 0.96), rgba(12, 17, 24, 0.94));
   overflow: hidden;
   position: relative;
+}
+
+.hero--unnested {
+  padding-right: 0;
+  padding-left: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.hero--unnested::after {
+  display: none;
 }
 
 .hero::after {
@@ -570,6 +577,10 @@ h3 {
 }
 
 .home-section {
+  margin-top: 1.75rem;
+}
+
+.product-landing-section {
   margin-top: 1.75rem;
 }
 
