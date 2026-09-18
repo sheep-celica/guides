@@ -32,6 +32,7 @@
   const countryFlag = String(config.countryFlag || "").trim();
   const countryLabel = String(config.countryLabel || "").trim();
   const currentYear = new Date().getFullYear();
+  const isHomePage = rootPrefix === "";
 
   function escapeHtml(value) {
     return value
@@ -150,7 +151,7 @@
     "</div>" +
     "</section>" +
     '<section class="site-footer-panel">' +
-    "<h2>Contact</h2>" +
+    (isHomePage ? "" : "<h2>Contact</h2>") +
     emailMarkup +
     youtubeMarkup +
     "</section>" +
