@@ -11,8 +11,7 @@ the package contents that can be ordered.
 
 ## Availability Notice
 
-- Manufacturing has started and consistent stock will be maintained.
-- Restocking will take about a month in case it ever runs out.
+- Currently out of stock. In process of restocking with Revision F units. Estimated to be back in stock near the end of November 2026.
 
 ## Pricing Notice
 
